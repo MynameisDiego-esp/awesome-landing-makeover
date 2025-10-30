@@ -86,7 +86,7 @@ const Index = () => {
       </section>
 
       {/* Solution Section */}
-      <section id="solucion" className="bg-[image:var(--gradient-soft)] py-20" style={{ background: "var(--gradient-soft)" }}>
+      <section id="solucion" className="bg-[image:var(--gradient-accent)] py-20" style={{ background: "var(--gradient-accent)" }}>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">
             La Solución: <span className="text-cyan-600">miraDry®</span> — Reducción
