@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import FloatingNav from "@/components/FloatingNav";
 import heroBg from "@/assets/hero-bg.jpg";
 import step1 from "@/assets/step1.jpg";
 import step2 from "@/assets/step2.jpg";
@@ -9,8 +10,10 @@ import step4 from "@/assets/step4.jpg";
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <FloatingNav />
+      
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-cyan-400 via-cyan-300 to-yellow-300 overflow-hidden">
+      <section id="inicio" className="relative min-h-screen bg-[image:var(--gradient-vibrant)] overflow-hidden" style={{ background: "var(--gradient-vibrant)" }}>
         <div className="absolute top-8 left-8">
           <div className="text-white">
             <div className="text-sm font-semibold mb-1">ZERO</div>
@@ -51,7 +54,7 @@ const Index = () => {
       </section>
 
       {/* Problem Section - Dark */}
-      <section className="bg-black text-white py-20">
+      <section id="problema" className="bg-[image:var(--gradient-dark)] text-white py-20" style={{ background: "var(--gradient-dark)" }}>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-12">
             Basta de vivir<br />
@@ -91,7 +94,7 @@ const Index = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="bg-white py-20">
+      <section id="solucion" className="bg-[image:var(--gradient-soft)] py-20" style={{ background: "var(--gradient-soft)" }}>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">
             La Solución: <span className="text-cyan-600">miraDry®</span> — Reducción
@@ -140,7 +143,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section - Dark with Yellow Accent */}
-      <section className="bg-gray-900 text-white py-20">
+      <section className="bg-[image:var(--gradient-dark)] text-white py-20" style={{ background: "var(--gradient-dark)" }}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -174,7 +177,9 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-black text-white py-20">
+      <section className="relative bg-black text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[image:var(--gradient-dark)] opacity-50" style={{ background: "var(--gradient-dark)" }}></div>
+        <div className="relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -204,10 +209,11 @@ const Index = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Procedure Timeline */}
-      <section className="bg-gradient-to-br from-cyan-100 to-cyan-50 py-20">
+      <section id="procedimiento" className="bg-[image:var(--gradient-soft)] py-20" style={{ background: "var(--gradient-soft)" }}>
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">
             Qué esperar del <span className="italic">procedimiento</span>
@@ -292,7 +298,9 @@ const Index = () => {
       </section>
 
       {/* Candidate Section */}
-      <section className="bg-black text-white py-20">
+      <section id="candidato" className="relative bg-black text-white py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[image:var(--gradient-dark)] opacity-50" style={{ background: "var(--gradient-dark)" }}></div>
+        <div className="relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -329,10 +337,11 @@ const Index = () => {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Final CTA */}
-      <section className="bg-gradient-to-br from-cyan-400 via-cyan-300 to-yellow-300 py-20">
+      <section id="contacto" className="bg-[image:var(--gradient-vibrant)] py-20" style={{ background: "var(--gradient-vibrant)" }}>
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-5xl font-bold mb-8">
             <span className="text-white">ZERO</span><br />
