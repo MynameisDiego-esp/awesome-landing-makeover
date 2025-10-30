@@ -14,15 +14,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section id="inicio" className="relative min-h-screen bg-[image:var(--gradient-vibrant)] overflow-hidden" style={{ background: "var(--gradient-vibrant)" }}>
-        <div className="absolute top-8 left-8">
-          <div className="text-white">
-            <div className="text-sm font-semibold mb-1">ZERO</div>
-            <div className="text-sm font-semibold">SWEAT</div>
-            <div className="text-sm font-semibold">CLINIC</div>
-          </div>
-        </div>
-        
-        <div className="container mx-auto px-4 flex items-center min-h-screen">
+        <div className="container mx-auto px-4 flex items-center min-h-screen pt-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             <div>
               <p className="bg-cyan-500 text-white px-4 py-2 rounded-full inline-block text-sm mb-6">
