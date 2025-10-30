@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import FloatingNav from "@/components/FloatingNav";
+import ImageWithBackgroundRemoval from "@/components/ImageWithBackgroundRemoval";
 import heroBg from "@/assets/hero-bg.jpg";
 import step1 from "@/assets/step1.jpg";
 import step2 from "@/assets/step2.jpg";
@@ -71,7 +72,7 @@ const Index = () => {
             </div>
             
             <div className="relative">
-              <img 
+              <ImageWithBackgroundRemoval
                 src={step1}
                 alt="Persona levantando brazos"
                 className="w-full h-auto rounded-3xl"
@@ -124,7 +125,7 @@ const Index = () => {
             </div>
             
             <div>
-              <img 
+              <ImageWithBackgroundRemoval
                 src={step2}
                 alt="Persona relajada"
                 className="w-full h-auto rounded-3xl"
@@ -139,7 +140,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
+              <ImageWithBackgroundRemoval
                 src={step3}
                 alt="Espalda mostrando resultado"
                 className="w-full h-auto rounded-3xl"
@@ -296,7 +297,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
+              <ImageWithBackgroundRemoval
                 src={step4}
                 alt="Candidato ideal"
                 className="w-full h-auto rounded-3xl"
