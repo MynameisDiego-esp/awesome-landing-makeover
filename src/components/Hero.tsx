@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-200 via-emerald-200 to-yellow-200" />
 
-      <div className="container mx-auto px-4 py-20 relative z-10 pt-36">
+      <div className="container mx-auto px-4 py-20 relative z-10 pt-48">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
