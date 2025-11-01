@@ -15,17 +15,8 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Black wrap effect at top - more prominent */}
-      <div className="absolute top-0 left-0 right-0 h-[120px] bg-black z-30" />
-
-      {/* Curved bottom edge of black wrap */}
-      <div
-        className="absolute top-[120px] left-0 right-0 h-[60px] bg-black z-30"
-        style={{
-          clipPath: "ellipse(100% 100% at 50% 0%)",
-          transform: "scaleY(-1)",
-        }}
-      />
+      {/* Black strip covering the top area */}
+      <div className="absolute top-0 left-0 right-0 h-[100px] bg-black z-30" />
 
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
