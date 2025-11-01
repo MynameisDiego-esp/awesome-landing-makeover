@@ -15,6 +15,11 @@ const Index = () => {
       
       {/* Hero Section */}
       <section id="inicio" className="relative min-h-screen overflow-hidden">
+        {/* Dynamic Island-style contour */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 z-50">
+          <div className="w-[280px] h-[80px] bg-black rounded-b-[40px] shadow-2xl"></div>
+        </div>
+        
         <div className="absolute inset-0 bg-[image:var(--gradient-vibrant)]" style={{ background: "var(--gradient-vibrant)" }}></div>
         <div 
           className="absolute inset-0 opacity-20 bg-cover bg-center"
