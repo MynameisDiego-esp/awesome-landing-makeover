@@ -14,8 +14,17 @@ const Index = () => {
       <FloatingNav />
       
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen bg-[image:var(--gradient-vibrant)] overflow-hidden" style={{ background: "var(--gradient-vibrant)" }}>
-        <div className="container mx-auto px-4 flex items-center min-h-screen pt-20">
+      <section id="inicio" className="relative min-h-screen overflow-hidden">
+        <div className="absolute inset-0 bg-[image:var(--gradient-vibrant)]" style={{ background: "var(--gradient-vibrant)" }}></div>
+        <div 
+          className="absolute inset-0 opacity-20 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            transform: 'scale(1.1)',
+            filter: 'blur(2px)'
+          }}
+        ></div>
+        <div className="relative z-10 container mx-auto px-4 flex items-center min-h-screen pt-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             <div className="animate-slide-in-left">
               <p className="bg-cyan-500 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 animate-fade-in">
@@ -33,13 +42,20 @@ const Index = () => {
               <div className="bg-cyan-500 text-white px-6 py-3 rounded-lg inline-block text-sm mb-8 animate-fade-in-slow font-body">
                 Aprobado por FDA • No quirúrgico • 1-2 sesiones • Resultados permanentes
               </div>
+              
+              <div className="flex gap-4">
+                <Button variant="cta" size="xl" className="animate-bounce-in" style={{ animationDelay: '0.8s', opacity: 0, animationFillMode: 'forwards' }}>
+                  Agenda Consulta Gratuita
+                </Button>
+              </div>
             </div>
             
             <div className="relative animate-slide-in-right">
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/30 to-transparent rounded-3xl blur-3xl"></div>
               <img 
                 src={heroBg}
                 alt="Persona feliz"
-                className="w-full h-auto hover:scale-105 transition-transform duration-500 shadow-2xl"
+                className="relative w-full h-auto hover:scale-105 transition-all duration-700 shadow-2xl rounded-3xl hover:shadow-[0_20px_80px_rgba(6,182,212,0.4)]"
               />
             </div>
           </div>
@@ -66,16 +82,18 @@ const Index = () => {
                 <li className="animate-fade-in hover:translate-x-2 transition-transform duration-300" style={{ animationDelay: '0.5s', opacity: 0, animationFillMode: 'forwards' }}>• Sudas aún con clima frío</li>
               </ul>
               
-              <Button className="mt-8 bg-yellow-400 text-black hover:bg-yellow-500 text-lg px-8 py-6 hover:scale-110 transition-all duration-300 animate-bounce-in" style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}>
+              <Button variant="pulse" size="xl" className="mt-8 bg-yellow-400 text-black hover:bg-yellow-500 animate-bounce-in font-sans" style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}>
                 Agenda tu Consulta + Prueba de Sudoración
               </Button>
             </div>
             
-            <div className="relative animate-slide-in-right">
+            <div className="relative animate-slide-in-right group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-yellow-400 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <img 
                 src={step1}
                 alt="Persona levantando brazos"
-                className="w-full h-auto hover:scale-105 transition-transform duration-500 animate-float shadow-2xl"
+                className="relative w-full h-auto hover:scale-105 transition-all duration-700 animate-float shadow-2xl rounded-2xl"
+                style={{ clipPath: 'inset(0 round 1rem)' }}
               />
             </div>
           </div>
@@ -124,11 +142,13 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="animate-slide-in-right">
+            <div className="relative animate-slide-in-right group">
+              <div className="absolute -inset-4 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <img 
                 src={step2}
                 alt="Persona relajada"
-                className="w-full h-auto hover:scale-105 transition-transform duration-500 animate-float shadow-2xl"
+                className="relative w-full h-auto hover:scale-110 hover:rotate-1 transition-all duration-700 animate-float shadow-2xl rounded-2xl"
+                style={{ clipPath: 'inset(0 round 1rem)' }}
               />
             </div>
           </div>
@@ -139,11 +159,13 @@ const Index = () => {
       <section className="bg-[image:var(--gradient-dark)] text-white py-20" style={{ background: "var(--gradient-dark)" }}>
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
+            <div className="relative animate-slide-in-left group">
+              <div className="absolute -inset-4 bg-gradient-to-tl from-yellow-400 to-cyan-400 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <img 
                 src={step3}
                 alt="Espalda mostrando resultado"
-                className="w-full h-auto hover:scale-105 transition-transform duration-500 animate-float shadow-2xl"
+                className="relative w-full h-auto hover:scale-110 hover:-rotate-1 transition-all duration-700 animate-float shadow-2xl rounded-2xl"
+                style={{ clipPath: 'inset(0 round 1rem)' }}
               />
             </div>
             
@@ -296,11 +318,13 @@ const Index = () => {
         <div className="relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
+            <div className="relative animate-slide-in-left group">
+              <div className="absolute -inset-4 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse-glow"></div>
               <img 
                 src={step4}
                 alt="Candidato ideal"
-                className="w-full h-auto hover:scale-105 transition-transform duration-500 animate-float shadow-2xl"
+                className="relative w-full h-auto hover:scale-110 transition-all duration-700 animate-float shadow-2xl rounded-2xl"
+                style={{ clipPath: 'inset(0 round 1rem)' }}
               />
             </div>
             
@@ -369,7 +393,7 @@ const Index = () => {
               </div>
             </Card>
             
-            <Button className="bg-yellow-400 hover:bg-yellow-500 text-black text-xl px-12 py-6 rounded-full font-sans font-bold animate-bounce-in hover:scale-110 transition-all duration-300" style={{ animationDelay: '0.5s', opacity: 0, animationFillMode: 'forwards' }}>
+            <Button variant="cta" size="xl" className="animate-bounce-in font-sans" style={{ animationDelay: '0.5s', opacity: 0, animationFillMode: 'forwards' }}>
               Agenda tu Consulta + Prueba de Sudoración
             </Button>
           </div>
@@ -384,7 +408,7 @@ const Index = () => {
             levantar los brazos sin pensarlo y olvidar el sudor para siempre
           </p>
           
-          <Button className="mt-6 bg-cyan-400 hover:bg-cyan-500 text-black text-lg px-8 py-4 rounded-full font-sans font-bold animate-bounce-in hover:scale-110 transition-all duration-300">
+          <Button variant="cta" size="xl" className="mt-6 font-sans animate-bounce-in">
             Agenda tu Consulta + Prueba de Sudoración
           </Button>
         </div>

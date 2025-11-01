@@ -156,6 +156,18 @@ export default {
             transform: "translateY(-10px)"
           }
         },
+        "shimmer": {
+          "0%": { backgroundPosition: "-1000px 0" },
+          "100%": { backgroundPosition: "1000px 0" }
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(185 85% 55% / 0.4)" },
+          "50%": { boxShadow: "0 0 40px hsl(185 85% 55% / 0.8)" }
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" }
+        },
         "glow": {
           "0%, 100%": {
             boxShadow: "0 0 20px hsl(var(--primary-glow) / 0.3)"
@@ -176,6 +188,9 @@ export default {
         "bounce-in": "bounce-in 0.6s ease-out",
         "float": "float 3s ease-in-out infinite",
         "glow": "glow 2s ease-in-out infinite",
+        "shimmer": "shimmer 3s linear infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 3s ease infinite",
       },
     },
   },
