@@ -16,31 +16,31 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-100 via-emerald-100 to-yellow-100" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-200 via-emerald-200 to-yellow-200" />
 
       <div className="container mx-auto px-4 py-20 relative z-10 pt-36">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
             <div className="mb-6 flex gap-2 flex-wrap">
-              <Badge className="text-sm px-4 py-2 bg-green-100 text-green-800 hover:bg-green-200 border-none">
+              <Badge className="text-sm px-4 py-2 bg-emerald-400 text-white hover:bg-emerald-500 border-none">
                 <CheckCircle2 className="w-4 h-4 mr-2" />
                 Aprobado por FDA
               </Badge>
-              <Badge className="text-sm px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 border-none">
+              <Badge className="text-sm px-4 py-2 bg-cyan-400 text-white hover:bg-cyan-500 border-none">
                 No quirúrgico
               </Badge>
-              <Badge className="text-sm px-4 py-2 bg-purple-100 text-purple-800 hover:bg-purple-200 border-none">
+              <Badge className="text-sm px-4 py-2 bg-purple-400 text-white hover:bg-purple-500 border-none">
                 1-2 sesiones
               </Badge>
-              <Badge className="text-sm px-4 py-2 bg-pink-100 text-pink-800 hover:bg-pink-200 border-none">
+              <Badge className="text-sm px-4 py-2 bg-pink-400 text-white hover:bg-pink-500 border-none">
                 Resultados permanentes
               </Badge>
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Detén el sudor axilar{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C7C0] via-[#7DE5B2] to-[#F7E37C]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#FFE04D]">
                 para siempre
               </span>
             </h1>
@@ -54,7 +54,7 @@ const Hero = () => {
               <Button
                 onClick={handleConsultation}
                 size="lg"
-                className="group bg-gradient-to-r from-[#00D4CE] via-[#8AFFC8] to-[#8AFFC8] hover:opacity-90 text-gray-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6"
+                className="group bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#A0FFD6] hover:opacity-90 text-gray-900 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-6"
               >
                 Agenda tu Consulta + Prueba de Sudoración
                 <CheckCircle2 className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -62,7 +62,7 @@ const Hero = () => {
             </div>
 
             {/* Si tú checklist */}
-            <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 shadow-lg">
+            <div className="bg-white/90 backdrop-blur-sm border-2 border-cyan-400 rounded-2xl p-6 shadow-xl">
               <p className="font-semibold text-gray-900 mb-4 text-lg">Si tú:</p>
               <ul className="space-y-3">
                 {[
@@ -73,14 +73,14 @@ const Hero = () => {
                   "Sudas aún con clima frío",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00D4CE' }} />
+                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00E5DD' }} />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-8 bg-cyan-100 border-l-4 p-4 rounded-r-lg" style={{ borderColor: '#00D4CE' }}>
+            <div className="mt-8 bg-cyan-200 border-l-4 p-4 rounded-r-lg" style={{ borderColor: '#00E5DD' }}>
               <p className="text-base text-gray-800">
                 <strong className="block mb-1 text-lg">No eres "una persona sudorosa"</strong>
                 <span className="text-gray-700">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
@@ -97,14 +97,14 @@ const Hero = () => {
                 className="w-full h-auto object-cover"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#00D4CE]/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#00E5DD]/40 to-transparent" />
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl opacity-0 animate-[scaleIn_0.6s_ease-out_0.8s_forwards] border border-gray-100">
+            <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl opacity-0 animate-[scaleIn_0.6s_ease-out_0.8s_forwards] border-2 border-emerald-400">
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="bg-gradient-to-br from-cyan-200 to-emerald-200 p-2 sm:p-3 rounded-full">
-                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#00D4CE' }} />
+                <div className="bg-gradient-to-br from-cyan-300 to-emerald-300 p-2 sm:p-3 rounded-full">
+                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#00E5DD' }} />
                 </div>
                 <div>
                   <p className="font-bold text-xl sm:text-2xl text-gray-900">95%</p>
