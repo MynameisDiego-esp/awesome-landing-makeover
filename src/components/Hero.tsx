@@ -38,12 +38,7 @@ const Hero = () => {
               </Badge>
             </div>
 
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 leading-tight">
-              Detén el sudor axilar{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#FFE04D]">
-                para siempre
-              </span>
-            </h1>
+            <div className="mb-8"></div>
 
             <p className="text-2xl text-gray-600 mb-8 leading-relaxed">
               Basta de vivir con sudor y mal olor. Con miraDry® obtendrás resultados permanentes en solo 1-2 sesiones,

@@ -1,25 +1,20 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, ChevronDown } from "lucide-react";
 
 const FloatingNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
     }
   };
 
-  const navItems = [
-    { id: "inicio", label: "Inicio" },
-    { id: "problema", label: "El Problema" },
-    { id: "solucion", label: "La Solución" },
-    { id: "procedimiento", label: "Procedimiento" },
-    { id: "candidato", label: "¿Eres candidato?" },
-  ];
+  const handleConsultation = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black text-white shadow-lg">
@@ -30,61 +25,31 @@ const FloatingNav = () => {
             Zero Sweat
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-lg font-medium hover:text-[#A0FFD6] transition-colors"
-              >
-                {item.label}
-              </button>
-            ))}
-            <Button 
-              size="lg" 
-              className="bg-[#00E5DD] hover:bg-[#00D4CE] text-gray-900 font-bold text-lg px-8 shadow-lg"
-              onClick={() => scrollToSection("contacto")}
+          {/* Centered CTA Button */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 hidden lg:block">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#FFE04D] hover:opacity-90 text-gray-900 font-bold text-lg px-8 shadow-xl whitespace-nowrap"
+              onClick={handleConsultation}
             >
-              <Phone className="w-6 h-6 mr-2" />
-              Contactar
+              Detén el sudor axilar para siempre con miraDry®
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex items-center gap-2 px-4 py-2 text-lg font-medium hover:text-[#A0FFD6] transition-colors"
-          >
-            Menú
-            <ChevronDown className={`w-5 h-5 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-          </button>
+          {/* Empty space for balance */}
+          <div className="w-[200px]"></div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="md:hidden border-t border-gray-800 py-4 animate-fade-in">
-            <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-3 text-left text-base font-medium hover:text-[#A0FFD6] hover:bg-gray-900 rounded-lg transition-colors"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <Button 
-                size="sm" 
-                className="bg-[#00E5DD] hover:bg-[#00D4CE] text-gray-900 font-bold mt-2 shadow-lg text-base"
-                onClick={() => scrollToSection("contacto")}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Contactar
-              </Button>
-            </div>
-          </div>
-        )}
+        {/* Mobile CTA Button */}
+        <div className="lg:hidden pb-4">
+          <Button
+            size="lg"
+            className="w-full bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#FFE04D] hover:opacity-90 text-gray-900 font-bold text-base px-6 shadow-xl"
+            onClick={handleConsultation}
+          >
+            Detén el sudor axilar para siempre con miraDry®
+          </Button>
+        </div>
       </div>
     </nav>
   );
