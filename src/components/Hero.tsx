@@ -15,13 +15,10 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Black strip covering the top area */}
-      <div className="absolute top-0 left-0 right-0 h-[100px] bg-black z-30" />
-
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
 
-      <div className="container mx-auto px-4 py-20 relative z-10 pt-48">
+      <div className="container mx-auto px-4 py-20 relative z-10 pt-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">

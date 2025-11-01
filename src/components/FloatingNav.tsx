@@ -1,30 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, ChevronDown } from "lucide-react";
 
 const FloatingNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Show nav when scrolling up, hide when scrolling down
-      if (currentScrollY < lastScrollY || currentScrollY < 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-        setIsOpen(false);
-      }
-      
-      setLastScrollY(currentScrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -43,53 +22,70 @@ const FloatingNav = () => {
   ];
 
   return (
-    <nav 
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-        isVisible ? "translate-y-0 opacity-100" : "-translate-y-20 opacity-0"
-      }`}
-    >
-      <div className="bg-white/90 backdrop-blur-lg rounded-full shadow-[var(--shadow-soft)] border border-border/50 px-4 py-3 flex items-center gap-3">
-        {/* Logo */}
-        <div className="font-bold text-primary text-sm">
-          Zero Sweat
-        </div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black text-white shadow-lg">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <div className="font-bold text-xl">
+            Zero Sweat
+          </div>
 
-        {/* Menu Dropdown Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-accent/50 rounded-full transition-colors"
-        >
-          Menú
-          <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-        </button>
-
-        {/* Contact Button */}
-        <Button 
-          size="sm" 
-          className="bg-[image:var(--gradient-cta)] hover:opacity-90 rounded-full shadow-[var(--shadow-soft)] border-0"
-          onClick={() => scrollToSection("contacto")}
-        >
-          <Phone className="w-4 h-4 mr-2" />
-          Contactar
-        </Button>
-      </div>
-
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div className="absolute top-full mt-2 left-0 right-0 bg-white/95 backdrop-blur-lg rounded-2xl shadow-[var(--shadow-card)] border border-border/50 p-4 animate-fade-in">
-          <div className="flex flex-col gap-2">
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 py-3 text-left text-sm font-medium text-foreground/80 hover:text-primary hover:bg-accent/50 rounded-lg transition-colors"
+                className="text-sm font-medium hover:text-cyan-400 transition-colors"
               >
                 {item.label}
               </button>
             ))}
+            <Button 
+              size="sm" 
+              className="bg-cyan-500 hover:bg-cyan-600 text-white"
+              onClick={() => scrollToSection("contacto")}
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              Contactar
+            </Button>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex items-center gap-2 px-3 py-2 text-sm font-medium hover:text-cyan-400 transition-colors"
+          >
+            Menú
+            <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+          </button>
         </div>
-      )}
+
+        {/* Mobile Dropdown Menu */}
+        {isOpen && (
+          <div className="md:hidden border-t border-gray-800 py-4 animate-fade-in">
+            <div className="flex flex-col gap-2">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="px-4 py-3 text-left text-sm font-medium hover:text-cyan-400 hover:bg-gray-900 rounded-lg transition-colors"
+                >
+                  {item.label}
+                </button>
+              ))}
+              <Button 
+                size="sm" 
+                className="bg-cyan-500 hover:bg-cyan-600 text-white mt-2"
+                onClick={() => scrollToSection("contacto")}
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Contactar
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
