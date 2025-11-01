@@ -21,29 +21,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-20 relative z-10 pt-48">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
-          <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
-            <div className="mb-6 flex gap-2 flex-wrap">
-              <Badge className="text-base px-5 py-2.5 bg-emerald-400 text-white hover:bg-emerald-500 border-none">
-                <CheckCircle2 className="w-5 h-5 mr-2" />
-                Aprobado por FDA
-              </Badge>
-              <Badge className="text-base px-5 py-2.5 bg-cyan-400 text-white hover:bg-cyan-500 border-none">
-                No quirúrgico
-              </Badge>
-              <Badge className="text-base px-5 py-2.5 bg-purple-400 text-white hover:bg-purple-500 border-none">
-                1-2 sesiones
-              </Badge>
-              <Badge className="text-base px-5 py-2.5 bg-pink-400 text-white hover:bg-pink-500 border-none">
-                Resultados permanentes
-              </Badge>
-            </div>
-
+          
             <div className="mb-8"></div>
 
-            <p className="text-2xl text-gray-600 mb-8 leading-relaxed">
-              Basta de vivir con sudor y mal olor. Con miraDry® obtendrás resultados permanentes en solo 1-2 sesiones,
-              sin cirugía ni tiempo de recuperación.
-            </p>
+          
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button
