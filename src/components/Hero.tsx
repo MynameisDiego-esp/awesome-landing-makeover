@@ -23,29 +23,29 @@ const Hero = () => {
           {/* Left content */}
           <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
             <div className="mb-6 flex gap-2 flex-wrap">
-              <Badge className="text-sm px-4 py-2 bg-emerald-400 text-white hover:bg-emerald-500 border-none">
-                <CheckCircle2 className="w-4 h-4 mr-2" />
+              <Badge className="text-base px-5 py-2.5 bg-emerald-400 text-white hover:bg-emerald-500 border-none">
+                <CheckCircle2 className="w-5 h-5 mr-2" />
                 Aprobado por FDA
               </Badge>
-              <Badge className="text-sm px-4 py-2 bg-cyan-400 text-white hover:bg-cyan-500 border-none">
+              <Badge className="text-base px-5 py-2.5 bg-cyan-400 text-white hover:bg-cyan-500 border-none">
                 No quirúrgico
               </Badge>
-              <Badge className="text-sm px-4 py-2 bg-purple-400 text-white hover:bg-purple-500 border-none">
+              <Badge className="text-base px-5 py-2.5 bg-purple-400 text-white hover:bg-purple-500 border-none">
                 1-2 sesiones
               </Badge>
-              <Badge className="text-sm px-4 py-2 bg-pink-400 text-white hover:bg-pink-500 border-none">
+              <Badge className="text-base px-5 py-2.5 bg-pink-400 text-white hover:bg-pink-500 border-none">
                 Resultados permanentes
               </Badge>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 leading-tight">
               Detén el sudor axilar{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#FFE04D]">
                 para siempre
               </span>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-2xl text-gray-600 mb-8 leading-relaxed">
               Basta de vivir con sudor y mal olor. Con miraDry® obtendrás resultados permanentes en solo 1-2 sesiones,
               sin cirugía ni tiempo de recuperación.
             </p>
@@ -54,16 +54,16 @@ const Hero = () => {
               <Button
                 onClick={handleConsultation}
                 size="lg"
-                className="group bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#A0FFD6] hover:opacity-90 text-gray-900 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-6"
+                className="group bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#A0FFD6] hover:opacity-90 text-gray-900 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 text-xl px-10 py-7"
               >
                 Agenda tu Consulta + Prueba de Sudoración
-                <CheckCircle2 className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                <CheckCircle2 className="ml-2 w-6 h-6 group-hover:scale-110 transition-transform" />
               </Button>
             </div>
 
             {/* Si tú checklist */}
             <div className="bg-white/90 backdrop-blur-sm border-2 border-cyan-400 rounded-2xl p-6 shadow-xl">
-              <p className="font-semibold text-gray-900 mb-4 text-lg">Si tú:</p>
+              <p className="font-semibold text-gray-900 mb-4 text-xl">Si tú:</p>
               <ul className="space-y-3">
                 {[
                   "Re-aplicas desodorante varias veces al día",
@@ -74,15 +74,15 @@ const Hero = () => {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00E5DD' }} />
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-gray-700 text-lg">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="mt-8 bg-cyan-200 border-l-4 p-4 rounded-r-lg" style={{ borderColor: '#00E5DD' }}>
-              <p className="text-base text-gray-800">
-                <strong className="block mb-1 text-lg">No eres "una persona sudorosa"</strong>
+              <p className="text-lg text-gray-800">
+                <strong className="block mb-1 text-xl">No eres "una persona sudorosa"</strong>
                 <span className="text-gray-700">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
               </p>
             </div>

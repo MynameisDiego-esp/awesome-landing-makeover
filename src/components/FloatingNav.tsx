@@ -26,7 +26,7 @@ const FloatingNav = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="font-bold text-2xl">
+          <div className="font-bold text-3xl">
             Zero Sweat
           </div>
 
@@ -36,17 +36,17 @@ const FloatingNav = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-base font-medium hover:text-[#A0FFD6] transition-colors"
+                className="text-lg font-medium hover:text-[#A0FFD6] transition-colors"
               >
                 {item.label}
               </button>
             ))}
             <Button 
               size="lg" 
-              className="bg-[#00E5DD] hover:bg-[#00D4CE] text-gray-900 font-bold text-base px-6 shadow-lg"
+              className="bg-[#00E5DD] hover:bg-[#00D4CE] text-gray-900 font-bold text-lg px-8 shadow-lg"
               onClick={() => scrollToSection("contacto")}
             >
-              <Phone className="w-5 h-5 mr-2" />
+              <Phone className="w-6 h-6 mr-2" />
               Contactar
             </Button>
           </div>
@@ -54,7 +54,7 @@ const FloatingNav = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex items-center gap-2 px-4 py-2 text-base font-medium hover:text-[#A0FFD6] transition-colors"
+            className="md:hidden flex items-center gap-2 px-4 py-2 text-lg font-medium hover:text-[#A0FFD6] transition-colors"
           >
             Menú
             <ChevronDown className={`w-5 h-5 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -69,17 +69,17 @@ const FloatingNav = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-3 text-left text-sm font-medium hover:text-[#A0FFD6] hover:bg-gray-900 rounded-lg transition-colors"
+                  className="px-4 py-3 text-left text-base font-medium hover:text-[#A0FFD6] hover:bg-gray-900 rounded-lg transition-colors"
                 >
                   {item.label}
                 </button>
               ))}
               <Button 
                 size="sm" 
-                className="bg-[#00E5DD] hover:bg-[#00D4CE] text-gray-900 font-bold mt-2 shadow-lg"
+                className="bg-[#00E5DD] hover:bg-[#00D4CE] text-gray-900 font-bold mt-2 shadow-lg text-base"
                 onClick={() => scrollToSection("contacto")}
               >
-                <Phone className="w-4 h-4 mr-2" />
+                <Phone className="w-5 h-5 mr-2" />
                 Contactar
               </Button>
             </div>
