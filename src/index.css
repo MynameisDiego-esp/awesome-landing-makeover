@@ -43,13 +43,13 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(185 80% 45%), hsl(185 85% 55%));
-    --gradient-hero: linear-gradient(180deg, hsl(185 70% 98%), hsl(0 0% 100%));
-    --gradient-accent: linear-gradient(135deg, hsl(185 40% 96%), hsl(185 50% 98%));
-    --gradient-vibrant: linear-gradient(135deg, hsl(185 80% 45%), hsl(190 85% 60%), hsl(45 100% 50%));
-    --gradient-soft: linear-gradient(180deg, hsl(185 60% 95%), hsl(185 40% 98%));
-    --gradient-dark: linear-gradient(135deg, hsl(200 15% 15%), hsl(185 30% 20%));
-    --gradient-cta: linear-gradient(135deg, hsl(185 80% 50%), hsl(185 90% 60%));
+    --gradient-primary: linear-gradient(135deg, hsl(160 75% 45%), hsl(185 80% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(160 60% 96%), hsl(185 70% 98%));
+    --gradient-accent: linear-gradient(135deg, hsl(150 45% 94%), hsl(185 50% 96%));
+    --gradient-vibrant: linear-gradient(135deg, hsl(150 80% 50%), hsl(175 85% 55%), hsl(185 80% 60%));
+    --gradient-soft: linear-gradient(180deg, hsl(155 55% 93%), hsl(175 50% 95%));
+    --gradient-dark: linear-gradient(135deg, hsl(200 15% 15%), hsl(160 25% 18%));
+    --gradient-cta: linear-gradient(135deg, hsl(165 75% 48%), hsl(185 85% 58%));
     
     /* Shadows */
     --shadow-soft: 0 2px 20px -5px hsl(185 80% 45% / 0.15);

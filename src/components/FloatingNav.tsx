@@ -36,14 +36,14 @@ const FloatingNav = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-base font-medium hover:text-cyan-400 transition-colors"
+                className="text-base font-medium hover:text-green-400 transition-colors"
               >
                 {item.label}
               </button>
             ))}
             <Button 
               size="lg" 
-              className="bg-cyan-500 hover:bg-cyan-600 text-white text-base px-6"
+              className="bg-green-600 hover:bg-green-700 text-white text-base px-6"
               onClick={() => scrollToSection("contacto")}
             >
               <Phone className="w-5 h-5 mr-2" />
@@ -54,7 +54,7 @@ const FloatingNav = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden flex items-center gap-2 px-4 py-2 text-base font-medium hover:text-cyan-400 transition-colors"
+            className="md:hidden flex items-center gap-2 px-4 py-2 text-base font-medium hover:text-green-400 transition-colors"
           >
             Menú
             <ChevronDown className={`w-5 h-5 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -69,14 +69,14 @@ const FloatingNav = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-3 text-left text-sm font-medium hover:text-cyan-400 hover:bg-gray-900 rounded-lg transition-colors"
+                  className="px-4 py-3 text-left text-sm font-medium hover:text-green-400 hover:bg-gray-900 rounded-lg transition-colors"
                 >
                   {item.label}
                 </button>
               ))}
               <Button 
                 size="sm" 
-                className="bg-cyan-500 hover:bg-cyan-600 text-white mt-2"
+                className="bg-green-600 hover:bg-green-700 text-white mt-2"
                 onClick={() => scrollToSection("contacto")}
               >
                 <Phone className="w-4 h-4 mr-2" />
