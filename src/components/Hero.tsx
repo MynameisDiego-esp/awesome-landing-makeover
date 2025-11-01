@@ -6,6 +6,9 @@ import heroImage from "@/assets/hero-image.jpg";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Black contour at top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] h-[80px] bg-black rounded-b-[40px] z-20" />
+      
       {/* Background gradient */}
       <div 
         className="absolute inset-0 bg-[image:var(--gradient-hero)]"
