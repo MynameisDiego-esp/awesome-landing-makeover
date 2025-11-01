@@ -1,91 +1,196 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2 } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import { CheckCircle2, PlayCircle } from "lucide-react";
+import { useState } from "react";
 
 const Hero = () => {
+  const [showVideo, setShowVideo] = useState(false);
+
+  const handleConsultation = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Full-width black strip */}
-      <div className="absolute top-0 left-0 right-0 h-[40px] bg-black z-10" />
-      
-      {/* Black contour at top */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] h-[80px] bg-black rounded-b-[40px] z-20" />
-      
-      {/* Background gradient */}
-      <div 
-        className="absolute inset-0 bg-[image:var(--gradient-hero)]"
-        style={{ background: "var(--gradient-hero)" }}
+      {/* Black wrap effect at top - more prominent */}
+      <div className="absolute top-0 left-0 right-0 h-[120px] bg-black z-30" />
+
+      {/* Curved bottom edge of black wrap */}
+      <div
+        className="absolute top-[120px] left-0 right-0 h-[60px] bg-black z-30"
+        style={{
+          clipPath: "ellipse(100% 100% at 50% 0%)",
+          transform: "scaleY(-1)",
+        }}
       />
-      
-      <div className="container mx-auto px-4 py-20 relative z-10">
+
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50" />
+
+      <div className="container mx-auto px-4 py-20 relative z-10 pt-48">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
-          <div className="animate-fade-in">
+          <div className="opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
             <div className="mb-6 flex gap-2 flex-wrap">
-              <Badge variant="secondary" className="text-sm px-4 py-2">
+              <Badge className="text-sm px-4 py-2 bg-green-100 text-green-800 hover:bg-green-200 border-none">
                 <CheckCircle2 className="w-4 h-4 mr-2" />
                 Aprobado por FDA
               </Badge>
-              <Badge variant="secondary" className="text-sm px-4 py-2">
+              <Badge className="text-sm px-4 py-2 bg-blue-100 text-blue-800 hover:bg-blue-200 border-none">
                 No quirúrgico
               </Badge>
-              <Badge variant="secondary" className="text-sm px-4 py-2">
+              <Badge className="text-sm px-4 py-2 bg-purple-100 text-purple-800 hover:bg-purple-200 border-none">
+                1-2 sesiones
+              </Badge>
+              <Badge className="text-sm px-4 py-2 bg-pink-100 text-pink-800 hover:bg-pink-200 border-none">
                 Resultados permanentes
               </Badge>
             </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Detén el sudor axilar{" "}
-              <span className="text-primary">para siempre</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                para siempre
+              </span>
             </h1>
-            
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Basta de vivir con sudor y mal olor. Con miraDry® obtendrás resultados 
-              permanentes en solo 1-2 sesiones, sin cirugía ni tiempo de recuperación.
+
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              Basta de vivir con sudor y mal olor. Con miraDry® obtendrás resultados permanentes en solo 1-2 sesiones,
+              sin cirugía ni tiempo de recuperación.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button variant="hero" size="xl" className="group">
-                Agenda tu Consulta Gratuita
-                <CheckCircle2 className="ml-2 group-hover:scale-110 transition-transform" />
-              </Button>
-              <Button variant="outline" size="xl">
-                Ver cómo funciona
+              <Button
+                onClick={handleConsultation}
+                size="lg"
+                className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6"
+              >
+                Agenda tu Consulta + Prueba de Sudoración
+                <CheckCircle2 className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
               </Button>
             </div>
-            
-            <p className="text-sm text-muted-foreground italic">
-              No eres "una persona sudorosa". Tus glándulas sudoríparas están hiperactivas — y son tratables.
-            </p>
+
+            {/* Si tú checklist */}
+            <div className="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-2xl p-6 shadow-lg">
+              <p className="font-semibold text-gray-900 mb-4 text-lg">Si tú:</p>
+              <ul className="space-y-3">
+                {[
+                  "Re-aplicas desodorante varias veces al día",
+                  "Manchas tus prendas de la zona de las axilas",
+                  "Te incomoda levantar los brazos en público",
+                  "Te preocupa tu propio olor",
+                  "Sudas aún con clima frío",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-8 bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg">
+              <p className="text-base text-gray-800">
+                <strong className="block mb-1 text-lg">No eres "una persona sudorosa"</strong>
+                <span className="text-gray-700">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
+              </p>
+            </div>
           </div>
-          
+
           {/* Right image */}
-          <div className="relative animate-fade-in-slow">
-            <div className="relative rounded-3xl overflow-hidden shadow-[var(--shadow-card)]">
-              <img 
-                src={heroImage}
+          <div className="relative opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&q=80"
                 alt="Persona feliz y segura levantando los brazos sin preocupación"
                 className="w-full h-auto object-cover"
+                loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent" />
             </div>
-            
+
             {/* Floating badge */}
-            <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-2xl shadow-[var(--shadow-card)] animate-scale-in">
-              <div className="flex items-center gap-4">
-                <div className="bg-primary/10 p-3 rounded-full">
-                  <CheckCircle2 className="w-8 h-8 text-primary" />
+            <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl opacity-0 animate-[scaleIn_0.6s_ease-out_0.8s_forwards] border border-gray-100">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-2 sm:p-3 rounded-full">
+                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
                 </div>
                 <div>
-                  <p className="font-bold text-2xl text-foreground">95%</p>
-                  <p className="text-sm text-muted-foreground">Tasa de éxito</p>
+                  <p className="font-bold text-xl sm:text-2xl text-gray-900">95%</p>
+                  <p className="text-xs sm:text-sm text-gray-600">Candidatos ideales</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg opacity-0 animate-[scaleIn_0.6s_ease-out_1s_forwards]">
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                  </svg>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Video modal */}
+      {showVideo && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowVideo(false)}
+        >
+          <div className="relative bg-white rounded-2xl overflow-hidden max-w-4xl w-full aspect-video">
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-gray-100 transition-colors z-10"
+              aria-label="Cerrar video"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+              title="miraDry Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </section>
   );
 };
