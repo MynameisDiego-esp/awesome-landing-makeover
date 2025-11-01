@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-emerald-50 to-yellow-50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-100 via-emerald-100 to-yellow-100" />
 
       <div className="container mx-auto px-4 py-20 relative z-10 pt-36">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -54,7 +54,7 @@ const Hero = () => {
               <Button
                 onClick={handleConsultation}
                 size="lg"
-                className="group bg-gradient-to-r from-[#00C7C0] via-[#7DE5B2] to-[#7DE5B2] hover:opacity-90 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6"
+                className="group bg-gradient-to-r from-[#00D4CE] via-[#8AFFC8] to-[#8AFFC8] hover:opacity-90 text-gray-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-lg px-8 py-6"
               >
                 Agenda tu Consulta + Prueba de Sudoración
                 <CheckCircle2 className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -73,14 +73,14 @@ const Hero = () => {
                   "Sudas aún con clima frío",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00C7C0' }} />
+                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00D4CE' }} />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-8 bg-cyan-50 border-l-4 p-4 rounded-r-lg" style={{ borderColor: '#00C7C0' }}>
+            <div className="mt-8 bg-cyan-100 border-l-4 p-4 rounded-r-lg" style={{ borderColor: '#00D4CE' }}>
               <p className="text-base text-gray-800">
                 <strong className="block mb-1 text-lg">No eres "una persona sudorosa"</strong>
                 <span className="text-gray-700">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
@@ -97,14 +97,14 @@ const Hero = () => {
                 className="w-full h-auto object-cover"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#00C7C0]/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#00D4CE]/30 to-transparent" />
             </div>
 
             {/* Floating badge */}
             <div className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 bg-white p-4 sm:p-6 rounded-2xl shadow-2xl opacity-0 animate-[scaleIn_0.6s_ease-out_0.8s_forwards] border border-gray-100">
               <div className="flex items-center gap-3 sm:gap-4">
-                <div className="bg-gradient-to-br from-cyan-100 to-emerald-100 p-2 sm:p-3 rounded-full">
-                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#00C7C0' }} />
+                <div className="bg-gradient-to-br from-cyan-200 to-emerald-200 p-2 sm:p-3 rounded-full">
+                  <CheckCircle2 className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: '#00D4CE' }} />
                 </div>
                 <div>
                   <p className="font-bold text-xl sm:text-2xl text-gray-900">95%</p>
