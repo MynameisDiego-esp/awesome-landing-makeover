@@ -18,9 +18,9 @@ All colors MUST be HSL.
     --popover-foreground: 200 15% 20%;
 
     /* Medical teal/cyan primary */
-    --primary: 185 80% 45%;
+    --primary: 177 100% 39%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 185 85% 55%;
+    --primary-glow: 149 68% 69%;
 
     /* Soft background accent */
     --secondary: 185 40% 96%;
@@ -43,13 +43,13 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(160 75% 45%), hsl(185 80% 50%));
-    --gradient-hero: linear-gradient(180deg, hsl(160 60% 96%), hsl(185 70% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(150 45% 94%), hsl(185 50% 96%));
-    --gradient-vibrant: linear-gradient(135deg, hsl(150 80% 50%), hsl(175 85% 55%), hsl(185 80% 60%));
-    --gradient-soft: linear-gradient(180deg, hsl(155 55% 93%), hsl(175 50% 95%));
-    --gradient-dark: linear-gradient(135deg, hsl(200 15% 15%), hsl(160 25% 18%));
-    --gradient-cta: linear-gradient(135deg, hsl(165 75% 48%), hsl(185 85% 58%));
+    --gradient-primary: linear-gradient(135deg, hsl(177 100% 39%), hsl(149 68% 69%));
+    --gradient-hero: linear-gradient(180deg, hsl(177 60% 85%), hsl(149 50% 90%));
+    --gradient-accent: linear-gradient(135deg, hsl(149 50% 90%), hsl(177 45% 85%));
+    --gradient-vibrant: linear-gradient(135deg, hsl(177 100% 39%), hsl(149 68% 69%), hsl(50 89% 73%));
+    --gradient-soft: linear-gradient(180deg, hsl(149 55% 88%), hsl(177 50% 90%));
+    --gradient-dark: linear-gradient(135deg, hsl(200 15% 15%), hsl(177 25% 18%));
+    --gradient-cta: linear-gradient(135deg, hsl(177 100% 39%), hsl(149 68% 69%));
     
     /* Shadows */
     --shadow-soft: 0 2px 20px -5px hsl(185 80% 45% / 0.15);
