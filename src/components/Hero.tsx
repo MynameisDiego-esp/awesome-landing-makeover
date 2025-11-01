@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, PlayCircle } from "lucide-react";
 import { useState } from "react";
+import heroWoman from "@/assets/hero-woman.png";
 
 const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -68,7 +69,7 @@ const Hero = () => {
           <div className="relative opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
               <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=1000&fit=crop&q=80"
+                src={heroWoman}
                 alt="Persona feliz y segura levantando los brazos sin preocupación"
                 className="w-full h-auto object-cover"
                 loading="eager"
