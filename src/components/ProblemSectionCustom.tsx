@@ -1,0 +1,75 @@
+import { Button } from "@/components/ui/button";
+import sillon from "@/assets/sillon.png";
+
+const ProblemSectionCustom = () => {
+  return (
+    <section
+      id="problema"
+      className="relative bg-black text-white py-12 overflow-x-visible"
+    >
+      <div className="container mx-auto px-6 lg:px-8 overflow-visible">
+        {/* Dynamic Island - Estilo iPhone - Centrada en el top */}
+        <div className="flex justify-center -mt-4 mb-8 animate-fade-in-slow">
+          <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-full px-7 py-4 sm:px-12 sm:py-6 shadow-[0_0_40px_rgba(59,130,246,0.6),0_0_80px_rgba(34,211,238,0.35)] backdrop-blur-md border border-white/20 hover:scale-110 transition-transform duration-300">
+            <div className="flex items-center gap-2">
+              <p 
+                className="text-sm xs:text-base sm:text-lg font-bold text-black leading-tight text-center" 
+                style={{ fontFamily: "'Playfair Display', 'Poppins', Georgia, serif" }}
+              >
+                <span className="hidden sm:inline">Aprobado por FDA • No quirúrgico • 1-2 sesiones • Resultados permanentes</span>
+                <span className="sm:hidden">Aprobado por FDA • No quirúrgico • 1-2 sesiones • Permanente</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-14 lg:gap-24 xl:gap-32 items-end">
+          {/* Imagen a la izquierda (más grande y movida a la izquierda, sólo un poco arriba, sin borde) */}
+          <div className="relative flex justify-start items-end mb-2 sm:-mb-2 md:-mb-6 lg:-mb-8 -ml-32 sm:-ml-44 md:-ml-60 lg:-ml-80 xl:-ml-[28rem] overflow-visible -mt-2 sm:-mt-4 md:-mt-8">
+            <div className="overflow-visible w-full">
+              <img
+                src={sillon}
+                alt="Sillón"
+                className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl h-[600px] lg:h-[800px] xl:h-[950px] object-contain rounded-3xl shadow-2xl scale-110 lg:scale-125"
+              />
+            </div>
+          </div>
+
+          {/* Texto a la derecha */}
+          <div>
+            <h2 className="text-4xl lg:text-5xl font-[ClashDisplay] font-bold mb-8 leading-tight pl-6 sm:pl-12">
+              Basta de vivir<br />
+              con <span className="text-cyan-400 italic">sudor</span> y<br />
+              <span className="italic text-cyan-400">mal olor</span>
+            </h2>
+            
+            {/* Isla con gradiente para "Si tú" */}
+            <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-2xl p-4 sm:p-6 shadow-2xl backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(59,130,246,0.5),0_0_60px_rgba(34,211,238,0.3)] mb-4 -ml-4 sm:-ml-6">
+              <p className="text-xl lg:text-2xl font-[Poppins] font-bold text-black mb-4">
+                Si tú:
+              </p>
+              <ul className="space-y-2 sm:space-y-3 font-[Inter] text-sm sm:text-base lg:text-lg text-gray-900">
+                <li>• Re-aplicas desodorante varias veces al día</li>
+                <li>• Manchas tus prendas en la zona de las axilas</li>
+                <li>• Te incomoda levantar los brazos en público</li>
+                <li>• Te preocupa tu propio olor</li>
+                <li>• Sudas incluso con clima frío</li>
+              </ul>
+            </div>
+
+            <Button
+              variant="cta"
+              size="xl"
+              className="mt-6 bg-cyan-400 text-black hover:bg-cyan-500 font-[Poppins]"
+            >
+              Agenda tu Consulta + Prueba de Sudoración
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProblemSectionCustom;
+
