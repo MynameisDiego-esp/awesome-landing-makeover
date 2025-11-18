@@ -53,18 +53,18 @@ const Index = () => {
         </h1>
       </div>
 
-      {/* Imagen - Más grande y por encima del navbar */}
+      {/* Imagen - Más grande y por encima del navbar, pegada al fondo */}
       <div 
-        className={`relative -mt-16 lg:-mt-8 transition-all duration-300 ${
+        className={`relative flex items-end transition-all duration-300 ${
           isScrolled ? 'z-[30]' : 'z-[100]'
         }`}
-        style={{ minHeight: "350px" }}
+        style={{ minHeight: "calc(100vh - 80px)" }}
       >
         <img
           src={heroBg}
           alt="Persona feliz"
-          className="w-full h-auto object-contain scale-[1.69] self-end"
-          style={{ maxHeight: '95vh' }}
+          className="w-full h-auto object-contain scale-[1.69] object-bottom"
+          style={{ maxHeight: '95vh', objectPosition: 'bottom' }}
         />
       </div>
       
@@ -94,15 +94,14 @@ const Index = () => {
     </div>
 
     <div className="grid md:grid-cols-2 gap-14 lg:gap-24 xl:gap-32 items-end">
-      {/* Imagen a la izquierda (más grande y movida a la izquierda, sólo un poco arriba, sin borde) */}
-      <div className="relative flex justify-start items-end mb-2 sm:-mb-2 md:-mb-6 lg:-mb-8 -ml-32 sm:-ml-44 md:-ml-60 lg:-ml-80 xl:-ml-[28rem] overflow-visible -mt-2 sm:-mt-4 md:-mt-8">
-        <div className="overflow-visible w-full">
-          <img
-            src={sillon}
-            alt="Sillón"
-            className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl h-[600px] lg:h-[800px] xl:h-[950px] object-contain rounded-3xl shadow-2xl scale-110 lg:scale-125"
-          />
-        </div>
+      {/* Imagen a la izquierda - pegada al fondo y borde izquierdo */}
+      <div className="relative flex justify-start items-end -ml-6 sm:-ml-12 lg:-ml-16 overflow-visible">
+        <img
+          src={sillon}
+          alt="Sillón"
+          className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl h-auto object-contain object-bottom scale-110 lg:scale-125"
+          style={{ objectPosition: 'bottom left' }}
+        />
       </div>
 
       {/* Texto a la derecha */}
@@ -151,10 +150,28 @@ const Index = () => {
             Permanente de Sudor y Olor
           </h3>
           
-          <p className="text-center text-lg max-w-3xl mx-auto mb-16 text-gray-700 animate-fade-in-slow font-body">
+          <p className="text-center text-lg max-w-3xl mx-auto mb-12 text-gray-700 animate-fade-in-slow font-body">
             miraDry utiliza energía térmica controlada para eliminar las glándulas sudoríparas 
             y odoríficas bajo la axila. Una vez eliminadas, no vuelven a regenerarse.
           </p>
+
+          {/* Gallery of 8 photos */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 animate-fade-in">
+            {[step1, step2, step3, step4, step1, step2, step3, step4].map((img, idx) => (
+              <div 
+                key={idx} 
+                className="relative overflow-hidden rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-square"
+                style={{ animationDelay: `${idx * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}
+              >
+                <img
+                  src={img}
+                  alt={`Galería miraDry ${idx + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
           
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-slide-in-left">

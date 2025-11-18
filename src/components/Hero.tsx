@@ -87,13 +87,14 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right image */}
-          <div className="relative opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300">
+          {/* Right image - pegada al fondo */}
+          <div className="relative flex items-end opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]" style={{ minHeight: "70vh" }}>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 w-full">
               <img
                 src={heroWoman}
                 alt="Persona feliz y segura levantando los brazos sin preocupación"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover object-bottom"
+                style={{ objectPosition: 'bottom' }}
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#00E5DD]/40 to-transparent" />
