@@ -4,7 +4,7 @@ import { Phone, Calendar, CheckCircle2 } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section id="contact" className="py-20 bg-[image:var(--gradient-accent)]">
+    <section className="py-20 bg-[image:var(--gradient-accent)]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <Card className="p-12 shadow-[var(--shadow-card)] border-2 border-primary/20 animate-scale-in">
