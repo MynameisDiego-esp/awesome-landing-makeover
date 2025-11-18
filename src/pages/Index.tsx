@@ -2,107 +2,144 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import FloatingNav from "@/components/FloatingNav";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-woman.png";
+import sillon from "@/assets/sillon.png";
 import step1 from "@/assets/step1.jpg";
 import step2 from "@/assets/step2.jpg";
 import step3 from "@/assets/step3.jpg";
 import step4 from "@/assets/step4.jpg";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main className="min-h-screen">
       <FloatingNav />
       
       {/* Hero Section */}
-      <section id="inicio" className="relative min-h-screen overflow-hidden">
-        <div className="absolute inset-0 bg-[image:var(--gradient-vibrant)]" style={{ background: "var(--gradient-vibrant)" }}></div>
-        <div 
-          className="absolute inset-0 opacity-20 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroBg})`,
-            transform: 'scale(1.1)',
-            filter: 'blur(2px)'
-          }}
-        ></div>
-        <div className="relative z-10 container mx-auto px-4 flex items-center min-h-screen pt-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
-            <div className="animate-slide-in-left">
-              <p className="bg-cyan-500 text-white px-4 py-2 rounded-full inline-block text-sm mb-6 animate-fade-in">
-                Detén el sudor axilar para siempre con miraDry®
-              </p>
-              
-              <h1 className="text-7xl font-display font-bold mb-4">
-                <span className="italic text-cyan-600 inline-block animate-bounce-in" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>Zero</span>
-                <br />
-                <span className="text-black inline-block animate-bounce-in" style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}>Sweat</span>
-                <br />
-                <span className="text-black inline-block animate-bounce-in" style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}>Clinic</span>
-              </h1>
-              
-              <div className="bg-cyan-500 text-white px-6 py-3 rounded-lg inline-block text-sm mb-8 animate-fade-in-slow font-body">
-                Aprobado por FDA • No quirúrgico • 1-2 sesiones • Resultados permanentes
-              </div>
-              
-              <div className="flex gap-4">
-                <Button variant="cta" size="xl" className="animate-bounce-in" style={{ animationDelay: '0.8s', opacity: 0, animationFillMode: 'forwards' }}>
-                  Agenda Consulta Gratuita
-                </Button>
-              </div>
-            </div>
-            
-            <div className="relative animate-slide-in-right">
-              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-400/30 to-transparent rounded-3xl blur-3xl"></div>
-              <img 
-                src={heroBg}
-                alt="Persona feliz"
-                className="relative w-full h-auto hover:scale-105 transition-all duration-700 shadow-2xl rounded-3xl hover:shadow-[0_20px_80px_rgba(6,182,212,0.4)]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+<section
+  id="inicio"
+  className="relative min-h-screen overflow-x-hidden overflow-y-visible"
+>
+  {/* Background Gradient - Azul izquierda, Amarillo derecha - abarca toda la altura de la página */}
+  <div
+    className="fixed inset-0 w-full h-full bg-gradient-to-r from-cyan-600 via-teal-300 to-yellow-300 -z-10"
+    style={{ minHeight: '100vh' }}
+    aria-hidden="true"
+  ></div>
 
-      {/* Problem Section - Dark */}
-      <section id="problema" className="bg-[image:var(--gradient-dark)] text-white py-20" style={{ background: "var(--gradient-dark)" }}>
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-display font-bold mb-12 animate-fade-in">
-            Basta de vivir<br />
-            con sudor y<br />
-            <span className="italic text-cyan-400">mal olor</span>
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-left">
-              <p className="text-xl mb-6 animate-fade-in font-sans">Si tú:</p>
-              <ul className="space-y-3 font-body text-lg">
-                <li className="animate-fade-in hover:translate-x-2 transition-transform duration-300" style={{ animationDelay: '0.1s', opacity: 0, animationFillMode: 'forwards' }}>• Re-aplicas desodorante varias veces al día</li>
-                <li className="animate-fade-in hover:translate-x-2 transition-transform duration-300" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>• Manchas tus prendas de la zona de las axilas</li>
-                <li className="animate-fade-in hover:translate-x-2 transition-transform duration-300" style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>• Te incomoda levantar los brazos en público</li>
-                <li className="animate-fade-in hover:translate-x-2 transition-transform duration-300" style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}>• Te preocupa tu propio olor</li>
-                <li className="animate-fade-in hover:translate-x-2 transition-transform duration-300" style={{ animationDelay: '0.5s', opacity: 0, animationFillMode: 'forwards' }}>• Sudas aún con clima frío</li>
-              </ul>
-              
-              <Button variant="pulse" size="xl" className="mt-8 bg-yellow-400 text-black hover:bg-yellow-500 animate-bounce-in font-sans" style={{ animationDelay: '0.6s', opacity: 0, animationFillMode: 'forwards' }}>
-                Agenda tu Consulta + Prueba de Sudoración
-              </Button>
-            </div>
-            
-            <div className="relative animate-slide-in-right group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-yellow-400 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              <img 
-                src={step1}
-                alt="Persona levantando brazos"
-                className="relative w-full h-auto hover:scale-105 transition-all duration-700 animate-float shadow-2xl rounded-2xl"
-                style={{ clipPath: 'inset(0 round 1rem)' }}
-              />
-            </div>
-          </div>
-          
-          <p className="mt-12 text-center text-cyan-400 italic text-xl animate-fade-in-slow">
-            No eres "una persona sudorosa". Tus glándulas sudoríparas están hiperactivas — y son tratables.
+  {/* Content Container - Ajustado para el navbar */}
+  <div className="relative container mx-auto px-4 flex items-center min-h-screen pt-16 pb-20">
+    <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+      
+      {/* Texto - Más grande */}
+      <div className="relative z-10 ml-8 md:ml-12 lg:ml-16">
+        <h1 className="text-8xl md:text-9xl lg:text-[9rem] font-display mb-4 leading-[0.9]">
+          <span className="text-black inline-block italic font-light tracking-tight" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>Zero</span>
+          <br />
+          <span className="text-black inline-block font-bold">Sweat</span>
+          <br />
+          <span className="text-black inline-block font-bold">Clinic</span>
+        </h1>
+      </div>
+
+      {/* Imagen - Más grande y por encima del navbar */}
+      <div 
+        className={`relative -mt-16 lg:-mt-8 transition-all duration-300 ${
+          isScrolled ? 'z-[30]' : 'z-[100]'
+        }`}
+        style={{ minHeight: "350px" }}
+      >
+        <img
+          src={heroBg}
+          alt="Persona feliz"
+          className="w-full h-auto object-contain scale-[1.69] self-end"
+          style={{ maxHeight: '95vh' }}
+        />
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{/* Problem Section - Dark Clean + Larger Image */}
+<section
+  id="problema"
+  className="relative bg-black text-white py-12 overflow-x-visible"
+>
+  <div className="container mx-auto px-6 lg:px-8 overflow-visible">
+      {/* Dynamic Island - Estilo iPhone - Centrada en el top */}
+      <div className="flex justify-center -mt-4 mb-8 animate-fade-in-slow">
+        <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-full px-7 py-4 sm:px-12 sm:py-6 shadow-[0_0_40px_rgba(59,130,246,0.6),0_0_80px_rgba(34,211,238,0.35)] backdrop-blur-md border border-white/20 hover:scale-110 transition-transform duration-300">
+        <div className="flex items-center gap-2">
+          <p 
+            className="text-sm xs:text-base sm:text-lg font-bold text-black leading-tight text-center" 
+            style={{ fontFamily: "'Playfair Display', 'Poppins', Georgia, serif" }}
+          >
+            <span className="hidden sm:inline">Aprobado por FDA • No quirúrgico • 1-2 sesiones • Resultados permanentes</span>
+            <span className="sm:hidden">Aprobado por FDA • No quirúrgico • 1-2 sesiones • Permanente</span>
           </p>
         </div>
-      </section>
+      </div>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-14 lg:gap-24 xl:gap-32 items-end">
+      {/* Imagen a la izquierda (más grande y movida a la izquierda, sólo un poco arriba, sin borde) */}
+      <div className="relative flex justify-start items-end mb-2 sm:-mb-2 md:-mb-6 lg:-mb-8 -ml-32 sm:-ml-44 md:-ml-60 lg:-ml-80 xl:-ml-[28rem] overflow-visible -mt-2 sm:-mt-4 md:-mt-8">
+        <div className="overflow-visible w-full">
+          <img
+            src={sillon}
+            alt="Sillón"
+            className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl h-[600px] lg:h-[800px] xl:h-[950px] object-contain rounded-3xl shadow-2xl scale-110 lg:scale-125"
+          />
+        </div>
+      </div>
+
+      {/* Texto a la derecha */}
+      <div>
+        <h2 className="text-4xl lg:text-5xl font-[ClashDisplay] font-bold mb-8 leading-tight pl-6 sm:pl-12">
+          Basta de vivir<br />
+          con <span className="text-cyan-400 italic">sudor</span> y<br />
+          <span className="italic text-cyan-400">mal olor</span>
+        </h2>
+        
+        {/* Isla con gradiente para "Si tú" */}
+        <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-2xl p-4 sm:p-6 shadow-2xl backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(59,130,246,0.5),0_0_60px_rgba(34,211,238,0.3)] mb-4 -ml-4 sm:-ml-6">
+          <p className="text-xl lg:text-2xl font-[Poppins] font-bold text-black mb-4">
+            Si tú:
+          </p>
+          <ul className="space-y-2 sm:space-y-3 font-[Inter] text-sm sm:text-base lg:text-lg text-gray-900">
+            <li>• Re-aplicas desodorante varias veces al día</li>
+            <li>• Manchas tus prendas en la zona de las axilas</li>
+            <li>• Te incomoda levantar los brazos en público</li>
+            <li>• Te preocupa tu propio olor</li>
+            <li>• Sudas incluso con clima frío</li>
+          </ul>
+        </div>
+
+        <Button
+          variant="cta"
+          size="xl"
+          className="mt-6 bg-cyan-400 text-black hover:bg-cyan-500 font-[Poppins]"
+        >
+          Agenda tu Consulta + Prueba de Sudoración
+        </Button>
+      </div>
+    </div>
+  </div>
+</section> 
+
+
 
       {/* Solution Section */}
       <section id="solucion" className="bg-[image:var(--gradient-accent)] py-20" style={{ background: "var(--gradient-accent)" }}>
@@ -155,41 +192,31 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section - Dark with Yellow Accent */}
-      <section className="bg-[image:var(--gradient-dark)] text-white py-20" style={{ background: "var(--gradient-dark)" }}>
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative animate-slide-in-left group">
-              <div className="absolute -inset-4 bg-gradient-to-tl from-yellow-400 to-cyan-400 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              <img 
-                src={step3}
-                alt="Espalda mostrando resultado"
-                className="relative w-full h-auto hover:scale-110 hover:-rotate-1 transition-all duration-700 animate-float shadow-2xl rounded-2xl"
-                style={{ clipPath: 'inset(0 round 1rem)' }}
-              />
-            </div>
-            
-            <div className="animate-slide-in-right">
-              <h3 className="text-4xl font-display font-bold mb-8 animate-fade-in">
-                Con <span className="text-cyan-400">miraDry</span> Láser, obtienes:
-              </h3>
-              
-              <div className="space-y-4 mb-8">
-                <div className="bg-yellow-400 text-black px-6 py-4 rounded-lg font-sans font-semibold text-lg animate-bounce-in hover:scale-105 transition-transform duration-300" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
-                  Reducción permanente del sudor
-                </div>
-                <div className="bg-yellow-400 text-black px-6 py-4 rounded-lg font-sans font-semibold text-lg animate-bounce-in hover:scale-105 transition-transform duration-300" style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}>
-                  Reducción permanente del mal olor
-                </div>
-              </div>
-              
-              <p className="text-xl text-cyan-400 animate-fade-in-slow font-body">
-                Sin toxinas • Sin cirugía • Sin tiempo de recuperación
-              </p>
-            </div>
-          </div>
+      {/* Benefits Section */}
+<section id="beneficios" className="bg-black text-white py-24">
+  <div className="container mx-auto px-6 lg:px-8 text-center">
+    <h2 className="text-5xl lg:text-6xl font-[ClashDisplay] font-bold mb-16">
+      Beneficios reales,<br />
+      <span className="text-cyan-400">desde la primera sesión</span>
+    </h2>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      {[
+        { title: "Sin sudor", text: "Reducción inmediata del exceso de sudoración." },
+        { title: "Más confianza", text: "Levanta los brazos sin preocuparte." },
+        { title: "Ropa limpia", text: "Adiós a las manchas en camisas y blusas." },
+        { title: "Duradero", text: "Efecto prolongado por meses." },
+        { title: "Seguro", text: "Tratamiento médico aprobado y controlado." },
+        { title: "Sin dolor", text: "Procedimiento cómodo y rápido." },
+      ].map((b, i) => (
+        <div key={i} className="p-8 bg-neutral-900 rounded-2xl shadow-lg">
+          <h3 className="text-2xl font-[Poppins] text-cyan-400 mb-3">{b.title}</h3>
+          <p className="text-gray-300 font-[Inter]">{b.text}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Why Choose Us */}
       <section className="relative bg-black text-white py-20 overflow-hidden">

@@ -18,6 +18,28 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-200 via-emerald-200 to-yellow-200" />
+      
+      {/* Decorative black strip */}
+      <div className="absolute top-0 left-0 w-full h-[50%] pointer-events-none z-0 overflow-hidden">
+        <svg
+          className="w-full h-full"
+          viewBox="0 0 1200 600"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M 0,0 
+               L 0,60 
+               C 150,80 250,100 350,120
+               C 450,135 525,145 600,150 
+               C 675,145 750,135 850,120 
+               C 950,100 1050,80 1200,60 
+               L 1200,0 
+               Z"
+            fill="black"
+          />
+        </svg>
+      </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10 pt-48">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
