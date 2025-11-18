@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-200 via-emerald-200 to-yellow-200" />
       
@@ -41,7 +41,7 @@ const Hero = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10 pt-48">
+      <div className="container mx-auto px-4 py-16 relative z-10 pt-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div>
@@ -53,7 +53,7 @@ const Hero = () => {
               <Button
                 onClick={handleConsultation}
                 size="lg"
-                className="group bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#A0FFD6] hover:opacity-90 text-gray-900 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 text-xl px-10 py-7"
+                className="group bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#A0FFD6] hover:opacity-90 text-gray-900 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 text-2xl px-12 py-8"
               >
                 Agenda tu Consulta + Prueba de Sudoración
                 <CheckCircle2 className="ml-2 w-6 h-6 group-hover:scale-110 transition-transform" />
@@ -61,8 +61,8 @@ const Hero = () => {
             </div>
 
             {/* Si tú checklist */}
-            <div className="bg-white/90 backdrop-blur-sm border-2 border-cyan-400 rounded-2xl p-6 shadow-xl">
-              <p className="font-semibold text-gray-900 mb-4 text-xl">Si tú:</p>
+            <div className="bg-white/90 backdrop-blur-sm border-2 border-cyan-400 rounded-2xl p-8 shadow-xl">
+              <p className="font-semibold text-gray-900 mb-4 text-2xl">Si tú:</p>
               <ul className="space-y-3">
                 {[
                   "Re-aplicas desodorante varias veces al día",
@@ -72,23 +72,23 @@ const Hero = () => {
                   "Sudas aún con clima frío",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: '#00E5DD' }} />
-                    <span className="text-gray-700 text-lg">{item}</span>
+                    <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5" style={{ color: '#00E5DD' }} />
+                    <span className="text-gray-700 text-xl">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="mt-8 bg-cyan-200 border-l-4 p-4 rounded-r-lg" style={{ borderColor: '#00E5DD' }}>
-              <p className="text-lg text-gray-800">
-                <strong className="block mb-1 text-xl">No eres "una persona sudorosa"</strong>
-                <span className="text-gray-700">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
+            <div className="mt-8 bg-cyan-200 border-l-4 p-6 rounded-r-lg" style={{ borderColor: '#00E5DD' }}>
+              <p className="text-xl text-gray-800">
+                <strong className="block mb-1 text-2xl">No eres "una persona sudorosa"</strong>
+                <span className="text-gray-700 text-lg">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
               </p>
             </div>
           </div>
 
           {/* Right image - pegada al fondo */}
-          <div className="relative flex items-end opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]" style={{ minHeight: "70vh" }}>
+          <div className="relative flex items-end opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]" style={{ minHeight: "60vh" }}>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 w-full">
               <img
                 src={heroWoman}
