@@ -1,5 +1,9 @@
 import { Card } from "@/components/ui/card";
 import { Zap, Shield, Clock, Sparkles } from "lucide-react";
+import step1 from "@/assets/step1.jpg";
+import step2 from "@/assets/step2.jpg";
+import step3 from "@/assets/step3.jpg";
+import step4 from "@/assets/step4.jpg";
 
 const benefits = [
   {
@@ -26,7 +30,7 @@ const benefits = [
 
 const SolutionSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section id="solucion" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
@@ -34,10 +38,28 @@ const SolutionSection = () => {
               La Solución:{" "}
               <span className="text-primary">miraDry®</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
               miraDry utiliza energía térmica controlada para eliminar las glándulas sudoríparas 
               y odoríficas bajo la axila. Una vez eliminadas, no vuelven a regenerarse.
             </p>
+
+            {/* Gallery of 8 photos */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 animate-fade-in">
+              {[step1, step2, step3, step4, step1, step2, step3, step4].map((img, idx) => (
+                <div 
+                  key={idx} 
+                  className="relative overflow-hidden rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-300 aspect-square"
+                  style={{ animationDelay: `${idx * 0.1}s`, opacity: 0, animationFillMode: 'forwards' }}
+                >
+                  <img
+                    src={img}
+                    alt={`Galería miraDry ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 mb-12 animate-fade-in-slow">
