@@ -3,6 +3,12 @@ import { Card } from "@/components/ui/card";
 import { Phone, Calendar, CheckCircle2 } from "lucide-react";
 
 const CTASection = () => {
+  const handleContactClick = () => {
+    const contactSection = document.getElementById("contacto");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="py-20 bg-[image:var(--gradient-accent)]">
       <div className="container mx-auto px-4">
@@ -45,7 +51,7 @@ const CTASection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" className="group">
+              <Button variant="hero" size="xl" className="group" onClick={handleContactClick}>
                 <Calendar className="mr-2 group-hover:scale-110 transition-transform" />
                 Agendar Consulta Gratuita
               </Button>

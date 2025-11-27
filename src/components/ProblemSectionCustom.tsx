@@ -2,12 +2,18 @@ import { Button } from "@/components/ui/button";
 import sillon from "@/assets/sillon.png";
 
 const ProblemSectionCustom = () => {
+  const handleContactClick = () => {
+    const contactSection = document.getElementById("contacto");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section
       id="problema"
-      className="relative bg-black text-white py-12 overflow-x-visible"
+      className="relative bg-black text-white py-12 overflow-hidden"
     >
-      <div className="container mx-auto px-6 lg:px-8 overflow-visible">
+      <div className="container mx-auto px-6 lg:px-8">
         {/* Dynamic Island - Estilo iPhone - Centrada en el top */}
         <div className="flex justify-center -mt-4 mb-8 animate-fade-in-slow">
           <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-full px-7 py-4 sm:px-12 sm:py-6 shadow-[0_0_40px_rgba(59,130,246,0.6),0_0_80px_rgba(34,211,238,0.35)] backdrop-blur-md border border-white/20 hover:scale-110 transition-transform duration-300">
@@ -25,13 +31,16 @@ const ProblemSectionCustom = () => {
 
         <div className="grid md:grid-cols-2 gap-14 lg:gap-24 xl:gap-32 items-end">
           {/* Imagen a la izquierda (más grande y movida a la izquierda, sólo un poco arriba, sin borde) */}
-          <div className="relative flex justify-start items-end mb-2 sm:-mb-2 md:-mb-6 lg:-mb-8 -ml-32 sm:-ml-44 md:-ml-60 lg:-ml-80 xl:-ml-[28rem] overflow-visible -mt-2 sm:-mt-4 md:-mt-8">
+          <div className="relative flex justify-start items-end mb-2 sm:-mb-2 md:-mb-6 lg:-mb-8 -ml-12 sm:-ml-16 md:-ml-24 lg:-ml-32 xl:-ml-[16rem] overflow-visible -mt-8 sm:-mt-10 md:-mt-16 lg:-mt-20 xl:-mt-24">
             <div className="overflow-visible w-full">
-              <img
-                src={sillon}
-                alt="Sillón"
-                className="w-full max-w-2xl lg:max-w-3xl xl:max-w-4xl h-[600px] lg:h-[800px] xl:h-[950px] object-contain rounded-3xl shadow-2xl scale-110 lg:scale-125"
-              />
+            <div className="relative overflow-visible">
+  <img
+    src={sillon}
+    alt="Sillón"
+    className="w-full h-full object-cover scale-[1.15]"
+  />
+</div>
+
             </div>
           </div>
 
@@ -61,6 +70,7 @@ const ProblemSectionCustom = () => {
               variant="cta"
               size="xl"
               className="mt-6 bg-cyan-400 text-black hover:bg-cyan-500 font-[Poppins]"
+              onClick={handleContactClick}
             >
               Agenda tu Consulta + Prueba de Sudoración
             </Button>

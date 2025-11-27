@@ -32,6 +32,12 @@ const comparisons = [
   }
 ];
 
+const attributes = [
+  { label: "Duración", key: "duration" as const },
+  { label: "Invasivo", key: "invasive" as const },
+  { label: "Costo a largo plazo", key: "cost" as const }
+];
+
 const ComparisonTable = () => {
   return (
     <section className="py-20 bg-accent/50">
@@ -46,38 +52,55 @@ const ComparisonTable = () => {
           
           <div className="overflow-x-auto animate-fade-in-slow">
             <Card className="p-8 shadow-[var(--shadow-card)]">
-              <div className="min-w-[600px]">
-                {/* Header */}
-                <div className="grid grid-cols-4 gap-4 pb-4 border-b-2 border-primary/20 mb-4">
+              <div className="min-w-[800px]">
+                {/* Header Row - First row with option names as headers */}
+                <div className="grid grid-cols-5 gap-4 pb-4 border-b-2 border-primary/20 mb-4">
                   <div className="font-bold text-foreground">Opción</div>
-                  <div className="font-bold text-foreground">Duración</div>
-                  <div className="font-bold text-foreground">Invasivo</div>
-                  <div className="font-bold text-foreground">Costo a largo plazo</div>
+                  {comparisons.map((item, index) => {
+                    const isMiradry = item.isGood;
+                    return (
+                      <div 
+                        key={index}
+                        className={`font-bold flex items-center justify-center gap-2 p-3 rounded-lg transition-all ${
+                          isMiradry 
+                            ? "text-primary bg-primary/10 border-4 border-primary shadow-md" 
+                            : "text-foreground border-2 border-transparent"
+                        }`}
+                      >
+                        {item.isGood ? (
+                          <Check className="w-5 h-5 text-primary" />
+                        ) : (
+                          <X className="w-5 h-5 text-muted-foreground" />
+                        )}
+                        <span>{item.option}</span>
+                      </div>
+                    );
+                  })}
                 </div>
                 
-                {/* Rows */}
-                {comparisons.map((item, index) => (
+                {/* Attribute Rows - Each attribute becomes a row */}
+                {attributes.map((attr, attrIndex) => (
                   <div 
-                    key={index}
-                    className={`grid grid-cols-4 gap-4 py-4 rounded-lg transition-all ${
-                      item.isGood 
-                        ? "bg-primary/10 border-2 border-primary font-semibold" 
-                        : "hover:bg-accent/50"
-                    }`}
+                    key={attrIndex}
+                    className="grid grid-cols-5 gap-4 py-4 rounded-lg transition-all hover:bg-accent/50 border-b border-primary/10 last:border-b-0"
                   >
-                    <div className="flex items-center gap-2">
-                      {item.isGood ? (
-                        <Check className="w-5 h-5 text-primary" />
-                      ) : (
-                        <X className="w-5 h-5 text-muted-foreground" />
-                      )}
-                      <span className={item.isGood ? "text-primary" : "text-foreground"}>
-                        {item.option}
-                      </span>
-                    </div>
-                    <div className="text-foreground">{item.duration}</div>
-                    <div className="text-foreground">{item.invasive}</div>
-                    <div className="text-foreground">{item.cost}</div>
+                    <div className="font-bold text-foreground flex items-center">{attr.label}</div>
+                    {comparisons.map((item, itemIndex) => {
+                      const value = item[attr.key];
+                      const isMiradry = item.isGood;
+                      return (
+                        <div
+                          key={itemIndex}
+                          className={`text-foreground text-center p-3 rounded-lg transition-all flex items-center justify-center ${
+                            isMiradry 
+                              ? "font-semibold text-primary bg-primary/10 border-4 border-primary shadow-md" 
+                              : "border-2 border-transparent"
+                          }`}
+                        >
+                          {value}
+                        </div>
+                      );
+                    })}
                   </div>
                 ))}
               </div>

@@ -8,7 +8,7 @@ const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
 
   const handleConsultation = () => {
-    const contactSection = document.getElementById("contact");
+    const contactSection = document.getElementById("contacto");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }

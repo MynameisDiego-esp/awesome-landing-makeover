@@ -2,43 +2,62 @@ import step4 from "@/assets/step4.jpg";
 
 const CandidateSectionCustom = () => {
   return (
-    <section id="candidato" className="relative bg-black text-white py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-[image:var(--gradient-dark)] opacity-50" style={{ background: "var(--gradient-dark)" }}></div>
+    <section id="candidato" className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24 overflow-hidden">
+      <div className="absolute inset-0 opacity-40" style={{ background: "var(--gradient-dark)" }}></div>
       <div className="relative z-10">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative animate-slide-in-left group">
-              <div className="absolute -inset-4 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-pulse-glow"></div>
-              <img 
-                src={step4}
-                alt="Candidato ideal"
-                className="relative w-full h-auto hover:scale-110 transition-all duration-700 animate-float shadow-2xl rounded-2xl"
-                style={{ clipPath: 'inset(0 round 1rem)' }}
-              />
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative animate-slide-in-left">
+              <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                <img 
+                  src={step4}
+                  alt="Candidato ideal"
+                  className="w-full h-auto object-cover transition-transform duration-500 hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent pointer-events-none"></div>
+              </div>
             </div>
             
-            <div className="animate-slide-in-right">
-              <h2 className="text-4xl font-display font-bold mb-8 animate-fade-in">
-                ¿Eres buen<br />
-                <span className="italic text-cyan-400">candidato?</span>
-              </h2>
+            <div className="animate-slide-in-right space-y-8">
+              <div>
+                <h2 className="text-5xl md:text-6xl font-display font-bold mb-4 tracking-tight">
+                  ¿Eres buen<br />
+                  <span className="text-primary italic">candidato?</span>
+                </h2>
+                <div className="w-20 h-1 bg-primary mt-6"></div>
+              </div>
               
-              <p className="text-xl mb-6 animate-fade-in font-sans">MiraDry es ideal para ti si:</p>
+              <p className="text-xl text-slate-300 font-sans leading-relaxed">
+                MiraDry es ideal para ti si:
+              </p>
               
-              <div className="space-y-4 mb-8">
-                <div className="bg-cyan-400 text-black px-6 py-4 rounded-lg font-sans font-semibold animate-bounce-in hover:scale-105 transition-transform duration-300" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
-                  Mojás o manchas de sudor camisas sin importar el clima
+              <div className="space-y-3">
+                <div className="group relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 px-6 py-4 rounded-lg transition-all duration-300 hover:bg-slate-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-lg"></div>
+                  <p className="text-slate-200 font-sans font-medium pl-4">
+                    Mojás o manchas de sudor camisas sin importar el clima
+                  </p>
                 </div>
-                <div className="bg-cyan-400 text-black px-6 py-4 rounded-lg font-sans font-semibold animate-bounce-in hover:scale-105 transition-transform duration-300" style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
-                  Te limita social o profesionalmente
+                <div className="group relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 px-6 py-4 rounded-lg transition-all duration-300 hover:bg-slate-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-lg"></div>
+                  <p className="text-slate-200 font-sans font-medium pl-4">
+                    Te limita social o profesionalmente
+                  </p>
                 </div>
-                <div className="bg-cyan-400 text-black px-6 py-4 rounded-lg font-sans font-semibold animate-bounce-in hover:scale-105 transition-transform duration-300" style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}>
-                  Prefieres una solución médica, no cosmética
+                <div className="group relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 px-6 py-4 rounded-lg transition-all duration-300 hover:bg-slate-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-l-lg"></div>
+                  <p className="text-slate-200 font-sans font-medium pl-4">
+                    Prefieres una solución médica, no cosmética
+                  </p>
                 </div>
               </div>
               
-              <div className="bg-yellow-400 text-black px-8 py-6 rounded-xl text-center text-xl font-sans font-bold animate-bounce-in hover:scale-110 transition-all duration-300" style={{ animationDelay: '0.5s', opacity: 0, animationFillMode: 'forwards' }}>
-                QUIERES DESAPARECER ESTE PROBLEMA PERMANENTEMENTE
+              <div className="pt-4">
+                <div className="bg-gradient-to-r from-primary to-primary-glow text-white px-8 py-6 rounded-xl text-center shadow-lg shadow-primary/20 transition-all duration-300 hover:shadow-xl hover:shadow-primary/30">
+                  <p className="text-lg font-sans font-semibold tracking-wide">
+                    Quieres desaparecer este problema permanentemente
+                  </p>
+                </div>
               </div>
             </div>
           </div>

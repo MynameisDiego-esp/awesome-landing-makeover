@@ -17,6 +17,8 @@ export default {
         'display': ['Playfair Display', 'serif'],
         'sans': ['Poppins', 'sans-serif'],
         'body': ['Inter', 'sans-serif'],
+        'didone': ['Cormorant Garamond', 'serif'],
+        'geometric': ['Montserrat', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
