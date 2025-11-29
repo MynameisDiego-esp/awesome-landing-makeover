@@ -28,16 +28,16 @@ const ContactSection = () => {
     const emailDestino = 'docsalas@bajahaircenter.com';
     
     // Crear asunto del email
-    const asunto = encodeURIComponent('Nueva Consulta - Zero Sweat Clinic');
+    const asunto = encodeURIComponent('Nueva Prueba de Sudoración - Zero Sweat Clinic');
     
     // Crear cuerpo del mensaje formateado
     const cuerpo = encodeURIComponent(
-      `Nueva Consulta - Zero Sweat Clinic\n\n` +
+      `Nueva Prueba de Sudoración - Zero Sweat Clinic\n\n` +
       `Nombre: ${nombre}\n` +
       `Email: ${email}\n` +
       `Teléfono: ${telefono}\n` +
       (edad ? `Edad: ${edad}\n` : '') +
-      (consulta ? `\nConsulta:\n${consulta}` : '')
+      (consulta ? `\nPrueba de Sudoración:\n${consulta}` : '')
     );
     
     // Crear URL de mailto

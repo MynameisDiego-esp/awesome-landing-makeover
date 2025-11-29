@@ -18,7 +18,7 @@
       "4": "Te preocupa tu propio olor",
       "5": "Sudas incluso con clima frío"
     },
-    "cta": "Agenda tu Consulta + Prueba de Sudoración"
+    "cta": "Agenda tu Prueba de Sudoración"
   },
   "solution": {
     "title": "La Solución: <cyan>miraDry®</cyan> — Reducción",
@@ -138,15 +138,15 @@
     "scheduleSunday": "Domingo: Cerrado",
     "readyToStart": "¿Listo para comenzar?",
     "readyDescription": "Agenda tu Prueba de Sudoracion. Estás a una decisión de transformar tu confianza.",
-    "scheduleConsultation": "Agenda tu Consulta",
+    "scheduleConsultation": "Agenda tu Prueba de Sudoración",
     "footerNote": "Prueba de Sudoracion especializada en hiperhidrosis axilar. Tratamiento con miraDry® certificado.",
-    "rightsReserved": "© {year} Zero Sweat Clinic. Todos los derechos reservados.",
+    "rightsReserved": "© 2025 Zero Sweat Clinic. Todos los derechos reservados.",
     "privacyPolicy": "Política de Privacidad",
     "terms": "Términos y Condiciones",
     "legalNotice": "Aviso Legal"
   },
   "contact": {
-    "title": "Agenda tu Consulta",
+    "title": "Agenda tu Prueba de Sudoración",
     "subtitle": "+ Prueba de Sudoración",
     "description": "Completa el formulario y nos pondremos en contacto contigo",
     "form": {
@@ -158,7 +158,7 @@
       "phonePlaceholder": "+52 123 456 7890",
       "age": "Edad",
       "agePlaceholder": "Ingresa tu edad",
-      "comments": "Consulta o comentarios",
+      "comments": "Prueba de Sudoración o comentarios",
       "commentsPlaceholder": "¿Tienes alguna pregunta específica sobre el procedimiento?",
       "submit": "Enviar solicitud",
       "submitting": "Enviando...",
@@ -189,7 +189,7 @@
       "sweatTest": "Prueba de sudoración",
       "personalizedPlan": "Plan de tratamiento personalizado"
     },
-    "cta": "Agenda tu Consulta + Prueba de Sudoración"
+    "cta": "Agenda tu Prueba de Sudoración"
   }
 }
 

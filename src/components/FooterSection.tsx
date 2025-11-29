@@ -5,7 +5,6 @@ import logo from "@/assets/logo.png";
 
 const FooterSection = () => {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -197,7 +196,7 @@ const FooterSection = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              {t('footer.rightsReserved', { year: currentYear })}
+              {t('footer.rightsReserved')}
             </p>
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">

@@ -53,7 +53,7 @@ const CTASection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" className="group" onClick={handleContactClick}>
                 <Calendar className="mr-2 group-hover:scale-110 transition-transform" />
-                Agendar Consulta Gratuita
+                Agendar Prueba de Sudoración Gratuita
               </Button>
               <Button variant="outline" size="xl">
                 <Phone className="mr-2" />

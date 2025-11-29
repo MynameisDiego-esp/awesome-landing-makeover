@@ -18,7 +18,7 @@
       "4": "Worry about your own odor",
       "5": "Sweat even in cold weather"
     },
-    "cta": "Schedule Your Consultation + Sweat Test"
+    "cta": "Schedule Your Sweat Test"
   },
   "solution": {
     "title": "The Solution: <cyan>miraDry®</cyan> — Permanent",
@@ -138,15 +138,15 @@
     "scheduleSunday": "Sunday: Closed",
     "readyToStart": "Ready to get started?",
     "readyDescription": "Schedule your Sweat Test. You're one decision away from transforming your confidence.",
-    "scheduleConsultation": "Schedule Your Consultation",
+    "scheduleConsultation": "Schedule Your Sweat Test",
     "footerNote": "Specialized sweat test for axillary hyperhidrosis. Certified miraDry® treatment.",
-    "rightsReserved": "© {year} Zero Sweat Clinic. All rights reserved.",
+    "rightsReserved": "© 2025 Zero Sweat Clinic. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms and Conditions",
     "legalNotice": "Legal Notice"
   },
   "contact": {
-    "title": "Schedule Your Consultation",
+    "title": "Schedule Your Sweat Test",
     "subtitle": "+ Sweat Test",
     "description": "Complete the form and we will contact you",
     "form": {
@@ -158,7 +158,7 @@
       "phonePlaceholder": "+1 123 456 7890",
       "age": "Age",
       "agePlaceholder": "Enter your age",
-      "comments": "Consultation or comments",
+      "comments": "Sweat Test or comments",
       "commentsPlaceholder": "Do you have any specific questions about the procedure?",
       "submit": "Send request",
       "submitting": "Sending...",
@@ -189,7 +189,7 @@
       "sweatTest": "Sweat test",
       "personalizedPlan": "Personalized treatment plan"
     },
-    "cta": "Schedule Your Consultation + Sweat Test"
+    "cta": "Schedule Your Sweat Test"
   }
 }
 
