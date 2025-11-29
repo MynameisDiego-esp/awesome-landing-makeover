@@ -36,8 +36,7 @@ const FinalCTASection = () => {
           </p>
           
           <Card className="p-10 bg-white/95 backdrop-blur-md mb-10 animate-scale-in hover:scale-105 transition-all duration-300 shadow-2xl border-2 border-cyan-400/30">
-            <h3 className="text-3xl font-sans font-bold mb-2 text-gray-900">Consulta Médica</h3>
-            <h3 className="text-cyan-600 text-2xl font-sans font-bold mb-8">+ Prueba de Sudoración</h3>
+            <h3 className="text-3xl font-sans font-bold mb-2 text-gray-900">Prueba de Sudoracion</h3>
             
             <div className="space-y-4 text-left mb-8 font-body">
               <p className="animate-fade-in hover:translate-x-2 transition-transform duration-300 text-lg text-gray-700 flex items-center gap-3" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>

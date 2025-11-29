@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const FooterSection = () => {
@@ -39,32 +39,31 @@ const FooterSection = () => {
             {/* Social Media */}
             <div className="flex items-center gap-4 pt-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/BajaHairCenter/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/bajahaircenter_andmedispa/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://goo.gl/maps/WpWu7hoQtPs6j8KS6" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="Twitter"
+                aria-label="Google Maps"
               >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
+                <MapPin className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -124,9 +123,14 @@ const FooterSection = () => {
                 <Phone className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">Teléfono</p>
-                  <a href="tel:+521234567890" className="text-white hover:text-primary transition-colors duration-300">
-                    +52 123 456 7890
-                  </a>
+                  <div className="space-y-1">
+                    <a href="tel:+16198701316" className="text-white hover:text-primary transition-colors duration-300 block">
+                      +1 (619) 870-1316
+                    </a>
+                    <a href="tel:+526643355729" className="text-white hover:text-primary transition-colors duration-300 block">
+                      +52 (664) 335-5729
+                    </a>
+                  </div>
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -142,18 +146,25 @@ const FooterSection = () => {
                 <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">Ubicación</p>
-                  <p className="text-white text-sm">
-                    Ciudad de México, México
-                  </p>
+                  <a 
+                    href="https://goo.gl/maps/WpWu7hoQtPs6j8KS6" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-primary transition-colors duration-300 text-sm"
+                  >
+                    Antonio Caso 2055 Suite 306. Zona Urbana Rio Tijuana, 22010 Tijuana, BC, México
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">Horario</p>
-                  <p className="text-white text-sm">
-                    Lun - Vie: 9:00 AM - 6:00 PM
-                  </p>
+                  <div className="space-y-1 text-white text-sm">
+                    <p>Lunes - Viernes: 8:00 AM - 6:00 PM</p>
+                    <p>Sábado: 9:00 AM - 5:00 PM</p>
+                    <p>Domingo: Cerrado</p>
+                  </div>
                 </div>
               </li>
             </ul>
@@ -163,7 +174,7 @@ const FooterSection = () => {
           <div className="space-y-6">
             <h4 className="text-lg font-sans font-bold uppercase tracking-wide">¿Listo para comenzar?</h4>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Agenda tu consulta médica y prueba de sudoración. 
+              Agenda tu Prueba de Sudoracion. 
               Estás a una decisión de transformar tu confianza.
             </p>
             <Button 
@@ -176,7 +187,7 @@ const FooterSection = () => {
             </Button>
             <div className="pt-4 border-t border-white/10">
               <p className="text-xs text-gray-400 leading-relaxed">
-                Consulta médica especializada en hiperhidrosis axilar. 
+                Prueba de Sudoracion especializada en hiperhidrosis axilar. 
                 Tratamiento con miraDry® certificado.
               </p>
             </div>

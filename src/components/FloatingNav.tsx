@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/NUEVOLOGO.png";
 
 const FloatingNav = () => {
   const [isButtonHovered, setIsButtonHovered] = useState(false);
@@ -14,9 +14,9 @@ const FloatingNav = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A] text-white shadow-2xl overflow-visible">
-      <div className="container mx-auto px-6 relative z-50">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-6 relative z-50">
         {/* Logo - Posicionado de forma independiente fuera del flujo */}
-        <div className={`absolute left-6 top-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-300 ${
+        <div className={`absolute left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-300 ${
           isButtonHovered 
             ? 'z-30 opacity-100' 
             : 'z-10 opacity-100'
@@ -24,19 +24,19 @@ const FloatingNav = () => {
             <img 
               src={logo} 
               alt="Zero Sweat Logo" 
-              className="h-32 lg:h-40 xl:h-48 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+              className="h-16 sm:h-20 lg:h-28 xl:h-32 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] max-w-[120px] sm:max-w-none"
             />
         </div>
 
         {/* Contenido principal del navbar con altura fija independiente del logo */}
-        <div className="flex flex-col items-center justify-center py-6 gap-4 lg:flex-row lg:justify-center lg:py-8 min-h-[70px] lg:min-h-[80px] relative z-[110]">
+        <div className="flex flex-col items-center justify-center py-4 sm:py-5 lg:py-8 gap-3 sm:gap-4 lg:gap-4 lg:flex-row lg:justify-center min-h-[60px] sm:min-h-[65px] lg:min-h-[80px] relative z-[110]">
           {/* CTA Button */}
           <div className="flex items-center justify-center w-full lg:w-auto relative z-[110]">
             <Button
               size="lg"
               className="bg-gradient-to-b from-[#00E5DD] via-[#A0FFD6] to-[#FFE04D]
-                         hover:opacity-90 text-gray-900 font-semibold text-xl lg:text-2xl
-                         px-8 lg:px-12 py-6 lg:py-8 shadow-2xl leading-tight rounded-full
+                         hover:opacity-90 text-gray-900 font-semibold text-base sm:text-lg lg:text-2xl
+                         px-4 sm:px-6 lg:px-12 py-4 sm:py-5 lg:py-8 shadow-2xl leading-tight rounded-full
                          transition-transform duration-200 hover:scale-105 whitespace-nowrap relative z-[110] tracking-tight"
               onClick={handleContactClick}
               onMouseEnter={() => setIsButtonHovered(true)}

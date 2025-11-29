@@ -18,7 +18,8 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5" />
-                <span>+52 (664) 123-4567</span>
+                <span>+1 (619) 870-1316</span>
+                <span>+52 (664) 335-5729</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5" />
@@ -26,7 +27,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5" />
-                <span>Tijuana, Baja California</span>
+                <span>Antonio Caso 2055 Suite 306. Zona Urbana Rio Tijuana, 22010 Tijuana, BC, México</span>
               </div>
             </div>
           </div>
@@ -34,8 +35,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Horario</h4>
             <div className="space-y-2 text-background/80">
-              <p>Lunes - Viernes: 9:00 AM - 7:00 PM</p>
-              <p>Sábado: 10:00 AM - 4:00 PM</p>
+              <p>Lunes - Viernes: 8:00 AM - 6:00 PM</p>
+              <p>Sábado: 9:00 AM - 5:00 PM</p>
               <p>Domingo: Cerrado</p>
             </div>
           </div>

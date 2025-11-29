@@ -2,6 +2,7 @@ import { useState } from "react";
 import felizzImg from "@/assets/Feliz1.png";
 import tristeImg from "@/assets/trsite (1).png";
 import premierImg from "@/assets/PREMIER-Hospital_1.png";
+import certificacionImg from "@/assets/certificacion.png";
 
 const WhyChooseUsSectionCustom = () => {
   const [selectedView, setSelectedView] = useState<"antes" | "despues">("antes");
@@ -19,13 +20,43 @@ const WhyChooseUsSectionCustom = () => {
               </h2>
             </div>
             
-            <div className="bg-cyan-400 text-black p-8 rounded-lg shadow-lg">
-              <p className="text-lg leading-relaxed font-body">
-                Somos el único centro en Tijuana que ofrece miraDry, con pacientes que viajan 
-                desde todas partes del mundo. Todos los procedimientos son realizados por 
-                especialistas capacitados bajo protocolos de seguridad. Se utiliza anestesia 
-                para tu máxima comodidad.
-              </p>
+            <div className="relative group">
+              {/* Glow effect background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 rounded-2xl blur-xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+              
+              {/* Main card */}
+              <div className="relative bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 text-black p-8 md:p-10 rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-cyan-500/50 border-2 border-cyan-300/50">
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-20 h-20 bg-white/10 rounded-full blur-2xl"></div>
+                <div className="absolute bottom-4 left-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon header */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center backdrop-blur-sm overflow-hidden">
+                      <img 
+                        src={certificacionImg} 
+                        alt="Certificación miraDry" 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-display font-bold text-black">Centro Certificado</h3>
+                  </div>
+                  
+                  <p className="text-lg md:text-xl leading-relaxed font-body font-medium text-black/90">
+                    Somos el <span className="font-bold text-black">único centro en Tijuana</span> que ofrece miraDry, con pacientes que viajan 
+                    desde todas partes del mundo. Todos los procedimientos son realizados por 
+                    especialistas capacitados bajo protocolos de seguridad. Se utiliza anestesia 
+                    para tu máxima comodidad.
+                  </p>
+                  
+                  {/* Decorative line */}
+                  <div className="mt-6 h-1 bg-black/20 rounded-full overflow-hidden">
+                    <div className="h-full bg-black/30 rounded-full animate-pulse" style={{ width: '60%' }}></div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Trust indicators */}
@@ -51,7 +82,7 @@ const WhyChooseUsSectionCustom = () => {
           
           {/* Right image comparison */}
           <div className="flex justify-center items-center relative">
-            <div className="relative w-full max-w-2xl aspect-[4/3]">
+            <div className="relative w-full max-w-5xl aspect-[4/3] -mt-12">
               {/* Before Image - Triste */}
               <div
                 className={`absolute inset-0 transition-all duration-700 ease-in-out ${
@@ -64,7 +95,8 @@ const WhyChooseUsSectionCustom = () => {
                   <img
                     src={tristeImg}
                     alt="Antes de miradry"
-                    className="w-full h-full object-contain rounded-lg"
+                    className="w-full h-full object-contain rounded-xl"
+                    style={{ transform: 'scale(1.3)' }}
                     loading="lazy"
                   />
                 </div>
@@ -82,7 +114,8 @@ const WhyChooseUsSectionCustom = () => {
                   <img
                     src={felizzImg}
                     alt="Después de miradry"
-                    className="w-full h-full object-contain rounded-lg scale-x-[-1]"
+                    className="w-full h-full object-contain rounded-xl"
+                    style={{ transform: 'scaleX(-1) scale(1.3)' }}
                     loading="lazy"
                   />
                 </div>
@@ -93,9 +126,9 @@ const WhyChooseUsSectionCustom = () => {
                 {/* Left button - Antes */}
                 <button
                   onClick={() => setSelectedView("antes")}
-                  className={`pointer-events-auto px-6 py-3 rounded-lg font-semibold transition-all duration-300 whitespace-nowrap ${
+                  className={`pointer-events-auto px-6 py-3 text-base rounded-lg font-semibold transition-all duration-300 whitespace-nowrap ${
                     selectedView === "antes"
-                      ? "bg-cyan-400 text-black shadow-lg scale-110"
+                      ? "bg-cyan-400 text-black shadow-lg scale-105"
                       : "bg-gray-700 text-white hover:bg-gray-600"
                   }`}
                 >
@@ -105,9 +138,9 @@ const WhyChooseUsSectionCustom = () => {
                 {/* Right button - Después */}
                 <button
                   onClick={() => setSelectedView("despues")}
-                  className={`pointer-events-auto px-6 py-3 rounded-lg font-semibold transition-all duration-300 whitespace-nowrap -mr-4 ${
+                  className={`pointer-events-auto px-6 py-3 text-base rounded-lg font-semibold transition-all duration-300 whitespace-nowrap -mr-4 ${
                     selectedView === "despues"
-                      ? "bg-cyan-400 text-black shadow-lg scale-110"
+                      ? "bg-cyan-400 text-black shadow-lg scale-105"
                       : "bg-gray-700 text-white hover:bg-gray-600"
                   }`}
                 >
@@ -116,23 +149,26 @@ const WhyChooseUsSectionCustom = () => {
               </div>
 
               {/* Premier image badge - bottom right */}
-              <div className="absolute -bottom-12 right-36 z-40">
-                <div className="relative group">
+              <div className="absolute -bottom-36 right-20 z-40">
+                <div className="relative group animate-fade-in-slow">
                   {/* Elegant background with subtle glow */}
-                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-xl border border-white/20 shadow-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl transform group-hover:scale-110 transition-all duration-500 ease-out group-hover:border-cyan-400/50 group-hover:shadow-cyan-400/30 group-hover:bg-black/80"></div>
                   
                   {/* Image container with padding */}
-                  <div className="relative px-5 py-4">
+                  <div className="relative px-4 py-3 transition-all duration-500 ease-out group-hover:scale-105">
                     <img
                       src={premierImg}
                       alt="Premier Hospital"
-                      className="h-20 w-auto object-contain filter brightness-110"
+                      className="h-20 md:h-28 w-auto object-contain filter brightness-110 transition-all duration-500 ease-out group-hover:brightness-125 group-hover:drop-shadow-lg"
                       loading="lazy"
                     />
                   </div>
                   
                   {/* Subtle accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60"></div>
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60 group-hover:opacity-100 group-hover:h-1 transition-all duration-500"></div>
+                  
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 rounded-xl bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-all duration-500 blur-xl -z-10"></div>
                 </div>
               </div>
             </div>

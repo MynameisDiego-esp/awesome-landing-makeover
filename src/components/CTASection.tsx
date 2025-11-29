@@ -20,7 +20,7 @@ const CTASection = () => {
                 <span className="text-primary">permanentemente?</span>
               </h2>
               <p className="text-xl text-muted-foreground">
-                Agenda tu consulta médica gratuita + prueba de sudoración
+                Agenda tu Prueba de Sudoracion gratuita
               </p>
             </div>
             

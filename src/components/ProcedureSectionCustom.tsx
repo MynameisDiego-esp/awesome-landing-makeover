@@ -12,7 +12,7 @@ const ProcedureSectionCustom = () => {
           <Card className="p-8 bg-white animate-fade-in hover:scale-105 hover:shadow-2xl transition-all duration-300" style={{ animationDelay: '0.1s', opacity: 0, animationFillMode: 'forwards' }}>
             <h3 className="text-2xl font-sans font-bold mb-6">Antes</h3>
             <div className="space-y-4 font-body">
-              <p><span className="font-bold font-sans">01</span> Consulta médica + prueba de sudoración</p>
+              <p><span className="font-bold font-sans">01</span> Prueba de Sudoracion</p>
               <p><span className="font-bold font-sans">02</span> Evaluación de candidatos, sólo tratamos a los pacientes correctos (95% de los candidatos)</p>
             </div>
           </Card>

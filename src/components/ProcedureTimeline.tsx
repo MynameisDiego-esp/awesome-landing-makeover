@@ -10,7 +10,7 @@ const timelineSteps = [
     phase: "Antes",
     icon: ClipboardCheck,
     items: [
-      "Consulta médica + prueba de sudoración",
+      "Prueba de Sudoracion",
       "Evaluación de candidatos",
       "Solo tratamos a los pacientes correctos (95% de los candidatos)",
     ],

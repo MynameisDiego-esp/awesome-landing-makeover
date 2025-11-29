@@ -93,7 +93,7 @@ const Hero = () => {
               <img
                 src={heroWoman}
                 alt="Persona feliz y segura levantando los brazos sin preocupación"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover scale-90"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#00E5DD]/40 to-transparent" />
@@ -113,7 +113,7 @@ const Hero = () => {
             </div>
 
             {/* Trust indicators */}
-            <div className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg opacity-0 animate-[scaleIn_0.6s_ease-out_1s_forwards]">
+            <div className="absolute top-4 right-4 bg-white p-3 rounded-full shadow-lg opacity-0 animate-[scaleIn_0.6s_ease-out_1s_forwards]">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
