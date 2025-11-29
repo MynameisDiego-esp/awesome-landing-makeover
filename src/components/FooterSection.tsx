@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import { Phone, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
+import { Phone, MapPin, Facebook, Instagram, Linkedin, Clock, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const FooterSection = () => {
@@ -39,6 +39,13 @@ const FooterSection = () => {
             
             {/* Social Media */}
             <div className="flex items-center gap-4 pt-4">
+              <a 
+                href="mailto:docsalas@bajahaircenter.com" 
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
               <a 
                 href="https://www.facebook.com/BajaHairCenter/" 
                 target="_blank"

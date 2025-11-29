@@ -162,8 +162,8 @@
       "commentsPlaceholder": "¿Tienes alguna pregunta específica sobre el procedimiento?",
       "submit": "Enviar solicitud",
       "submitting": "Enviando...",
-      "successTitle": "¡Solicitud Enviada!",
-      "successMessage": "Nos pondremos en contacto contigo pronto"
+      "successTitle": "¡Redirigiendo a Email!",
+      "successMessage": "Se abrirá tu cliente de email con el mensaje. Completa el envío desde allí."
     },
     "features": {
       "sweatTest": {

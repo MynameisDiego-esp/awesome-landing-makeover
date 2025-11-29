@@ -12,6 +12,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import ContactSection from "@/components/ContactSection";
 import FinalCTASection from "@/components/FinalCTASection";
 import FooterSection from "@/components/FooterSection";
+import AccessibilityPanel from "@/components/AccessibilityPanel";
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
       <LanguageModal />
       <FloatingNav />
       <LanguageSwitcher />
+      <AccessibilityPanel />
       <HeroSection />
       <ProblemSectionCustom />
       <SolutionSectionCustom />

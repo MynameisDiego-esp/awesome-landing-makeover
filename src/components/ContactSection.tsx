@@ -15,19 +15,44 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simular envío del formulario
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
     
-    // Aquí puedes agregar la lógica para enviar el formulario
-    // Por ejemplo, llamar a una API o mostrar un mensaje de éxito
-    console.log("Formulario enviado");
+    const nombre = formData.get('nombre') as string;
+    const email = formData.get('email') as string;
+    const telefono = formData.get('telefono') as string;
+    const edad = formData.get('edad') as string;
+    const consulta = formData.get('consulta') as string;
+    
+    // Email de destino
+    const emailDestino = 'docsalas@bajahaircenter.com';
+    
+    // Crear asunto del email
+    const asunto = encodeURIComponent('Nueva Consulta - Zero Sweat Clinic');
+    
+    // Crear cuerpo del mensaje formateado
+    const cuerpo = encodeURIComponent(
+      `Nueva Consulta - Zero Sweat Clinic\n\n` +
+      `Nombre: ${nombre}\n` +
+      `Email: ${email}\n` +
+      `Teléfono: ${telefono}\n` +
+      (edad ? `Edad: ${edad}\n` : '') +
+      (consulta ? `\nConsulta:\n${consulta}` : '')
+    );
+    
+    // Crear URL de mailto
+    const mailtoUrl = `mailto:${emailDestino}?subject=${asunto}&body=${cuerpo}`;
+    
+    // Abrir el cliente de email
+    window.location.href = mailtoUrl;
+    
     setIsSubmitted(true);
     setIsSubmitting(false);
     
     // Resetear después de 3 segundos
     setTimeout(() => {
       setIsSubmitted(false);
-      (e.target as HTMLFormElement).reset();
+      form.reset();
     }, 3000);
   };
 
@@ -95,6 +120,7 @@ const ContactSection = () => {
                 </Label>
                 <Input
                   id="nombre"
+                  name="nombre"
                   type="text"
                   placeholder={t('contact.form.namePlaceholder')}
                   required
@@ -109,6 +135,7 @@ const ContactSection = () => {
                 </Label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder={t('contact.form.emailPlaceholder')}
                   required
@@ -123,6 +150,7 @@ const ContactSection = () => {
                 </Label>
                 <Input
                   id="telefono"
+                  name="telefono"
                   type="tel"
                   placeholder={t('contact.form.phonePlaceholder')}
                   required
@@ -137,6 +165,7 @@ const ContactSection = () => {
                 </Label>
                 <Input
                   id="edad"
+                  name="edad"
                   type="number"
                   placeholder={t('contact.form.agePlaceholder')}
                   className="bg-white border-2 border-gray-300 focus:border-[#00E5DD] focus:ring-2 focus:ring-[#00E5DD]/20 text-base h-12 transition-all"
@@ -150,6 +179,7 @@ const ContactSection = () => {
                 </Label>
                 <textarea
                   id="consulta"
+                  name="consulta"
                   rows={4}
                   placeholder={t('contact.form.commentsPlaceholder')}
                   className="flex w-full rounded-md border-2 border-gray-300 bg-white px-4 py-3 text-base ring-offset-background placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E5DD] focus-visible:ring-offset-2 focus-visible:border-[#00E5DD] disabled:cursor-not-allowed disabled:opacity-50 resize-none transition-all"

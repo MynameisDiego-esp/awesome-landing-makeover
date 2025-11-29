@@ -162,8 +162,8 @@
       "commentsPlaceholder": "Do you have any specific questions about the procedure?",
       "submit": "Send request",
       "submitting": "Sending...",
-      "successTitle": "Request Sent!",
-      "successMessage": "We will contact you soon"
+      "successTitle": "Redirecting to Email!",
+      "successMessage": "Your email client will open with the message. Complete the send from there."
     },
     "features": {
       "sweatTest": {
