@@ -1,0 +1,195 @@
+{
+  "hero": {
+    "readyToSweatLess": "LISTO PARA SUDAR MENOS?",
+    "scrollToNext": "Ir a la siguiente sección"
+  },
+  "nav": {
+    "stopSweatForever": "Detén el sudor axilar para <bold>siempre</bold>"
+  },
+  "problem": {
+    "title": "Basta de vivir<br />con <cyan>sudor</cyan> y<br /><cyan>mal olor</cyan>",
+    "badge": "Aprobado por FDA • No quirúrgico • 1-2 sesiones • Resultados permanentes",
+    "badgeMobile": "Aprobado por FDA • No quirúrgico • 1-2 sesiones • Permanente",
+    "ifYou": "Si tú:",
+    "symptoms": {
+      "1": "Re-aplicas desodorante varias veces al día",
+      "2": "Manchas tus prendas en la zona de las axilas",
+      "3": "Te incomoda levantar los brazos en público",
+      "4": "Te preocupa tu propio olor",
+      "5": "Sudas incluso con clima frío"
+    },
+    "cta": "Agenda tu Consulta + Prueba de Sudoración"
+  },
+  "solution": {
+    "title": "La Solución: <cyan>miraDry®</cyan> — Reducción",
+    "subtitle": "Permanente de Sudor y Olor",
+    "description": "miraDry utiliza energía térmica controlada para eliminar las glándulas sudoríparas y odoríficas bajo la axila. Una vez eliminadas, no vuelven a regenerarse.",
+    "benefits": {
+      "noSweat": {
+        "title": "Sin sudor",
+        "text": "Reducción inmediata del exceso de sudoración."
+      },
+      "moreConfidence": {
+        "title": "Más confianza",
+        "text": "Levanta los brazos sin preocuparte."
+      },
+      "cleanClothes": {
+        "title": "Ropa limpia",
+        "text": "Adiós a las manchas en camisas y blusas."
+      },
+      "durable": {
+        "title": "Duradero",
+        "text": "Efecto prolongado por meses."
+      },
+      "safe": {
+        "title": "Seguro",
+        "text": "Tratamiento médico aprobado y controlado."
+      }
+    },
+    "message": "No eres <italic>\"una persona sudorosa\"</italic>",
+    "messageSubtext": "Tus glándulas sudoríparas están hiperactivas — y son tratables."
+  },
+  "whyChooseUs": {
+    "title": "Por qué los pacientes nos <cyan>eligen</cyan>",
+    "certifiedCenter": "Centro Certificado",
+    "description": "Somos el <bold>único centro en Tijuana</bold> que ofrece miraDry, con pacientes que viajan desde todas partes del mundo. Todos los procedimientos son realizados por especialistas capacitados bajo protocolos de seguridad. Se utiliza anestesia para tu máxima comodidad.",
+    "certifiedSpecialists": "Especialistas Certificados",
+    "safetyProtocols": "Protocolos de Seguridad",
+    "before": "Antes",
+    "after": "Después",
+    "beforeMiradry": "Antes de miradry",
+    "afterMiradry": "Después de miradry"
+  },
+  "procedure": {
+    "title": "Qué esperar del <italic>procedimiento</italic>",
+    "before": {
+      "title": "Antes",
+      "step1": "Prueba de Sudoracion",
+      "step2": "Evaluación de candidatos, sólo tratamos a los pacientes correctos (95% de los candidatos)"
+    },
+    "during": {
+      "title": "Durante",
+      "duration": "(60–90 min)",
+      "step1": "Anestesia local para comodidad",
+      "step2": "Aplicación de miraDry en la zona axilar"
+    },
+    "after": {
+      "title": "Después",
+      "step1": "Actividades normales el mismo día",
+      "step2": "Evitar ejercicio intenso por 48–72 horas",
+      "step3": "Resultados inmediatos y permanentes"
+    }
+  },
+  "candidate": {
+    "title": "¿Eres buen<br /><primary>candidato?</primary>",
+    "subtitle": "MiraDry es ideal para ti si:",
+    "criteria": {
+      "1": "Mojás o manchas de sudor camisas sin importar el clima",
+      "2": "Te limita social o profesionalmente",
+      "3": "Prefieres una solución médica, no cosmética",
+      "4": "Quieres desaparecer este problema permanentemente"
+    }
+  },
+  "comparison": {
+    "title": "miraDry® vs Otras Opciones",
+    "subtitle": "Compara y descubre por qué miraDry® es la mejor solución",
+    "option": "Opción",
+    "duration": "Duración",
+    "invasive": "Invasivo",
+    "cost": "Costo a largo plazo",
+    "options": {
+      "antiperspirants": "Antitranspirantes",
+      "botox": "Botox",
+      "surgery": "Cirugía ETS",
+      "miradry": "miraDry"
+    },
+    "values": {
+      "daily": "Diario",
+      "4to6months": "4-6 meses",
+      "permanent": "Permanente",
+      "chemical": "Químico",
+      "injections": "Inyecciones",
+      "surgical": "Quirúrgico",
+      "nonSurgical": "No quirúrgico",
+      "lifetimeCost": "Costo de por vida",
+      "repetitiveExpense": "Gasto repetitivo",
+      "highRiskCost": "Alto riesgo/costo",
+      "singleInvestment": "Inversión única"
+    }
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros <cyan>pacientes</cyan>",
+    "subtitle": "Miles de vidas transformadas con resultados permanentes"
+  },
+  "footer": {
+    "description": "Tu solución definitiva para detener el sudor axilar de forma permanente. Transforma tu confianza con miraDry®.",
+    "navigation": "Navegación",
+    "home": "Inicio",
+    "problem": "El Problema",
+    "solution": "La Solución",
+    "procedure": "Procedimiento",
+    "contact": "Contacto",
+    "contactTitle": "Contacto",
+    "phone": "Teléfono",
+    "location": "Ubicación",
+    "schedule": "Horario",
+    "scheduleWeekdays": "Lunes - Viernes: 8:00 AM - 6:00 PM",
+    "scheduleSaturday": "Sábado: 9:00 AM - 5:00 PM",
+    "scheduleSunday": "Domingo: Cerrado",
+    "readyToStart": "¿Listo para comenzar?",
+    "readyDescription": "Agenda tu Prueba de Sudoracion. Estás a una decisión de transformar tu confianza.",
+    "scheduleConsultation": "Agenda tu Consulta",
+    "footerNote": "Prueba de Sudoracion especializada en hiperhidrosis axilar. Tratamiento con miraDry® certificado.",
+    "rightsReserved": "© {year} Zero Sweat Clinic. Todos los derechos reservados.",
+    "privacyPolicy": "Política de Privacidad",
+    "terms": "Términos y Condiciones",
+    "legalNotice": "Aviso Legal"
+  },
+  "contact": {
+    "title": "Agenda tu Consulta",
+    "subtitle": "+ Prueba de Sudoración",
+    "description": "Completa el formulario y nos pondremos en contacto contigo",
+    "form": {
+      "name": "Nombre completo *",
+      "namePlaceholder": "Ingresa tu nombre completo",
+      "email": "Correo electrónico *",
+      "emailPlaceholder": "tu@email.com",
+      "phone": "Teléfono *",
+      "phonePlaceholder": "+52 123 456 7890",
+      "age": "Edad",
+      "agePlaceholder": "Ingresa tu edad",
+      "comments": "Consulta o comentarios",
+      "commentsPlaceholder": "¿Tienes alguna pregunta específica sobre el procedimiento?",
+      "submit": "Enviar solicitud",
+      "submitting": "Enviando...",
+      "successTitle": "¡Solicitud Enviada!",
+      "successMessage": "Nos pondremos en contacto contigo pronto"
+    },
+    "features": {
+      "sweatTest": {
+        "title": "Prueba de Sudoración",
+        "description": "Evaluamos tu caso específico"
+      },
+      "medicalEvaluation": {
+        "title": "Evaluación Médica",
+        "description": "Por especialistas capacitados"
+      },
+      "personalizedPlan": {
+        "title": "Plan Personalizado",
+        "description": "Tratamiento a tu medida"
+      }
+    },
+    "note": "Somos el único centro en Tijuana que ofrece miraDry®"
+  },
+  "finalCTA": {
+    "yourNextStep": "Tu siguiente <italic>paso</italic>",
+    "sweatTest": "Prueba de Sudoracion",
+    "features": {
+      "medicalEvaluation": "Evaluación médica",
+      "sweatTest": "Prueba de sudoración",
+      "personalizedPlan": "Plan de tratamiento personalizado"
+    },
+    "cta": "Agenda tu Consulta + Prueba de Sudoración"
+  }
+}
+

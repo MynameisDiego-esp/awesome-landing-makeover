@@ -1,7 +1,9 @@
+import { useTranslation, Trans } from "react-i18next";
 import sudorSenor from "@/assets/sudor senor.png";
 import premierHospital from "@/assets/PREMIER-Hospital_1.png";
 
 const CandidateSectionCustom = () => {
+  const { t } = useTranslation();
   return (
     <section id="candidato" className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24 overflow-hidden">
       <div className="absolute inset-0 opacity-40" style={{ background: "var(--gradient-dark)" }}></div>
@@ -25,10 +27,10 @@ const CandidateSectionCustom = () => {
                   <img 
                     src={premierHospital}
                     alt="PREMIER Hospital"
-                    className="h-24 sm:h-32 md:h-40 lg:h-48 w-auto object-contain drop-shadow-lg border-2 border-white/30 rounded-lg p-2 bg-white/10 backdrop-blur-sm transition-all duration-500 ease-out group-hover:border-white/50 group-hover:bg-white/20 group-hover:shadow-xl group-hover:shadow-white/20"
+                    className="h-32 sm:h-40 md:h-52 lg:h-64 w-auto object-contain drop-shadow-lg transition-all duration-500 ease-out group-hover:shadow-xl group-hover:shadow-white/20"
                   />
                   {/* Glow effect on hover */}
-                  <div className="absolute inset-0 rounded-lg bg-white/0 group-hover:bg-white/10 transition-all duration-500 blur-xl -z-10"></div>
+                  <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-500 blur-xl -z-10"></div>
                 </div>
               </div>
             </div>
@@ -36,33 +38,38 @@ const CandidateSectionCustom = () => {
             <div className="animate-slide-in-right space-y-8 md:col-span-2">
               <div className="animate-fade-in">
                 <h2 className="text-5xl md:text-6xl font-display font-bold mb-4 tracking-tight transition-all duration-500 hover:scale-105">
-                  ¿Eres buen<br />
-                  <span className="text-primary italic transition-all duration-500 hover:text-primary/80">candidato?</span>
+                  <Trans
+                    i18nKey="candidate.title"
+                    components={{
+                      br: <br />,
+                      primary: <span className="text-primary italic transition-all duration-500 hover:text-primary/80" />
+                    }}
+                  />
                 </h2>
                 <div className="w-20 h-1 bg-primary mt-6 transition-all duration-500 hover:w-32 hover:shadow-lg hover:shadow-primary/50"></div>
               </div>
               
               <p className="text-xl text-slate-300 font-sans leading-relaxed animate-fade-in-slow transition-all duration-500 hover:text-slate-200">
-                MiraDry es ideal para ti si:
+                {t('candidate.subtitle')}
               </p>
               
               <div className="space-y-3">
-                <div className="group relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 px-6 py-4 rounded-lg transition-all duration-500 ease-out hover:bg-slate-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0, animationFillMode: 'forwards' }}>
+                <div className="group relative bg-white backdrop-blur-sm border border-white/40 px-6 py-4 rounded-lg transition-all duration-500 ease-out hover:bg-white hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.1s', opacity: 0, animationFillMode: 'forwards' }}>
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-l-lg group-hover:w-2"></div>
-                  <p className="text-slate-200 font-sans font-medium pl-4 transition-all duration-300 group-hover:text-white group-hover:pl-6">
-                    Mojás o manchas de sudor camisas sin importar el clima
+                  <p className="text-slate-800 font-sans font-medium pl-4 transition-all duration-300 group-hover:text-slate-900 group-hover:pl-6">
+                    {t('candidate.criteria.1')}
                   </p>
                 </div>
-                <div className="group relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 px-6 py-4 rounded-lg transition-all duration-500 ease-out hover:bg-slate-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
+                <div className="group relative bg-white backdrop-blur-sm border border-white/40 px-6 py-4 rounded-lg transition-all duration-500 ease-out hover:bg-white hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-l-lg group-hover:w-2"></div>
-                  <p className="text-slate-200 font-sans font-medium pl-4 transition-all duration-300 group-hover:text-white group-hover:pl-6">
-                    Te limita social o profesionalmente
+                  <p className="text-slate-800 font-sans font-medium pl-4 transition-all duration-300 group-hover:text-slate-900 group-hover:pl-6">
+                    {t('candidate.criteria.2')}
                   </p>
                 </div>
-                <div className="group relative bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 px-6 py-4 rounded-lg transition-all duration-500 ease-out hover:bg-slate-800 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
+                <div className="group relative bg-white backdrop-blur-sm border border-white/40 px-6 py-4 rounded-lg transition-all duration-500 ease-out hover:bg-white hover:border-primary/30 hover:shadow-lg hover:shadow-primary/10 hover:scale-[1.02] hover:-translate-y-1 animate-fade-in" style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-l-lg group-hover:w-2"></div>
-                  <p className="text-slate-200 font-sans font-medium pl-4 transition-all duration-300 group-hover:text-white group-hover:pl-6">
-                    Prefieres una solución médica, no cosmética
+                  <p className="text-slate-800 font-sans font-medium pl-4 transition-all duration-300 group-hover:text-slate-900 group-hover:pl-6">
+                    {t('candidate.criteria.3')}
                   </p>
                 </div>
               </div>
@@ -70,7 +77,7 @@ const CandidateSectionCustom = () => {
               <div className="pt-4 animate-fade-in-slow">
                 <div className="bg-gradient-to-r from-primary to-primary-glow text-white px-8 py-6 rounded-xl text-center shadow-lg shadow-primary/20 transition-all duration-500 ease-out hover:shadow-xl hover:shadow-primary/30 hover:scale-105 hover:-translate-y-1 group cursor-pointer">
                   <p className="text-lg font-sans font-semibold tracking-wide transition-all duration-300 group-hover:tracking-wider">
-                    Quieres desaparecer este problema permanentemente
+                    {t('candidate.criteria.4')}
                   </p>
                   {/* Glow effect on hover */}
                   <div className="absolute inset-0 rounded-xl bg-primary/0 group-hover:bg-primary/20 transition-all duration-500 blur-xl -z-10"></div>

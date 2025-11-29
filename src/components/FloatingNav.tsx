@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { useTranslation, Trans } from "react-i18next";
 import logo from "@/assets/NUEVOLOGO.png";
 
 const FloatingNav = () => {
+  const { i18n } = useTranslation(); // Suscribirse a cambios de idioma
   const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   const handleContactClick = () => {
@@ -43,7 +45,12 @@ const FloatingNav = () => {
               onMouseLeave={() => setIsButtonHovered(false)}
               style={{ letterSpacing: 0 }}
             >
-              Detén el sudor axilar para  <span className="font-bold">siempre</span>
+              <Trans
+                i18nKey="nav.stopSweatForever"
+                components={{
+                  bold: <span className="font-bold" />
+                }}
+              />
             </Button>
           </div>
         </div>

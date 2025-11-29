@@ -1,4 +1,6 @@
 import FloatingNav from "@/components/FloatingNav";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import LanguageModal from "@/components/LanguageModal";
 import HeroSection from "@/components/HeroSection";
 import ProblemSectionCustom from "@/components/ProblemSectionCustom";
 import SolutionSectionCustom from "@/components/SolutionSectionCustom";
@@ -14,7 +16,9 @@ import FooterSection from "@/components/FooterSection";
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <LanguageModal />
       <FloatingNav />
+      <LanguageSwitcher />
       <HeroSection />
       <ProblemSectionCustom />
       <SolutionSectionCustom />

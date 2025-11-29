@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
+import { Phone, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const FooterSection = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (id: string) => {
@@ -31,8 +33,7 @@ const FooterSection = () => {
                 <span className="italic">Zero</span> Sweat Clinic
               </h3>
               <p className="text-gray-300 text-sm leading-relaxed">
-                Tu solución definitiva para detener el sudor axilar de forma permanente. 
-                Transforma tu confianza con miraDry®.
+                {t('footer.description')}
               </p>
             </div>
             
@@ -70,14 +71,14 @@ const FooterSection = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h4 className="text-lg font-sans font-bold uppercase tracking-wide">Navegación</h4>
+            <h4 className="text-lg font-sans font-bold uppercase tracking-wide">{t('footer.navigation')}</h4>
             <ul className="space-y-3">
               <li>
                 <button
                   onClick={() => scrollToSection("inicio")}
                   className="text-gray-300 hover:text-primary transition-colors duration-300 text-left"
                 >
-                  Inicio
+                  {t('footer.home')}
                 </button>
               </li>
               <li>
@@ -85,7 +86,7 @@ const FooterSection = () => {
                   onClick={() => scrollToSection("problema")}
                   className="text-gray-300 hover:text-primary transition-colors duration-300 text-left"
                 >
-                  El Problema
+                  {t('footer.problem')}
                 </button>
               </li>
               <li>
@@ -93,7 +94,7 @@ const FooterSection = () => {
                   onClick={() => scrollToSection("solucion")}
                   className="text-gray-300 hover:text-primary transition-colors duration-300 text-left"
                 >
-                  La Solución
+                  {t('footer.solution')}
                 </button>
               </li>
               <li>
@@ -101,7 +102,7 @@ const FooterSection = () => {
                   onClick={() => scrollToSection("procedimiento")}
                   className="text-gray-300 hover:text-primary transition-colors duration-300 text-left"
                 >
-                  Procedimiento
+                  {t('footer.procedure')}
                 </button>
               </li>
               <li>
@@ -109,7 +110,7 @@ const FooterSection = () => {
                   onClick={() => scrollToSection("contacto")}
                   className="text-gray-300 hover:text-primary transition-colors duration-300 text-left"
                 >
-                  Contacto
+                  {t('footer.contact')}
                 </button>
               </li>
             </ul>
@@ -117,12 +118,12 @@ const FooterSection = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <h4 className="text-lg font-sans font-bold uppercase tracking-wide">Contacto</h4>
+            <h4 className="text-lg font-sans font-bold uppercase tracking-wide">{t('footer.contactTitle')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">Teléfono</p>
+                  <p className="text-gray-300 text-sm">{t('footer.phone')}</p>
                   <div className="space-y-1">
                     <a href="tel:+16198701316" className="text-white hover:text-primary transition-colors duration-300 block">
                       +1 (619) 870-1316
@@ -134,18 +135,9 @@ const FooterSection = () => {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-primary mt-1 shrink-0" />
-                <div>
-                  <p className="text-gray-300 text-sm">Email</p>
-                  <a href="mailto:info@zerosweatclinic.com" className="text-white hover:text-primary transition-colors duration-300">
-                    info@zerosweatclinic.com
-                  </a>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">Ubicación</p>
+                  <p className="text-gray-300 text-sm">{t('footer.location')}</p>
                   <a 
                     href="https://goo.gl/maps/WpWu7hoQtPs6j8KS6" 
                     target="_blank"
@@ -159,11 +151,11 @@ const FooterSection = () => {
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-primary mt-1 shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">Horario</p>
+                  <p className="text-gray-300 text-sm">{t('footer.schedule')}</p>
                   <div className="space-y-1 text-white text-sm">
-                    <p>Lunes - Viernes: 8:00 AM - 6:00 PM</p>
-                    <p>Sábado: 9:00 AM - 5:00 PM</p>
-                    <p>Domingo: Cerrado</p>
+                    <p>{t('footer.scheduleWeekdays')}</p>
+                    <p>{t('footer.scheduleSaturday')}</p>
+                    <p>{t('footer.scheduleSunday')}</p>
                   </div>
                 </div>
               </li>
@@ -172,10 +164,9 @@ const FooterSection = () => {
 
           {/* CTA Column */}
           <div className="space-y-6">
-            <h4 className="text-lg font-sans font-bold uppercase tracking-wide">¿Listo para comenzar?</h4>
+            <h4 className="text-lg font-sans font-bold uppercase tracking-wide">{t('footer.readyToStart')}</h4>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Agenda tu Prueba de Sudoracion. 
-              Estás a una decisión de transformar tu confianza.
+              {t('footer.readyDescription')}
             </p>
             <Button 
               variant="cta" 
@@ -183,12 +174,11 @@ const FooterSection = () => {
               className="w-full font-sans"
               onClick={() => scrollToSection("contacto")}
             >
-              Agenda tu Consulta
+              {t('footer.scheduleConsultation')}
             </Button>
             <div className="pt-4 border-t border-white/10">
               <p className="text-xs text-gray-400 leading-relaxed">
-                Prueba de Sudoracion especializada en hiperhidrosis axilar. 
-                Tratamiento con miraDry® certificado.
+                {t('footer.footerNote')}
               </p>
             </div>
           </div>
@@ -200,17 +190,17 @@ const FooterSection = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              © {currentYear} Zero Sweat Clinic. Todos los derechos reservados.
+              {t('footer.rightsReserved', { year: currentYear })}
             </p>
             <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                Política de Privacidad
+                {t('footer.privacyPolicy')}
               </a>
               <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                Términos y Condiciones
+                {t('footer.terms')}
               </a>
               <a href="#" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                Aviso Legal
+                {t('footer.legalNotice')}
               </a>
             </div>
           </div>

@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import heroBg from "@/assets/hero-woman.png";
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -93,10 +95,10 @@ const HeroSection = () => {
               <button
                 onClick={handleScrollToNext}
                 className="flex flex-col items-start gap-2 text-black hover:opacity-80 transition-opacity duration-300 bg-transparent border-none outline-none cursor-pointer"
-                aria-label="Ir a la siguiente sección"
+                aria-label={t('hero.scrollToNext')}
               >
                 <span className="text-sm sm:text-base font-semibold uppercase tracking-wide">
-                  LISTO PARA SUDAR MENOS?
+                  {t('hero.readyToSweatLess')}
                 </span>
                 <ChevronDown className="w-5 h-5 animate-bounce" />
               </button>

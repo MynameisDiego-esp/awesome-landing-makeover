@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -6,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Send, CheckCircle2 } from "lucide-react";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -59,13 +61,13 @@ const ContactSection = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-4 drop-shadow-lg">
-              Agenda tu Consulta
+              {t('contact.title')}
             </h2>
             <p className="text-xl md:text-2xl text-gray-800 font-semibold mb-2">
-              + Prueba de Sudoración
+              {t('contact.subtitle')}
             </p>
             <p className="text-lg text-gray-700 mt-4">
-              Completa el formulario y nos pondremos en contacto contigo
+              {t('contact.description')}
             </p>
           </div>
 
@@ -77,10 +79,10 @@ const ContactSection = () => {
                 <div className="text-center p-8">
                   <CheckCircle2 className="w-20 h-20 text-gray-900 mx-auto mb-4 animate-scale-in" />
                   <h3 className="text-3xl font-bold text-gray-900 mb-2">
-                    ¡Solicitud Enviada!
+                    {t('contact.form.successTitle')}
                   </h3>
                   <p className="text-lg text-gray-800">
-                    Nos pondremos en contacto contigo pronto
+                    {t('contact.form.successMessage')}
                   </p>
                 </div>
               </div>
@@ -89,12 +91,12 @@ const ContactSection = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="nombre" className="text-gray-900 font-semibold text-base">
-                  Nombre completo *
+                  {t('contact.form.name')}
                 </Label>
                 <Input
                   id="nombre"
                   type="text"
-                  placeholder="Ingresa tu nombre completo"
+                  placeholder={t('contact.form.namePlaceholder')}
                   required
                   className="bg-white border-2 border-gray-300 focus:border-[#00E5DD] focus:ring-2 focus:ring-[#00E5DD]/20 text-base h-12 transition-all"
                   disabled={isSubmitting || isSubmitted}
@@ -103,12 +105,12 @@ const ContactSection = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-gray-900 font-semibold text-base">
-                  Correo electrónico *
+                  {t('contact.form.email')}
                 </Label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="tu@email.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   required
                   className="bg-white border-2 border-gray-300 focus:border-[#00E5DD] focus:ring-2 focus:ring-[#00E5DD]/20 text-base h-12 transition-all"
                   disabled={isSubmitting || isSubmitted}
@@ -117,12 +119,12 @@ const ContactSection = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="telefono" className="text-gray-900 font-semibold text-base">
-                  Teléfono *
+                  {t('contact.form.phone')}
                 </Label>
                 <Input
                   id="telefono"
                   type="tel"
-                  placeholder="+52 123 456 7890"
+                  placeholder={t('contact.form.phonePlaceholder')}
                   required
                   className="bg-white border-2 border-gray-300 focus:border-[#00E5DD] focus:ring-2 focus:ring-[#00E5DD]/20 text-base h-12 transition-all"
                   disabled={isSubmitting || isSubmitted}
@@ -131,12 +133,12 @@ const ContactSection = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="edad" className="text-gray-900 font-semibold text-base">
-                  Edad
+                  {t('contact.form.age')}
                 </Label>
                 <Input
                   id="edad"
                   type="number"
-                  placeholder="Ingresa tu edad"
+                  placeholder={t('contact.form.agePlaceholder')}
                   className="bg-white border-2 border-gray-300 focus:border-[#00E5DD] focus:ring-2 focus:ring-[#00E5DD]/20 text-base h-12 transition-all"
                   disabled={isSubmitting || isSubmitted}
                 />
@@ -144,12 +146,12 @@ const ContactSection = () => {
 
               <div className="space-y-2">
                 <Label htmlFor="consulta" className="text-gray-900 font-semibold text-base">
-                  Consulta o comentarios
+                  {t('contact.form.comments')}
                 </Label>
                 <textarea
                   id="consulta"
                   rows={4}
-                  placeholder="¿Tienes alguna pregunta específica sobre el procedimiento?"
+                  placeholder={t('contact.form.commentsPlaceholder')}
                   className="flex w-full rounded-md border-2 border-gray-300 bg-white px-4 py-3 text-base ring-offset-background placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00E5DD] focus-visible:ring-offset-2 focus-visible:border-[#00E5DD] disabled:cursor-not-allowed disabled:opacity-50 resize-none transition-all"
                   disabled={isSubmitting || isSubmitted}
                 />
@@ -164,11 +166,11 @@ const ContactSection = () => {
                   {isSubmitting ? (
                     <>
                       <span className="animate-spin mr-2">⏳</span>
-                      Enviando...
+                      {t('contact.form.submitting')}
                     </>
                   ) : (
                     <>
-                      Enviar solicitud
+                      {t('contact.form.submit')}
                       <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </>
                   )}
@@ -181,25 +183,25 @@ const ContactSection = () => {
               <div className="grid md:grid-cols-3 gap-6 text-center">
                 <div>
                   <CheckCircle2 className="w-8 h-8 text-[#00E5DD] mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Prueba de Sudoración</p>
-                  <p className="text-xs text-gray-600">Evaluamos tu caso específico</p>
+                  <p className="text-sm font-semibold text-gray-900">{t('contact.features.sweatTest.title')}</p>
+                  <p className="text-xs text-gray-600">{t('contact.features.sweatTest.description')}</p>
                 </div>
                 <div>
                   <CheckCircle2 className="w-8 h-8 text-[#00E5DD] mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Evaluación Médica</p>
-                  <p className="text-xs text-gray-600">Por especialistas capacitados</p>
+                  <p className="text-sm font-semibold text-gray-900">{t('contact.features.medicalEvaluation.title')}</p>
+                  <p className="text-xs text-gray-600">{t('contact.features.medicalEvaluation.description')}</p>
                 </div>
                 <div>
                   <CheckCircle2 className="w-8 h-8 text-[#00E5DD] mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-gray-900">Plan Personalizado</p>
-                  <p className="text-xs text-gray-600">Tratamiento a tu medida</p>
+                  <p className="text-sm font-semibold text-gray-900">{t('contact.features.personalizedPlan.title')}</p>
+                  <p className="text-xs text-gray-600">{t('contact.features.personalizedPlan.description')}</p>
                 </div>
               </div>
             </div>
           </Card>
 
           <p className="text-center text-sm text-gray-700 mt-6 font-medium">
-            Somos el único centro en Tijuana que ofrece miraDry®
+            {t('contact.note')}
           </p>
         </div>
       </div>

@@ -1,8 +1,10 @@
+import { useTranslation, Trans } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import hikingImage from "@/assets/HIKING.png";
 
 const FinalCTASection = () => {
+  const { t } = useTranslation();
   const handleContactClick = () => {
     const contactSection = document.getElementById("contacto");
     if (contactSection) {
@@ -32,24 +34,29 @@ const FinalCTASection = () => {
           </h2>
           
           <p className="text-4xl md:text-5xl font-display font-bold mb-10 animate-fade-in text-white drop-shadow-lg">
-            Tu siguiente <span className="italic text-cyan-300">paso</span>
+            <Trans
+              i18nKey="finalCTA.yourNextStep"
+              components={{
+                italic: <span className="italic text-cyan-300" />
+              }}
+            />
           </p>
           
           <Card className="p-10 bg-white/95 backdrop-blur-md mb-10 animate-scale-in hover:scale-105 transition-all duration-300 shadow-2xl border-2 border-cyan-400/30">
-            <h3 className="text-3xl font-sans font-bold mb-2 text-gray-900">Prueba de Sudoracion</h3>
+            <h3 className="text-3xl font-sans font-bold mb-2 text-gray-900">{t('finalCTA.sweatTest')}</h3>
             
             <div className="space-y-4 text-left mb-8 font-body">
               <p className="animate-fade-in hover:translate-x-2 transition-transform duration-300 text-lg text-gray-700 flex items-center gap-3" style={{ animationDelay: '0.2s', opacity: 0, animationFillMode: 'forwards' }}>
                 <span className="text-cyan-600 font-bold">✓</span>
-                <span>Evaluación médica</span>
+                <span>{t('finalCTA.features.medicalEvaluation')}</span>
               </p>
               <p className="animate-fade-in hover:translate-x-2 transition-transform duration-300 text-lg text-gray-700 flex items-center gap-3" style={{ animationDelay: '0.3s', opacity: 0, animationFillMode: 'forwards' }}>
                 <span className="text-cyan-600 font-bold">✓</span>
-                <span>Prueba de sudoración</span>
+                <span>{t('finalCTA.features.sweatTest')}</span>
               </p>
               <p className="animate-fade-in hover:translate-x-2 transition-transform duration-300 text-lg text-gray-700 flex items-center gap-3" style={{ animationDelay: '0.4s', opacity: 0, animationFillMode: 'forwards' }}>
                 <span className="text-cyan-600 font-bold">✓</span>
-                <span>Plan de tratamiento personalizado</span>
+                <span>{t('finalCTA.features.personalizedPlan')}</span>
               </p>
             </div>
           </Card>
@@ -61,7 +68,7 @@ const FinalCTASection = () => {
             style={{ animationDelay: '0.5s', opacity: 0, animationFillMode: 'forwards' }}
             onClick={handleContactClick}
           >
-            Agenda tu Consulta + Prueba de Sudoración
+            {t('finalCTA.cta')}
           </Button>
         </div>
       </div>

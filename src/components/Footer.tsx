@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -20,10 +20,6 @@ const Footer = () => {
                 <Phone className="w-5 h-5" />
                 <span>+1 (619) 870-1316</span>
                 <span>+52 (664) 335-5729</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5" />
-                <span>info@zerosweatclinic.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5" />
