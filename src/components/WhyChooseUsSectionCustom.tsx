@@ -129,12 +129,12 @@ const WhyChooseUsSectionCustom = () => {
                 </div>
               </div>
 
-              {/* Toggle buttons */}
-              <div className="absolute inset-0 z-30 flex items-center justify-between pl-4 pr-0 pointer-events-none">
+              {/* Toggle buttons - Mejorados para móvil */}
+              <div className="absolute inset-0 z-30 flex items-center justify-between pl-2 pr-2 md:pl-4 md:pr-0 pointer-events-none">
                 {/* Left button - Antes */}
                 <button
                   onClick={() => setSelectedView("antes")}
-                  className={`pointer-events-auto px-6 py-3 text-base rounded-lg font-semibold transition-all duration-300 whitespace-nowrap ${
+                  className={`pointer-events-auto px-3 py-2 md:px-6 md:py-3 text-xs md:text-base rounded-lg font-semibold transition-all duration-300 whitespace-nowrap min-h-[36px] md:min-h-[44px] flex items-center justify-center ${
                     selectedView === "antes"
                       ? "bg-cyan-400 text-black shadow-lg scale-105"
                       : "bg-gray-700 text-white hover:bg-gray-600"
@@ -146,7 +146,7 @@ const WhyChooseUsSectionCustom = () => {
                 {/* Right button - Después */}
                 <button
                   onClick={() => setSelectedView("despues")}
-                  className={`pointer-events-auto px-6 py-3 text-base rounded-lg font-semibold transition-all duration-300 whitespace-nowrap -mr-4 ${
+                  className={`pointer-events-auto px-3 py-2 md:px-6 md:py-3 text-xs md:text-base rounded-lg font-semibold transition-all duration-300 whitespace-nowrap -mr-0 md:-mr-4 min-h-[36px] md:min-h-[44px] flex items-center justify-center ${
                     selectedView === "despues"
                       ? "bg-cyan-400 text-black shadow-lg scale-105"
                       : "bg-gray-700 text-white hover:bg-gray-600"
@@ -156,8 +156,8 @@ const WhyChooseUsSectionCustom = () => {
                 </button>
               </div>
 
-              {/* Premier image badge - bottom right */}
-              <div className="absolute -bottom-36 right-20 z-40">
+              {/* Premier image badge - bottom right - Oculto en móvil */}
+              <div className="hidden md:block absolute -bottom-36 right-20 z-40">
                 <div className="relative group animate-fade-in-slow">
                   {/* Elegant background with subtle glow */}
                   <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl transform group-hover:scale-110 transition-all duration-500 ease-out group-hover:border-cyan-400/50 group-hover:shadow-cyan-400/30 group-hover:bg-black/80"></div>

@@ -1,21 +1,18 @@
-import { useTranslation, Trans } from "react-i18next";
 import step1 from "@/assets/step1.jpg";
 import step2 from "@/assets/step2.jpg";
 import step3 from "@/assets/step3.jpg";
 import step4 from "@/assets/step4.jpg";
 import heroImage from "@/assets/hero-image.jpg";
 
+const benefits = [
+  { title: "Sin sudor", text: "Reducción inmediata del exceso de sudoración." },
+  { title: "Más confianza", text: "Levanta los brazos sin preocuparte." },
+  { title: "Ropa limpia", text: "Adiós a las manchas en camisas y blusas." },
+  { title: "Duradero", text: "Efecto prolongado por meses." },
+  { title: "Seguro", text: "Tratamiento médico aprobado y controlado." },
+];
+
 const SolutionSectionCustom = () => {
-  const { t } = useTranslation();
-  
-  const benefits = [
-    { title: t('solution.benefits.noSweat.title'), text: t('solution.benefits.noSweat.text') },
-    { title: t('solution.benefits.moreConfidence.title'), text: t('solution.benefits.moreConfidence.text') },
-    { title: t('solution.benefits.cleanClothes.title'), text: t('solution.benefits.cleanClothes.text') },
-    { title: t('solution.benefits.durable.title'), text: t('solution.benefits.durable.text') },
-    { title: t('solution.benefits.safe.title'), text: t('solution.benefits.safe.text') },
-  ];
-  
   const images = [
     { 
       src: step1, 
@@ -54,22 +51,57 @@ const SolutionSectionCustom = () => {
     <section id="solucion" className="bg-[image:var(--gradient-accent)] py-20" style={{ background: "var(--gradient-accent)" }}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-display font-bold text-center mb-4 animate-fade-in">
-          <Trans
-            i18nKey="solution.title"
-            components={{
-              cyan: <span className="text-cyan-600" />
-            }}
-          />
+          La Solución: <span className="text-cyan-600">miraDry®</span> — Reducción
         </h2>
         <h3 className="text-3xl font-sans font-bold text-center mb-8 animate-fade-in-slow">
-          {t('solution.subtitle')}
+          Permanente de Sudor y Olor
         </h3>
         
         <p className="text-center text-xl max-w-3xl mx-auto mb-16 text-gray-700 animate-fade-in-slow font-body">
-          {t('solution.description')}
+          miraDry utiliza energía térmica controlada para eliminar las glándulas sudoríparas 
+          y odoríficas bajo la axila. Una vez eliminadas, no vuelven a regenerarse.
         </p>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-4 max-w-6xl mx-auto">
+        {/* Galería móvil - Solo imagen principal */}
+        <div className="block md:hidden max-w-2xl mx-auto mb-8">
+          {images.filter(img => img.isMain).map((image, index) => (
+            <div
+              key={index}
+              className="relative group animate-fade-in"
+              style={{ 
+                animationDelay: '0.1s',
+                opacity: 0,
+                animationFillMode: 'forwards'
+              }}
+            >
+              <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                  style={{ 
+                    aspectRatio: '4/3',
+                    clipPath: 'inset(0 round 1rem)',
+                  }}
+                />
+                {/* Overlay siempre visible en móvil */}
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 rounded-2xl">
+                  <div className="text-center">
+                    <h3 className="text-xl font-bold text-cyan-400 mb-2 font-display">
+                      {image.benefit.title}
+                    </h3>
+                    <p className="text-white text-sm font-body">
+                      {image.benefit.text}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Galería desktop - Grid completo con hover */}
+        <div className="hidden md:grid md:grid-cols-3 md:grid-rows-2 gap-4 max-w-6xl mx-auto">
           {images.map((image, index) => {
             const isMain = image.isMain;
             const isLeftTop = image.position === 'left-top';
@@ -132,15 +164,8 @@ const SolutionSectionCustom = () => {
         
         <div className="mt-16 max-w-5xl mx-auto bg-cyan-200 border-l-4 p-10 rounded-r-lg animate-fade-in-slow" style={{ borderColor: '#00E5DD' }}>
           <p className="text-2xl text-gray-800">
-            <strong className="block mb-4 text-3xl">
-              <Trans
-                i18nKey="solution.message"
-                components={{
-                  italic: <span className="font-display italic" />
-                }}
-              />
-            </strong>
-            <span className="text-black text-2xl font-bold block ml-16">{t('solution.messageSubtext')}</span>
+            <strong className="block mb-4 text-3xl">No eres <span className="font-display italic">"una persona sudorosa"</span></strong>
+            <span className="text-black text-2xl font-bold block ml-16">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
           </p>
         </div>
       </div>

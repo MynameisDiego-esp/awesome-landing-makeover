@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { useTranslation, Trans } from "react-i18next";
 import sillon from "@/assets/sillon.png";
 
 const ProblemSectionCustom = () => {
-  const { t } = useTranslation();
   const handleContactClick = () => {
     const contactSection = document.getElementById("contacto");
     if (contactSection) {
@@ -24,8 +22,8 @@ const ProblemSectionCustom = () => {
                 className="text-sm xs:text-base sm:text-lg font-bold text-black leading-tight text-center" 
                 style={{ fontFamily: "'Playfair Display', 'Poppins', Georgia, serif" }}
               >
-                <span className="hidden sm:inline">{t('problem.badge')}</span>
-                <span className="sm:hidden">{t('problem.badgeMobile')}</span>
+                <span className="hidden sm:inline">Aprobado por FDA • No quirúrgico • 1-2 sesiones • Resultados permanentes</span>
+                <span className="sm:hidden">Aprobado por FDA • No quirúrgico • 1-2 sesiones • Permanente</span>
               </p>
             </div>
           </div>
@@ -49,36 +47,32 @@ const ProblemSectionCustom = () => {
           {/* Texto a la derecha */}
           <div>
             <h2 className="text-4xl lg:text-5xl font-[ClashDisplay] font-bold mb-8 leading-tight pl-6 sm:pl-12">
-              <Trans
-                i18nKey="problem.title"
-                components={{
-                  br: <br />,
-                  cyan: <span className="text-cyan-400 italic" />
-                }}
-              />
+              Basta de vivir<br />
+              con <span className="text-cyan-400 italic">sudor</span> y<br />
+              <span className="italic text-cyan-400">mal olor</span>
             </h2>
             
             {/* Isla con gradiente para "Si tú" */}
             <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-2xl p-4 sm:p-6 shadow-2xl backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(59,130,246,0.5),0_0_60px_rgba(34,211,238,0.3)] mb-4 -ml-4 sm:-ml-6">
               <p className="text-xl lg:text-2xl font-[Poppins] font-bold text-black mb-4">
-                {t('problem.ifYou')}
+                Si tú:
               </p>
               <ul className="space-y-2 sm:space-y-3 font-[Inter] text-sm sm:text-base lg:text-lg text-gray-900">
-                <li>• {t('problem.symptoms.1')}</li>
-                <li>• {t('problem.symptoms.2')}</li>
-                <li>• {t('problem.symptoms.3')}</li>
-                <li>• {t('problem.symptoms.4')}</li>
-                <li>• {t('problem.symptoms.5')}</li>
+                <li>• Re-aplicas desodorante varias veces al día</li>
+                <li>• Manchas tus prendas en la zona de las axilas</li>
+                <li>• Te incomoda levantar los brazos en público</li>
+                <li>• Te preocupa tu propio olor</li>
+                <li>• Sudas incluso con clima frío</li>
               </ul>
             </div>
 
             <Button
               variant="cta"
               size="xl"
-              className="mt-6 bg-cyan-400 text-black hover:bg-cyan-500 font-[Poppins]"
+              className="mt-6 bg-cyan-400 text-black hover:bg-cyan-500 font-[Poppins] text-sm md:text-base px-4 py-2 md:px-6 md:py-3"
               onClick={handleContactClick}
             >
-              {t('problem.cta')}
+              Agenda tu Consulta + Prueba de Sudoración
             </Button>
           </div>
         </div>
