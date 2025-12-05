@@ -144,10 +144,10 @@ const HeroSection = () => {
             }}
             aria-label="Ir a la siguiente sección"
           >
-            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans font-semibold text-black mb-3 sm:mb-4 md:mb-6">
+            <p className="text-xl sm:text-2xl font-sans font-semibold text-black mb-3 sm:mb-4 block md:hidden">
               Listo para dejar de sudar?
             </p>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] 2xl:text-[11rem] font-display mb-4 leading-[0.9]">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] 2xl:text-[11rem] font-display mb-4 leading-[0.9] md:mt-16 lg:mt-24 xl:mt-32">
               <span
                 className="text-black inline-block italic font-light tracking-tight"
                 style={{

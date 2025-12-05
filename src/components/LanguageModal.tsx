@@ -132,7 +132,7 @@ const LanguageModal = () => {
               onClick={() => handleLanguageSelect('es')}
               className="w-full bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 border-2 border-cyan-400/50 text-white hover:bg-cyan-500/30 hover:border-cyan-400 py-6 text-lg font-semibold transition-all duration-200"
             >
-              <span className="text-2xl mr-3">🇪🇸</span>
+              <span className="text-2xl mr-3">🇲🇽</span>
               <div className="text-left flex-1">
                 <div className="font-bold">Español</div>
                 <div className="text-sm font-normal opacity-80">Spanish</div>
