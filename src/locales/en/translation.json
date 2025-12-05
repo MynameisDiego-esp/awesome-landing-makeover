@@ -1,10 +1,13 @@
 {
   "hero": {
     "readyToSweatLess": "READY TO SWEAT LESS?",
+    "readyToStopSweating": "Ready to stop sweating?",
     "scrollToNext": "Go to next section"
   },
   "nav": {
-    "stopSweatForever": "Stop underarm sweat <bold>forever</bold>"
+    "stopSweatForever": "Stop underarm sweat <bold>forever</bold>",
+    "stopSweatForeverMobile": "Stop sweat <bold>forever</bold>",
+    "stopSweatForeverDesktop": "Stop underarm sweat  <bold>forever</bold>"
   },
   "problem": {
     "title": "Stop living<br />with <cyan>sweat</cyan> and<br /><cyan>bad odor</cyan>",
@@ -18,7 +21,9 @@
       "4": "Worry about your own odor",
       "5": "Sweat even in cold weather"
     },
-    "cta": "Schedule Your Sweat Test"
+    "cta": "Schedule Your Sweat Test",
+    "ctaWithConsultation": "Schedule Your Consultation + Sweat Test",
+    "chairAlt": "Chair"
   },
   "solution": {
     "title": "The Solution: <cyan>miraDry®</cyan> — Permanent",
@@ -47,7 +52,14 @@
       }
     },
     "message": "You are not <italic>\"a sweaty person\"</italic>",
-    "messageSubtext": "Your sweat glands are hyperactive — and they are treatable."
+    "messageSubtext": "Your sweat glands are hyperactive — and they are treatable.",
+    "stepAlt": {
+      "1": "Step 1 of the procedure",
+      "2": "Step 2 of the procedure",
+      "3": "Step 3 of the procedure",
+      "4": "Step 4 of the procedure"
+    },
+    "resultAlt": "Treatment result"
   },
   "whyChooseUs": {
     "title": "Why patients <cyan>choose us</cyan>",
@@ -58,7 +70,9 @@
     "before": "Before",
     "after": "After",
     "beforeMiradry": "Before miradry",
-    "afterMiradry": "After miradry"
+    "afterMiradry": "After miradry",
+    "certificationAlt": "miraDry Certification",
+    "premierHospitalAlt": "Premier Hospital"
   },
   "procedure": {
     "title": "What to expect from the <italic>procedure</italic>",
@@ -83,6 +97,8 @@
   "candidate": {
     "title": "Are you a good<br /><primary>candidate?</primary>",
     "subtitle": "MiraDry is ideal for you if:",
+    "candidateAlt": "Ideal candidate",
+    "premierHospitalAlt": "PREMIER Hospital",
     "criteria": {
       "1": "You wet or stain shirts with sweat regardless of the weather",
       "2": "It limits you socially or professionally",
@@ -115,11 +131,26 @@
       "repetitiveExpense": "Repetitive expense",
       "highRiskCost": "High risk/cost",
       "singleInvestment": "Single investment"
-    }
+    },
+    "bestOption": "✓ Best recommended option"
   },
   "testimonials": {
     "title": "What our <cyan>patients</cyan> say",
-    "subtitle": "Thousands of lives transformed with permanent results"
+    "subtitle": "Thousands of lives transformed with permanent results",
+    "items": [
+      {
+        "text": "I went to see Dr. Sarah. She did PRP and CO2 laser restoration on my face. I won't show photos right now because I'm healing. I live in Nevada and traveled to Mexico.\nI've been visiting her for about three or four years for different modalities. It's incredible.\nCheck it out!",
+        "name": "Rita B."
+      },
+      {
+        "text": "I was referred to Dr. Salas Mónica Garibay Silver, Medical Tourism Liaison, who has helped me on numerous occasions to find the right doctor, hospital, or related services for my needs. Dr. Salas and her team are kind and professional. After my skin consultation for several issues, Dr. Salas provided me with a written plan to address each one with therapies and medications. This is the first time I've done this, as most doctors explain how they will treat my problems, but there's rarely such a detailed plan. My first therapy was with nurse Claudia, who was very detailed both in her explanation of the treatment and in the follow-up. I must say I am very satisfied and highly recommend Dr. Salas and her team.",
+        "name": "David C."
+      },
+      {
+        "text": "Excellent clinic, Dr. Salas is one of the best dermatologists and has her state-of-the-art team for your skin.",
+        "name": "Jennifer M."
+      }
+    ]
   },
   "footer": {
     "description": "Your definitive solution to permanently stop underarm sweat. Transform your confidence with miraDry®.",
@@ -179,7 +210,8 @@
         "description": "Treatment tailored to you"
       }
     },
-    "note": "We are the only center in Tijuana that offers miraDry®"
+    "note": "We are the only center in Tijuana that offers miraDry®",
+    "callNow": "Call Now"
   },
   "finalCTA": {
     "yourNextStep": "Your next <italic>step</italic>",
@@ -189,7 +221,12 @@
       "sweatTest": "Sweat test",
       "personalizedPlan": "Personalized treatment plan"
     },
-    "cta": "Schedule Your Sweat Test"
+    "cta": "Schedule Your Sweat Test",
+    "ctaWithConsultation": "Schedule Your Consultation + Sweat Test"
+  },
+  "mobileScroll": {
+    "scrollUp": "Scroll up",
+    "scrollDown": "Scroll down"
   }
 }
 

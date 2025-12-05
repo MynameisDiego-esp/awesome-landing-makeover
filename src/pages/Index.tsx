@@ -1,6 +1,7 @@
 import FloatingNav from "@/components/FloatingNav";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import LanguageModal from "@/components/LanguageModal";
+import MobileScrollToggle from "@/components/MobileScrollToggle";
 import HeroSection from "@/components/HeroSection";
 import ProblemSectionCustom from "@/components/ProblemSectionCustom";
 import SolutionSectionCustom from "@/components/SolutionSectionCustom";
@@ -20,6 +21,7 @@ const Index = () => {
       <LanguageModal />
       <FloatingNav />
       <LanguageSwitcher />
+      <MobileScrollToggle />
       <AccessibilityPanel />
       <HeroSection />
       <ProblemSectionCustom />

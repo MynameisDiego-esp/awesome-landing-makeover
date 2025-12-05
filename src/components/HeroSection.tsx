@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import heroBg from "@/assets/hero-woman.png";
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -112,7 +114,10 @@ const HeroSection = () => {
     <section
       ref={sectionRef}
       id="inicio"
-      className="relative min-h-screen overflow-x-hidden overflow-y-visible"
+      className="relative min-h-screen overflow-x-hidden"
+      style={{
+        WebkitOverflowScrolling: 'touch',
+      }}
     >
       {/* Background Gradient - Azul izquierda, Amarillo derecha - abarca toda la altura de la página */}
       <div
@@ -122,7 +127,7 @@ const HeroSection = () => {
       ></div>
 
       {/* Content Container - Ajustado para el navbar */}
-      <div className="relative container mx-auto px-4 flex items-center min-h-screen pt-0 pb-16 md:pt-2 md:pb-20 lg:pt-16 lg:pt-24">
+      <div className="relative container mx-auto px-4 flex items-center min-h-screen pt-0 pb-16 md:pt-2 md:pb-20 lg:pt-16 lg:pt-24" style={{ minHeight: '100vh', height: 'auto' }}>
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center w-full">
           
           {/* Texto - Centrado en móvil, izquierda en desktop */}
@@ -142,12 +147,12 @@ const HeroSection = () => {
               animation: 'blink 2s ease-in-out infinite',
               width: '100%',
             }}
-            aria-label="Ir a la siguiente sección"
+            aria-label={t('hero.scrollToNext')}
           >
             <p className="text-xl sm:text-2xl font-sans font-semibold text-black mb-3 sm:mb-4 block md:hidden">
-              Listo para dejar de sudar?
+              {t('hero.readyToStopSweating')}
             </p>
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] 2xl:text-[11rem] font-display mb-4 leading-[0.9] md:mt-16 lg:mt-24 xl:mt-32">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl 2xl:text-[9rem] font-display mb-4 leading-[0.9] md:mt-16 lg:mt-24 xl:mt-32">
               <span
                 className="text-black inline-block italic font-light tracking-tight"
                 style={{
@@ -185,7 +190,7 @@ const HeroSection = () => {
             <img
               src={heroBg}
               alt="Persona feliz"
-              className="w-full h-auto object-contain scale-[1.95] self-end"
+              className="w-full h-auto object-contain scale-[1.95] lg:scale-[1.7] xl:scale-[1.65] self-end"
               style={{ maxHeight: '95vh' }}
             />
           </div>

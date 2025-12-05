@@ -1,10 +1,13 @@
 {
   "hero": {
     "readyToSweatLess": "LISTO PARA SUDAR MENOS?",
+    "readyToStopSweating": "Listo para dejar de sudar?",
     "scrollToNext": "Ir a la siguiente sección"
   },
   "nav": {
-    "stopSweatForever": "Detén el sudor axilar para <bold>siempre</bold>"
+    "stopSweatForever": "Detén el sudor axilar para <bold>siempre</bold>",
+    "stopSweatForeverMobile": "Detén el sudor <bold>para siempre</bold>",
+    "stopSweatForeverDesktop": "Detén el sudor axilar para  <bold>siempre</bold>"
   },
   "problem": {
     "title": "Basta de vivir<br />con <cyan>sudor</cyan> y<br /><cyan>mal olor</cyan>",
@@ -18,7 +21,9 @@
       "4": "Te preocupa tu propio olor",
       "5": "Sudas incluso con clima frío"
     },
-    "cta": "Agenda tu Prueba de Sudoración"
+    "cta": "Agenda tu Prueba de Sudoración",
+    "ctaWithConsultation": "Agenda tu Consulta + Prueba de Sudoración",
+    "chairAlt": "Sillón"
   },
   "solution": {
     "title": "La Solución: <cyan>miraDry®</cyan> — Reducción",
@@ -47,7 +52,14 @@
       }
     },
     "message": "No eres <italic>\"una persona sudorosa\"</italic>",
-    "messageSubtext": "Tus glándulas sudoríparas están hiperactivas — y son tratables."
+    "messageSubtext": "Tus glándulas sudoríparas están hiperactivas — y son tratables.",
+    "stepAlt": {
+      "1": "Paso 1 del procedimiento",
+      "2": "Paso 2 del procedimiento",
+      "3": "Paso 3 del procedimiento",
+      "4": "Paso 4 del procedimiento"
+    },
+    "resultAlt": "Resultado del tratamiento"
   },
   "whyChooseUs": {
     "title": "Por qué los pacientes nos <cyan>eligen</cyan>",
@@ -58,7 +70,9 @@
     "before": "Antes",
     "after": "Después",
     "beforeMiradry": "Antes de miradry",
-    "afterMiradry": "Después de miradry"
+    "afterMiradry": "Después de miradry",
+    "certificationAlt": "Certificación miraDry",
+    "premierHospitalAlt": "Premier Hospital"
   },
   "procedure": {
     "title": "Qué esperar del <italic>procedimiento</italic>",
@@ -83,6 +97,8 @@
   "candidate": {
     "title": "¿Eres buen<br /><primary>candidato?</primary>",
     "subtitle": "MiraDry es ideal para ti si:",
+    "candidateAlt": "Candidato ideal",
+    "premierHospitalAlt": "PREMIER Hospital",
     "criteria": {
       "1": "Mojás o manchas de sudor camisas sin importar el clima",
       "2": "Te limita social o profesionalmente",
@@ -115,11 +131,26 @@
       "repetitiveExpense": "Gasto repetitivo",
       "highRiskCost": "Alto riesgo/costo",
       "singleInvestment": "Inversión única"
-    }
+    },
+    "bestOption": "✓ Mejor opción recomendada"
   },
   "testimonials": {
     "title": "Lo que dicen nuestros <cyan>pacientes</cyan>",
-    "subtitle": "Miles de vidas transformadas con resultados permanentes"
+    "subtitle": "Miles de vidas transformadas con resultados permanentes",
+    "items": [
+      {
+        "text": "Fui a ver a la Dra. Sarah. Me hizo PRP y restauración láser de CO2 en la cara. No mostraré fotos ahora mismo porque estoy sanando. Vivo en Nevada y viajé a México.\nLlevo unos tres o cuatro años visitándola para diferentes modalidades. Es increíble.\n¡Échenle un vistazo!.",
+        "name": "Rita B."
+      },
+      {
+        "text": "Me recomendó a la Dra. Salas Mónica Garibay Silver, Enlace de Turismo Médico, quien me ha ayudado en numerosas ocasiones a encontrar el médico, el hospital o los servicios relacionados adecuados para mis necesidades. La Dra. Salas y su equipo son amables y profesionales. Después de mi consulta sobre la piel por varios problemas, la Dra. Salas me proporcionó un plan escrito para abordar cada uno con terapias y medicamentos. Esta es la primera vez que lo hago, ya que la mayoría de los médicos explican cómo tratarán mis problemas, pero rara vez hay un plan tan detallado. Mi primera terapia fue con la enfermera Claudia, quien fue muy detallada tanto en su explicación del tratamiento como en el seguimiento. Debo decir que estoy muy satisfecha y recomiendo ampliamente a la Dra. Salas y a su equipo.",
+        "name": "David C."
+      },
+      {
+        "text": "Excelente clinica, La Dra. Salas es uno de los mejores dermatologos y cuenta con su equipo de ultima generacion para su piel.",
+        "name": "Jennifer M."
+      }
+    ]
   },
   "footer": {
     "description": "Tu solución definitiva para detener el sudor axilar de forma permanente. Transforma tu confianza con miraDry®.",
@@ -179,7 +210,8 @@
         "description": "Tratamiento a tu medida"
       }
     },
-    "note": "Somos el único centro en Tijuana que ofrece miraDry®"
+    "note": "Somos el único centro en Tijuana que ofrece miraDry®",
+    "callNow": "Llamar Ahora"
   },
   "finalCTA": {
     "yourNextStep": "Tu siguiente <italic>paso</italic>",
@@ -189,7 +221,12 @@
       "sweatTest": "Prueba de sudoración",
       "personalizedPlan": "Plan de tratamiento personalizado"
     },
-    "cta": "Agenda tu Prueba de Sudoración"
+    "cta": "Agenda tu Prueba de Sudoración",
+    "ctaWithConsultation": "Agenda tu Consulta + Prueba de Sudoración"
+  },
+  "mobileScroll": {
+    "scrollUp": "Subir",
+    "scrollDown": "Bajar"
   }
 }
 

@@ -1,53 +1,56 @@
+import { useTranslation } from "react-i18next";
 import { Card } from "@/components/ui/card";
 import { Check, TrendingUpDown, X } from "lucide-react";
 
-const comparisons = [
-  {
-    option: "Antitranspirantes",
-    duration: "Diario",
-    invasive: "Químicos",
-    cost: "Costo de por vida",
-    isGood: false
-  },
-  {
-    option: "Botox",
-    duration: "4-6 meses",
-    invasive: "Inyecciones",
-    cost: "Gasto repetitivo",
-    isGood: false
-  },
-  {
-    option: "Cirugía ETS",
-    duration: "Permanente",
-    invasive: "Quirúrgico",
-    cost: "Alto riesgo/costo",
-    isGood: false
-  },
-  {
-    option: "miraDry",
-    duration: "Permanente",
-    invasive: "No quirúrgico",
-    cost: "Inversión única",
-    isGood: true
-  }
-];
-
-const attributes = [
-  { label: "Duración", key: "duration" as const },
-  { label: "Invasivo", key: "invasive" as const },
-  { label: "Costo a largo plazo", key: "cost" as const }
-];
-
 const ComparisonTable = () => {
+  const { t } = useTranslation();
+  
+  const comparisons = [
+    {
+      option: t('comparison.options.antiperspirants'),
+      duration: t('comparison.values.daily'),
+      invasive: t('comparison.values.chemical'),
+      cost: t('comparison.values.lifetimeCost'),
+      isGood: false
+    },
+    {
+      option: t('comparison.options.botox'),
+      duration: t('comparison.values.4to6months'),
+      invasive: t('comparison.values.injections'),
+      cost: t('comparison.values.repetitiveExpense'),
+      isGood: false
+    },
+    {
+      option: t('comparison.options.surgery'),
+      duration: t('comparison.values.permanent'),
+      invasive: t('comparison.values.surgical'),
+      cost: t('comparison.values.highRiskCost'),
+      isGood: false
+    },
+    {
+      option: t('comparison.options.miradry'),
+      duration: t('comparison.values.permanent'),
+      invasive: t('comparison.values.nonSurgical'),
+      cost: t('comparison.values.singleInvestment'),
+      isGood: true
+    }
+  ];
+
+  const attributes = [
+    { label: t('comparison.duration'), key: "duration" as const },
+    { label: t('comparison.invasive'), key: "invasive" as const },
+    { label: t('comparison.cost'), key: "cost" as const }
+  ];
+
   return (
     <section className="py-20 bg-accent/50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-foreground mb-4 animate-fade-in">
-            miraDry® vs Otras Opciones
+            {t('comparison.title')}
           </h2>
           <p className="text-xl text-center text-muted-foreground mb-12 animate-fade-in">
-            Compara y descubre por qué miraDry® es la mejor solución
+            {t('comparison.subtitle')}
           </p>
           
           {/* Versión móvil - Cards verticales */}
@@ -95,7 +98,7 @@ const ComparisonTable = () => {
                   {isMiradry && (
                     <div className="mt-4 pt-4 border-t border-emerald-300">
                       <p className="text-sm text-emerald-700 font-semibold text-center">
-                        ✓ Mejor opción recomendada
+                        {t('comparison.bestOption')}
                       </p>
                     </div>
                   )}
@@ -110,7 +113,7 @@ const ComparisonTable = () => {
               <div className="min-w-[800px]">
                 {/* Header Row - First row with option names as headers */}
                 <div className="grid grid-cols-5 gap-4 pb-4 border-b-2 border-primary/20 mb-4">
-                  <div className="font-bold text-foreground">Opción</div>
+                  <div className="font-bold text-foreground">{t('comparison.option')}</div>
                   {comparisons.map((item, index) => {
                     const isMiradry = item.isGood;
                     return (

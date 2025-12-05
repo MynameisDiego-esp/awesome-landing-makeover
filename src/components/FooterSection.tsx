@@ -177,8 +177,28 @@ const FooterSection = () => {
             <Button 
               variant="cta" 
               size="lg" 
-              className="w-full font-sans"
-              onClick={() => scrollToSection("contacto")}
+              className="w-full font-sans bg-primary hover:bg-primary/90 blink-animation neon-glow"
+              onClick={() => {
+                const contactSection = document.getElementById("contacto");
+                if (contactSection) {
+                  // Buscar el formulario dentro de la sección
+                  const form = contactSection.querySelector('form');
+                  if (form) {
+                    // Hacer scroll al formulario
+                    form.scrollIntoView({ behavior: "smooth", block: "center" });
+                    // Enfocar el primer campo del formulario después de un pequeño delay
+                    setTimeout(() => {
+                      const firstInput = form.querySelector('input, textarea') as HTMLElement;
+                      if (firstInput) {
+                        firstInput.focus();
+                      }
+                    }, 500);
+                  } else {
+                    // Si no hay formulario, hacer scroll a la sección
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                  }
+                }
+              }}
             >
               {t('footer.scheduleConsultation')}
             </Button>
@@ -212,6 +232,38 @@ const FooterSection = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes blink {
+          0%, 100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.5;
+          }
+        }
+        @keyframes neon-pulse {
+          0%, 100% {
+            box-shadow: 0 0 8px hsl(177 100% 40% / 0.5),
+                        0 0 15px hsl(177 100% 40% / 0.3),
+                        0 0 25px hsl(177 100% 40% / 0.2),
+                        0 0 35px hsl(177 100% 40% / 0.1);
+          }
+          50% {
+            box-shadow: 0 0 15px hsl(177 100% 40% / 0.7),
+                        0 0 25px hsl(177 100% 40% / 0.5),
+                        0 0 35px hsl(177 100% 40% / 0.3),
+                        0 0 45px hsl(177 100% 40% / 0.2),
+                        0 0 55px hsl(177 100% 40% / 0.1);
+          }
+        }
+        .blink-animation {
+          animation: blink 0.8s ease-in-out infinite;
+        }
+        .neon-glow {
+          animation: neon-pulse 1.5s ease-in-out infinite;
+        }
+      `}</style>
     </footer>
   );
 };

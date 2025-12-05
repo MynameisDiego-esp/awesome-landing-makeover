@@ -1,19 +1,21 @@
 import { useState, useEffect, useRef } from "react";
+import { useTranslation, Trans } from "react-i18next";
 import step1 from "@/assets/step1.jpg";
 import step2 from "@/assets/step2.jpg";
 import step3 from "@/assets/step3.jpg";
 import step4 from "@/assets/step4.jpg";
 import heroImage from "@/assets/hero-image.jpg";
 
-const benefits = [
-  { title: "Sin sudor", text: "Reducción inmediata del exceso de sudoración." },
-  { title: "Más confianza", text: "Levanta los brazos sin preocuparte." },
-  { title: "Ropa limpia", text: "Adiós a las manchas en camisas y blusas." },
-  { title: "Duradero", text: "Efecto prolongado por meses." },
-  { title: "Seguro", text: "Tratamiento médico aprobado y controlado." },
-];
-
 const SolutionSectionCustom = () => {
+  const { t } = useTranslation();
+  
+  const benefits = [
+    { title: t('solution.benefits.noSweat.title'), text: t('solution.benefits.noSweat.text') },
+    { title: t('solution.benefits.moreConfidence.title'), text: t('solution.benefits.moreConfidence.text') },
+    { title: t('solution.benefits.cleanClothes.title'), text: t('solution.benefits.cleanClothes.text') },
+    { title: t('solution.benefits.durable.title'), text: t('solution.benefits.durable.text') },
+    { title: t('solution.benefits.safe.title'), text: t('solution.benefits.safe.text') },
+  ];
   const [clickedImage, setClickedImage] = useState<number | null>(null);
   const [visibleImages, setVisibleImages] = useState<Set<number>>(new Set());
   const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -27,32 +29,32 @@ const SolutionSectionCustom = () => {
   const images = [
     { 
       src: step1, 
-      alt: "Paso 1 del procedimiento", 
+      alt: t('solution.stepAlt.1'), 
       position: "left-top",
       benefit: benefits[0] // "Sin sudor"
     },
     { 
       src: step2, 
-      alt: "Paso 2 del procedimiento", 
+      alt: t('solution.stepAlt.2'), 
       position: "left-bottom",
       benefit: benefits[4] // "Seguro"
     },
     { 
       src: heroImage, 
-      alt: "Resultado del tratamiento", 
+      alt: t('solution.resultAlt'), 
       position: "center", 
       isMain: true,
       benefit: benefits[1] // "Más confianza"
     },
     { 
       src: step3, 
-      alt: "Paso 3 del procedimiento", 
+      alt: t('solution.stepAlt.3'), 
       position: "right-top",
       benefit: benefits[2] // "Ropa limpia"
     },
     { 
       src: step4, 
-      alt: "Paso 4 del procedimiento", 
+      alt: t('solution.stepAlt.4'), 
       position: "right-bottom",
       benefit: benefits[3] // "Duradero"
     }
@@ -122,15 +124,19 @@ const SolutionSectionCustom = () => {
     <section id="solucion" className="bg-[image:var(--gradient-accent)] py-20" style={{ background: "var(--gradient-accent)" }}>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-display font-bold text-center mb-4 animate-fade-in">
-          La Solución: <span className="text-cyan-600">miraDry®</span> — Reducción
+          <Trans
+            i18nKey="solution.title"
+            components={{
+              cyan: <span className="text-cyan-600" />
+            }}
+          />
         </h2>
         <h3 className="text-3xl font-sans font-bold text-center mb-8 animate-fade-in-slow">
-          Permanente de Sudor y Olor
+          {t('solution.subtitle')}
         </h3>
         
         <p className="text-center text-xl max-w-3xl mx-auto mb-16 text-gray-700 animate-fade-in-slow font-body">
-          miraDry utiliza energía térmica controlada para eliminar las glándulas sudoríparas 
-          y odoríficas bajo la axila. Una vez eliminadas, no vuelven a regenerarse.
+          {t('solution.description')}
         </p>
         
         {/* Galería móvil - Patrón 2-1-2 */}
@@ -390,8 +396,15 @@ const SolutionSectionCustom = () => {
         
         <div className="mt-16 max-w-5xl mx-auto bg-cyan-200 border-l-4 p-10 rounded-r-lg animate-fade-in-slow" style={{ borderColor: '#00E5DD' }}>
           <p className="text-2xl text-gray-800">
-            <strong className="block mb-4 text-3xl">No eres <span className="font-display italic">"una persona sudorosa"</span></strong>
-            <span className="text-black text-2xl font-bold block ml-16">Tus glándulas sudoríparas están hiperactivas — y son tratables.</span>
+            <strong className="block mb-4 text-3xl">
+              <Trans
+                i18nKey="solution.message"
+                components={{
+                  italic: <span className="font-display italic" />
+                }}
+              />
+            </strong>
+            <span className="text-black text-2xl font-bold block ml-16">{t('solution.messageSubtext')}</span>
           </p>
         </div>
       </div>

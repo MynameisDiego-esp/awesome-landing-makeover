@@ -43,7 +43,7 @@ const WhyChooseUsSectionCustom = () => {
                     <div className="w-32 h-32 flex items-center justify-center overflow-hidden">
                       <img 
                         src={certificacionImg} 
-                        alt="Certificación miraDry" 
+                        alt={t('whyChooseUs.certificationAlt')} 
                         className="w-full h-full object-contain"
                       />
                     </div>
@@ -102,7 +102,7 @@ const WhyChooseUsSectionCustom = () => {
                 <div className="relative w-full h-full">
                   <img
                     src={tristeImg}
-                    alt="Antes de miradry"
+                    alt={t('whyChooseUs.beforeMiradry')}
                     className="w-full h-full object-contain rounded-xl"
                     style={{ transform: 'scale(1.3)' }}
                     loading="lazy"
@@ -121,7 +121,7 @@ const WhyChooseUsSectionCustom = () => {
                 <div className="relative w-full h-full">
                   <img
                     src={felizzImg}
-                    alt="Después de miradry"
+                    alt={t('whyChooseUs.afterMiradry')}
                     className="w-full h-full object-contain rounded-xl"
                     style={{ transform: 'scaleX(-1) scale(1.3)' }}
                     loading="lazy"
@@ -153,7 +153,7 @@ const WhyChooseUsSectionCustom = () => {
                     <div className="relative px-3 md:px-3 py-3 transition-all duration-500 ease-out group-hover:scale-105">
                       <img
                         src={premierImg}
-                        alt="Premier Hospital"
+                        alt={t('whyChooseUs.premierHospitalAlt')}
                         className="h-18 md:h-18 w-auto object-contain filter brightness-110 transition-all duration-500 ease-out group-hover:brightness-125 group-hover:drop-shadow-lg"
                         loading="lazy"
                       />
