@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import step1 from "@/assets/step1.jpg";
 import step2 from "@/assets/step2.jpg";
 import step3 from "@/assets/step3.jpg";
@@ -13,6 +14,16 @@ const benefits = [
 ];
 
 const SolutionSectionCustom = () => {
+  const [clickedImage, setClickedImage] = useState<number | null>(null);
+  const [visibleImages, setVisibleImages] = useState<Set<number>>(new Set());
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
+  
+  // Función para asignar refs
+  const setImageRef = (index: number) => (el: HTMLDivElement | null) => {
+    if (el) {
+      imageRefs.current[index] = el;
+    }
+  };
   const images = [
     { 
       src: step1, 
@@ -47,6 +58,66 @@ const SolutionSectionCustom = () => {
     }
   ];
 
+  // Intersection Observer para detectar cuando las imágenes entran en el viewport
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    // Función para inicializar observers
+    const initObservers = () => {
+      imageRefs.current.forEach((ref, index) => {
+        if (!ref) return;
+
+        // Limpiar observer anterior si existe
+        const existingObserver = observers[index];
+        if (existingObserver) {
+          existingObserver.disconnect();
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setVisibleImages((prev) => {
+                  const newSet = new Set(prev);
+                  newSet.add(index);
+                  return newSet;
+                });
+              } else {
+                // Eliminar del set cuando sale del viewport
+                setVisibleImages((prev) => {
+                  const newSet = new Set(prev);
+                  newSet.delete(index);
+                  return newSet;
+                });
+              }
+            });
+          },
+          {
+            threshold: [0.1, 0.2, 0.3], // Múltiples thresholds para mejor detección
+            rootMargin: "0px 0px -10% 0px", // Más sensible en móvil
+          }
+        );
+
+        observer.observe(ref);
+        observers[index] = observer;
+      });
+    };
+
+    // Esperar a que los refs estén listos
+    const timeoutId = setTimeout(initObservers, 200);
+    
+    // También intentar después de un render adicional
+    const timeoutId2 = setTimeout(initObservers, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(timeoutId2);
+      observers.forEach((observer) => {
+        if (observer) observer.disconnect();
+      });
+    };
+  }, [images.length]); // Dependencia en la longitud del array de imágenes
+
   return (
     <section id="solucion" className="bg-[image:var(--gradient-accent)] py-20" style={{ background: "var(--gradient-accent)" }}>
       <div className="container mx-auto px-4">
@@ -62,42 +133,178 @@ const SolutionSectionCustom = () => {
           y odoríficas bajo la axila. Una vez eliminadas, no vuelven a regenerarse.
         </p>
         
-        {/* Galería móvil - Solo imagen principal */}
-        <div className="block md:hidden max-w-2xl mx-auto mb-8">
-          {images.filter(img => img.isMain).map((image, index) => (
-            <div
-              key={index}
-              className="relative group animate-fade-in"
-              style={{ 
-                animationDelay: '0.1s',
-                opacity: 0,
-                animationFillMode: 'forwards'
-              }}
-            >
-              <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                  style={{ 
-                    aspectRatio: '4/3',
-                    clipPath: 'inset(0 round 1rem)',
+        {/* Galería móvil - Patrón 2-1-2 */}
+        <div className="block md:hidden max-w-2xl mx-auto mb-8 space-y-2">
+          {/* Fila 1: 2 imágenes (step1 y step2) */}
+          <div className="flex gap-2">
+            {[images[0], images[1]].map((image, idx) => {
+              const imageIndex = idx;
+              const isClicked = clickedImage === imageIndex;
+              const isVisible = visibleImages.has(imageIndex);
+              return (
+                <div 
+                  key={idx} 
+                  ref={(el) => {
+                    if (el) imageRefs.current[imageIndex] = el;
                   }}
-                />
-                {/* Overlay siempre visible en móvil */}
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 rounded-2xl">
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-cyan-400 mb-2 font-display">
-                      {image.benefit.title}
-                    </h3>
-                    <p className="text-white text-sm font-body">
-                      {image.benefit.text}
-                    </p>
+                  className="relative group animate-fade-in flex-1 cursor-pointer"
+                  style={{ 
+                    animationDelay: `${idx * 0.1}s`,
+                    opacity: 0,
+                    animationFillMode: 'forwards'
+                  }}
+                  onClick={() => {
+                    setClickedImage(imageIndex);
+                    setTimeout(() => setClickedImage(null), 5000);
+                  }}
+                >
+                  <div className={`relative w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ${
+                    isClicked ? 'scale-95 ring-4 ring-cyan-400 ring-opacity-75' : 'scale-100'
+                  }`}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className={`w-full h-full object-cover transition-transform duration-500 ${
+                        isClicked ? 'scale-110 brightness-110' : 'scale-100'
+                      }`}
+                      style={{ 
+                        aspectRatio: '4/3',
+                        clipPath: 'inset(0 round 1rem)',
+                      }}
+                      loading="lazy"
+                    />
+                    {/* Overlay visible al hacer scroll o clic */}
+                    <div className={`absolute inset-0 backdrop-blur-sm flex items-center justify-center p-2 rounded-2xl transition-all duration-700 ease-out ${
+                      isVisible || isClicked ? 'bg-black/60 opacity-100' : 'bg-black/60 opacity-0'
+                    }`}>
+                      <div className={`text-center transition-all duration-700 ease-out ${
+                        isVisible || isClicked 
+                          ? 'translate-y-0 scale-100 opacity-100' 
+                          : 'translate-y-8 scale-95 opacity-0'
+                      }`}>
+                        <h3 className="text-xs font-bold text-cyan-400 mb-1 font-display">
+                          {image.benefit.title}
+                        </h3>
+                        <p className="text-white text-[10px] font-body">
+                          {image.benefit.text}
+                        </p>
+                      </div>
+                    </div>
                   </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Fila 2: 1 imagen (heroImage - principal) */}
+          <div 
+            ref={setImageRef(2)}
+            className="relative group animate-fade-in cursor-pointer"
+            style={{ 
+              animationDelay: '0.2s',
+              opacity: 0,
+              animationFillMode: 'forwards'
+            }}
+            onClick={() => {
+              setClickedImage(2);
+              setTimeout(() => setClickedImage(null), 5000);
+            }}
+          >
+            <div className={`relative w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ${
+              clickedImage === 2 ? 'scale-95 ring-4 ring-cyan-400 ring-opacity-75' : 'scale-100'
+            }`}>
+              <img
+                src={images[2].src}
+                alt={images[2].alt}
+                className={`w-full h-full object-cover transition-transform duration-500 ${
+                  clickedImage === 2 ? 'scale-110 brightness-110' : 'scale-100'
+                }`}
+                style={{ 
+                  aspectRatio: '4/3',
+                  clipPath: 'inset(0 round 1rem)',
+                }}
+                loading="lazy"
+              />
+              {/* Overlay visible al hacer scroll o clic */}
+              <div className={`absolute inset-0 backdrop-blur-sm flex items-center justify-center p-4 rounded-2xl transition-all duration-700 ease-out ${
+                visibleImages.has(2) || clickedImage === 2 ? 'bg-black/60 opacity-100' : 'bg-black/60 opacity-0'
+              }`}>
+                <div className={`text-center transition-all duration-700 ease-out ${
+                  visibleImages.has(2) || clickedImage === 2
+                    ? 'translate-y-0 scale-100 opacity-100'
+                    : 'translate-y-8 scale-95 opacity-0'
+                }`}>
+                  <h3 className="text-sm font-bold text-cyan-400 mb-1 font-display">
+                    {images[2].benefit.title}
+                  </h3>
+                  <p className="text-white text-xs font-body">
+                    {images[2].benefit.text}
+                  </p>
                 </div>
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Fila 3: 2 imágenes (step3 y step4) */}
+          <div className="flex gap-2">
+            {[images[3], images[4]].map((image, idx) => {
+              const imageIndex = idx + 3;
+              const isClicked = clickedImage === imageIndex;
+              const isVisible = visibleImages.has(imageIndex);
+              return (
+                <div 
+                  key={idx} 
+                  ref={(el) => {
+                    if (el) imageRefs.current[imageIndex] = el;
+                  }}
+                  className="relative group animate-fade-in flex-1 cursor-pointer"
+                  style={{ 
+                    animationDelay: `${(idx + 3) * 0.1}s`,
+                    opacity: 0,
+                    animationFillMode: 'forwards'
+                  }}
+                  onClick={() => {
+                    setClickedImage(imageIndex);
+                    setTimeout(() => setClickedImage(null), 5000);
+                  }}
+                >
+                  <div className={`relative w-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ${
+                    isClicked ? 'scale-95 ring-4 ring-cyan-400 ring-opacity-75' : 'scale-100'
+                  }`}>
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className={`w-full h-full object-cover transition-transform duration-500 ${
+                        isClicked ? 'scale-110 brightness-110' : 'scale-100'
+                      }`}
+                      style={{ 
+                        aspectRatio: '4/3',
+                        clipPath: 'inset(0 round 1rem)',
+                      }}
+                      loading="lazy"
+                    />
+                    {/* Overlay visible al hacer scroll o clic */}
+                    <div className={`absolute inset-0 backdrop-blur-sm flex items-center justify-center p-2 rounded-2xl transition-all duration-700 ease-out ${
+                      isVisible || isClicked ? 'bg-black/60 opacity-100' : 'bg-black/60 opacity-0'
+                    }`}>
+                      <div className={`text-center transition-all duration-700 ease-out ${
+                        isVisible || isClicked
+                          ? 'translate-y-0 scale-100 opacity-100'
+                          : 'translate-y-8 scale-95 opacity-0'
+                      }`}>
+                        <h3 className="text-xs font-bold text-cyan-400 mb-1 font-display">
+                          {image.benefit.title}
+                        </h3>
+                        <p className="text-white text-[10px] font-body">
+                          {image.benefit.text}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Galería desktop - Grid completo con hover */}
@@ -123,31 +330,50 @@ const SolutionSectionCustom = () => {
               gridClasses += ' md:col-start-3 md:row-start-2';
             }
             
+            const isClicked = clickedImage === index;
+            const isVisible = visibleImages.has(index);
             return (
               <div
                 key={index}
-                className={gridClasses}
+                ref={setImageRef(index)}
+                className={`${gridClasses} cursor-pointer`}
                 style={{ 
                   animationDelay: `${index * 0.1}s`,
                   opacity: 0,
                   animationFillMode: 'forwards'
                 }}
+                onClick={() => {
+                  setClickedImage(index);
+                  setTimeout(() => setClickedImage(null), 5000);
+                }}
               >
-                <div className="absolute -inset-2 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"></div>
-                <div className="relative w-full h-full overflow-hidden rounded-2xl shadow-2xl">
+                <div className={`absolute -inset-2 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-3xl blur-xl transition-all duration-500 ${
+                  isClicked ? 'opacity-60 scale-105' : 'opacity-20 group-hover:opacity-40'
+                }`}></div>
+                <div className={`relative w-full h-full overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ${
+                  isClicked ? 'scale-95 ring-4 ring-cyan-400 ring-opacity-75' : 'scale-100'
+                }`}>
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full object-cover transition-transform duration-500 ${
+                      isClicked ? 'scale-115 brightness-110' : 'scale-100 group-hover:scale-110'
+                    }`}
                     style={{ 
                       aspectRatio: isMain ? '1/2' : '1/1',
                       clipPath: 'inset(0 round 1rem)',
                       height: '100%'
                     }}
                   />
-                  {/* Overlay con texto del beneficio */}
-                  <div className="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out flex items-center justify-center p-6 rounded-2xl">
-                    <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 ease-in-out">
+                  {/* Overlay con texto del beneficio - visible al hacer scroll o clic */}
+                  <div className={`absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-6 rounded-2xl transition-all duration-700 ease-out ${
+                    isVisible || isClicked ? 'opacity-100' : 'opacity-0'
+                  }`}>
+                    <div className={`text-center transition-all duration-700 ease-out ${
+                      isVisible || isClicked
+                        ? 'translate-y-0 scale-100 opacity-100'
+                        : 'translate-y-8 scale-95 opacity-0'
+                    }`}>
                       <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 mb-3 font-display">
                         {image.benefit.title}
                       </h3>

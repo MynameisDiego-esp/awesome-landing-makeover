@@ -143,6 +143,30 @@ const WhyChooseUsSectionCustom = () => {
                   {t('whyChooseUs.beforeMiradry')}
                 </button>
 
+                {/* Premier image badge - Centrada entre botones, pegada al piso */}
+                <div className="absolute left-[20%] right-[20%] -bottom-20 md:-bottom-28 z-40 pointer-events-none">
+                  <div className="relative group animate-fade-in-slow">
+                    {/* Elegant background with subtle glow */}
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl transform group-hover:scale-110 transition-all duration-500 ease-out group-hover:border-cyan-400/50 group-hover:shadow-cyan-400/30 group-hover:bg-black/80"></div>
+                    
+                    {/* Image container with padding */}
+                    <div className="relative px-3 md:px-3 py-3 transition-all duration-500 ease-out group-hover:scale-105">
+                      <img
+                        src={premierImg}
+                        alt="Premier Hospital"
+                        className="h-18 md:h-18 w-auto object-contain filter brightness-110 transition-all duration-500 ease-out group-hover:brightness-125 group-hover:drop-shadow-lg"
+                        loading="lazy"
+                      />
+                    </div>
+                    
+                    {/* Subtle accent line */}
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60 group-hover:opacity-100 group-hover:h-1 transition-all duration-500"></div>
+                    
+                    {/* Glow effect on hover */}
+                    <div className="absolute inset-0 rounded-xl bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-all duration-500 blur-xl -z-10"></div>
+                  </div>
+                </div>
+
                 {/* Right button - Después */}
                 <button
                   onClick={() => setSelectedView("despues")}
@@ -154,30 +178,6 @@ const WhyChooseUsSectionCustom = () => {
                 >
                   {t('whyChooseUs.afterMiradry')}
                 </button>
-              </div>
-
-              {/* Premier image badge - bottom right - Oculto en móvil */}
-              <div className="hidden md:block absolute -bottom-36 right-20 z-40">
-                <div className="relative group animate-fade-in-slow">
-                  {/* Elegant background with subtle glow */}
-                  <div className="absolute inset-0 bg-black/70 backdrop-blur-sm rounded-xl border border-white/20 shadow-xl transform group-hover:scale-110 transition-all duration-500 ease-out group-hover:border-cyan-400/50 group-hover:shadow-cyan-400/30 group-hover:bg-black/80"></div>
-                  
-                  {/* Image container with padding */}
-                  <div className="relative px-4 py-3 transition-all duration-500 ease-out group-hover:scale-105">
-                    <img
-                      src={premierImg}
-                      alt="Premier Hospital"
-                      className="h-20 md:h-28 w-auto object-contain filter brightness-110 transition-all duration-500 ease-out group-hover:brightness-125 group-hover:drop-shadow-lg"
-                      loading="lazy"
-                    />
-                  </div>
-                  
-                  {/* Subtle accent line */}
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60 group-hover:opacity-100 group-hover:h-1 transition-all duration-500"></div>
-                  
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 rounded-xl bg-cyan-400/0 group-hover:bg-cyan-400/10 transition-all duration-500 blur-xl -z-10"></div>
-                </div>
               </div>
             </div>
           </div>

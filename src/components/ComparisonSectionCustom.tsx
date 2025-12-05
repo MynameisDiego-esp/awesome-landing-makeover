@@ -82,10 +82,10 @@ const ComparisonSectionCustom = () => {
               className={getMobileCardClasses(item.isHighlighted)}
               style={getMobileCardStyle(item.isHighlighted, index)}
             >
-              <div className={`font-bold mb-2 text-base ${item.isHighlighted ? "text-white" : "text-gray-900"}`}>
+              <div className={`font-bold mb-2 text-base ${item.isHighlighted ? "text-cyan-700" : "text-gray-900"}`}>
                 {item.option}
               </div>
-              <div className={`text-sm space-y-1 ${item.isHighlighted ? "text-white" : "text-gray-700"}`}>
+              <div className={`text-sm space-y-1 ${item.isHighlighted ? "text-cyan-600" : "text-gray-700"}`}>
                 <div>
                   <span className="font-semibold">Duración:</span> {item.duration}
                 </div>
