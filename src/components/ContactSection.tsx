@@ -25,7 +25,7 @@ const ContactSection = () => {
     const consulta = formData.get('consulta') as string;
     
     // Email de destino
-    const emailDestino = 'docsalas@bajahaircenter.com';
+    const emailDestino = 'Bajahaircenter.transplant@gmail.com';
     
     // Crear asunto del email
     const asunto = encodeURIComponent('Nueva Prueba de Sudoración - Zero Sweat Clinic');
