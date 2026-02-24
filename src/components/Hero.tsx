@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle2, PlayCircle } from "lucide-react";
@@ -5,10 +6,11 @@ import { useState } from "react";
 import heroWoman from "@/assets/hero-woman.png";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [showVideo, setShowVideo] = useState(false);
 
   const handleConsultation = () => {
-    const contactSection = document.getElementById("contact");
+    const contactSection = document.getElementById("contacto");
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: "smooth" });
     }
@@ -33,7 +35,7 @@ const Hero = () => {
                 size="lg"
                 className="group bg-gradient-to-r from-[#00E5DD] via-[#A0FFD6] to-[#A0FFD6] hover:opacity-90 text-gray-900 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 text-xl px-10 py-7"
               >
-                Agenda tu Consulta + Prueba de Sudoración
+                {t('contact.title')}
                 <CheckCircle2 className="ml-2 w-6 h-6 group-hover:scale-110 transition-transform" />
               </Button>
             </div>
@@ -71,7 +73,7 @@ const Hero = () => {
               <img
                 src={heroWoman}
                 alt="Persona feliz y segura levantando los brazos sin preocupación"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover scale-90"
                 loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#00E5DD]/40 to-transparent" />
@@ -91,7 +93,7 @@ const Hero = () => {
             </div>
 
             {/* Trust indicators */}
-            <div className="absolute -top-4 -right-4 bg-white p-3 rounded-full shadow-lg opacity-0 animate-[scaleIn_0.6s_ease-out_1s_forwards]">
+            <div className="absolute top-4 right-4 bg-white p-3 rounded-full shadow-lg opacity-0 animate-[scaleIn_0.6s_ease-out_1s_forwards]">
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">

@@ -67,7 +67,17 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    height: auto;
+    min-height: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    position: relative;
+    overflow-y: auto;
   }
 }

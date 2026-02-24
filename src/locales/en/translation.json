@@ -1,0 +1,237 @@
+{
+  "hero": {
+    "readyToSweatLess": "READY TO SWEAT LESS?",
+    "readyToStopSweating": "Ready to stop sweating?",
+    "scrollToNext": "Go to next section"
+  },
+  "nav": {
+    "stopSweatForever": "Stop underarm sweat <bold>forever</bold>",
+    "stopSweatForeverMobile": "Stop sweat <bold>forever</bold>",
+    "stopSweatForeverDesktop": "Stop underarm sweat  <bold>forever</bold>"
+  },
+  "problem": {
+    "title": "Stop living<br />with <cyan>sweat</cyan> and<br /><cyan>bad odor</cyan>",
+    "badge": "FDA Approved • Non-surgical • 1-2 sessions • Permanent results",
+    "badgeMobile": "FDA Approved • Non-surgical • 1-2 sessions • Permanent",
+    "ifYou": "If you:",
+    "symptoms": {
+      "1": "Re-apply deodorant several times a day",
+      "2": "Stain your clothes in the armpit area",
+      "3": "Feel uncomfortable raising your arms in public",
+      "4": "Worry about your own odor",
+      "5": "Sweat even in cold weather"
+    },
+    "cta": "Schedule Your Sweat Test",
+    "ctaWithConsultation": "Schedule Your Consultation + Sweat Test",
+    "chairAlt": "Chair"
+  },
+  "solution": {
+    "title": "The Solution: <cyan>miraDry®</cyan> — Permanent",
+    "subtitle": "Reduction of Sweat and Odor",
+    "description": "miraDry uses controlled thermal energy to eliminate sweat and odor glands under the armpit. Once eliminated, they do not regenerate.",
+    "benefits": {
+      "noSweat": {
+        "title": "No sweat",
+        "text": "Immediate reduction of excessive sweating."
+      },
+      "moreConfidence": {
+        "title": "More confidence",
+        "text": "Raise your arms without worry."
+      },
+      "cleanClothes": {
+        "title": "Clean clothes",
+        "text": "Goodbye to stains on shirts and blouses."
+      },
+      "durable": {
+        "title": "Long-lasting",
+        "text": "Prolonged effect for months."
+      },
+      "safe": {
+        "title": "Safe",
+        "text": "Approved and controlled medical treatment."
+      }
+    },
+    "message": "You are not <italic>\"a sweaty person\"</italic>",
+    "messageSubtext": "Your sweat glands are hyperactive — and they are treatable.",
+    "stepAlt": {
+      "1": "Step 1 of the procedure",
+      "2": "Step 2 of the procedure",
+      "3": "Step 3 of the procedure",
+      "4": "Step 4 of the procedure"
+    },
+    "resultAlt": "Treatment result"
+  },
+  "whyChooseUs": {
+    "title": "Why patients <cyan>choose us</cyan>",
+    "certifiedCenter": "Certified Center",
+    "description": "We are the <bold>only center in Tijuana</bold> that offers miraDry, with patients traveling from all over the world. All procedures are performed by trained specialists under safety protocols. Anesthesia is used for your maximum comfort.",
+    "certifiedSpecialists": "Certified Specialists",
+    "safetyProtocols": "Safety Protocols",
+    "before": "Before",
+    "after": "After",
+    "beforeMiradry": "Before miradry",
+    "afterMiradry": "After miradry",
+    "certificationAlt": "miraDry Certification",
+    "premierHospitalAlt": "Premier Hospital"
+  },
+  "procedure": {
+    "title": "What to expect from the <italic>procedure</italic>",
+    "before": {
+      "title": "Before",
+      "step1": "Sweat Test",
+      "step2": "Candidate evaluation, we only treat the right patients (95% of candidates)"
+    },
+    "during": {
+      "title": "During",
+      "duration": "(60–90 min)",
+      "step1": "Local anesthesia for comfort",
+      "step2": "Application of miraDry in the axillary area"
+    },
+    "after": {
+      "title": "After",
+      "step1": "Normal activities the same day",
+      "step2": "Avoid intense exercise for 48–72 hours",
+      "step3": "Immediate and permanent results"
+    }
+  },
+  "candidate": {
+    "title": "Are you a good<br /><primary>candidate?</primary>",
+    "subtitle": "MiraDry is ideal for you if:",
+    "candidateAlt": "Ideal candidate",
+    "premierHospitalAlt": "PREMIER Hospital",
+    "criteria": {
+      "1": "You wet or stain shirts with sweat regardless of the weather",
+      "2": "It limits you socially or professionally",
+      "3": "You prefer a medical solution, not cosmetic",
+      "4": "You want to eliminate this problem permanently"
+    }
+  },
+  "comparison": {
+    "title": "miraDry® vs Other Options",
+    "subtitle": "Compare and discover why miraDry® is the best solution",
+    "option": "Option",
+    "duration": "Duration",
+    "invasive": "Invasive",
+    "cost": "Long-term cost",
+    "options": {
+      "antiperspirants": "Antiperspirants",
+      "botox": "Botox",
+      "surgery": "ETS Surgery",
+      "miradry": "miraDry"
+    },
+    "values": {
+      "daily": "Daily",
+      "4to6months": "4-6 months",
+      "permanent": "Permanent",
+      "chemical": "Chemical",
+      "injections": "Injections",
+      "surgical": "Surgical",
+      "nonSurgical": "Non-surgical",
+      "lifetimeCost": "Lifetime cost",
+      "repetitiveExpense": "Repetitive expense",
+      "highRiskCost": "High risk/cost",
+      "singleInvestment": "Single investment"
+    },
+    "bestOption": "✓ Best recommended option"
+  },
+  "testimonials": {
+    "title": "What our <cyan>patients</cyan> say",
+    "subtitle": "Thousands of lives transformed with permanent results",
+    "items": [
+      {
+        "text": "I went to see Dr. Sarah. She did PRP and CO2 laser restoration on my face. I won't show photos right now because I'm healing. I live in Nevada and traveled to Mexico.\nI've been visiting her for about three or four years for different modalities. It's incredible.\nCheck it out!",
+        "name": "Rita B."
+      },
+      {
+        "text": "I was referred to Dr. Salas Mónica Garibay Silver, Medical Tourism Liaison, who has helped me on numerous occasions to find the right doctor, hospital, or related services for my needs. Dr. Salas and her team are kind and professional. After my skin consultation for several issues, Dr. Salas provided me with a written plan to address each one with therapies and medications. This is the first time I've done this, as most doctors explain how they will treat my problems, but there's rarely such a detailed plan. My first therapy was with nurse Claudia, who was very detailed both in her explanation of the treatment and in the follow-up. I must say I am very satisfied and highly recommend Dr. Salas and her team.",
+        "name": "David C."
+      },
+      {
+        "text": "Excellent clinic, Dr. Salas is one of the best dermatologists and has her state-of-the-art team for your skin.",
+        "name": "Jennifer M."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Your definitive solution to permanently stop underarm sweat. Transform your confidence with miraDry®.",
+    "navigation": "Navigation",
+    "home": "Home",
+    "problem": "The Problem",
+    "solution": "The Solution",
+    "procedure": "Procedure",
+    "contact": "Contact",
+    "contactTitle": "Contact",
+    "phone": "Phone",
+    "phoneCallOnly": "For calls only",
+    "phoneMexico": "Mexico",
+    "phoneUSA": "USA",
+    "whatsappForMessages": "WhatsApp for messages",
+    "location": "Location",
+    "schedule": "Schedule",
+    "scheduleWeekdays": "Monday - Friday: 9:00 AM - 5:00 PM",
+    "scheduleSaturday": "Saturday: 8:00 AM - 4:00 PM",
+    "scheduleSunday": "Sunday: Closed",
+    "readyToStart": "Ready to get started?",
+    "readyDescription": "Schedule your Sweat Test. You're one decision away from transforming your confidence.",
+    "scheduleConsultation": "Schedule Your Sweat Test",
+    "footerNote": "Specialized sweat test for axillary hyperhidrosis. Certified miraDry® treatment.",
+    "rightsReserved": "© 2025 Zero Sweat Clinic. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "legalNotice": "Legal Notice",
+    "whatsappCta": "Contact us on WhatsApp"
+  },
+  "contact": {
+    "title": "Schedule Your Sweat Test",
+    "subtitle": "+ Sweat Test",
+    "description": "Complete the form and we will contact you",
+    "form": {
+      "name": "Full name *",
+      "namePlaceholder": "Enter your full name",
+      "email": "Email *",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone *",
+      "phonePlaceholder": "+1 123 456 7890",
+      "age": "Age",
+      "agePlaceholder": "Enter your age",
+      "comments": "Sweat Test or comments",
+      "commentsPlaceholder": "Do you have any specific questions about the procedure?",
+      "submit": "Send request",
+      "submitting": "Sending...",
+      "successTitle": "Redirecting to Email!",
+      "successMessage": "Your email client will open with the message. Complete the send from there."
+    },
+    "features": {
+      "sweatTest": {
+        "title": "Sweat Test",
+        "description": "We evaluate your specific case"
+      },
+      "medicalEvaluation": {
+        "title": "Medical Evaluation",
+        "description": "By trained specialists"
+      },
+      "personalizedPlan": {
+        "title": "Personalized Plan",
+        "description": "Treatment tailored to you"
+      }
+    },
+    "note": "We are the only center in Tijuana that offers miraDry®",
+    "callNow": "Call Now"
+  },
+  "finalCTA": {
+    "yourNextStep": "Your next <italic>step</italic>",
+    "sweatTest": "Sweat Test",
+    "features": {
+      "medicalEvaluation": "Medical evaluation",
+      "sweatTest": "Sweat test",
+      "personalizedPlan": "Personalized treatment plan"
+    },
+    "cta": "Schedule Your Sweat Test",
+    "ctaWithConsultation": "Schedule Your Consultation + Sweat Test"
+  },
+  "mobileScroll": {
+    "scrollUp": "Scroll up",
+    "scrollDown": "Scroll down"
+  }
+}
+
