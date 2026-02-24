@@ -9,7 +9,7 @@
     "stopSweatForeverMobile": "Detén el sudor <bold>para siempre</bold>",
     "stopSweatForeverDesktop": "Detén el sudor axilar para  <bold>siempre</bold>"
   },
-  "problem": {
+  "problem": { 
     "title": "Basta de vivir<br />con <cyan>sudor</cyan> y<br /><cyan>mal olor</cyan>",
     "badge": "Aprobado por FDA • No quirúrgico • 1-2 sesiones • Resultados permanentes",
     "badgeMobile": "Aprobado por FDA • No quirúrgico • 1-2 sesiones • Permanente",
@@ -164,8 +164,8 @@
     "phone": "Teléfono",
     "location": "Ubicación",
     "schedule": "Horario",
-    "scheduleWeekdays": "Lunes - Viernes: 8:00 AM - 6:00 PM",
-    "scheduleSaturday": "Sábado: 9:00 AM - 5:00 PM",
+    "scheduleWeekdays": "Lunes - Viernes: 9:00 AM - 5:00 PM",
+    "scheduleSaturday": "Sábado: 8:00 AM - 4:00 PM",
     "scheduleSunday": "Domingo: Cerrado",
     "readyToStart": "¿Listo para comenzar?",
     "readyDescription": "Agenda tu Prueba de Sudoracion. Estás a una decisión de transformar tu confianza.",
