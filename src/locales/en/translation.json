@@ -162,6 +162,10 @@
     "contact": "Contact",
     "contactTitle": "Contact",
     "phone": "Phone",
+    "phoneCallOnly": "For calls only",
+    "phoneMexico": "Mexico",
+    "phoneUSA": "USA",
+    "whatsappForMessages": "WhatsApp for messages",
     "location": "Location",
     "schedule": "Schedule",
     "scheduleWeekdays": "Monday - Friday: 9:00 AM - 5:00 PM",
@@ -174,7 +178,8 @@
     "rightsReserved": "© 2025 Zero Sweat Clinic. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "terms": "Terms and Conditions",
-    "legalNotice": "Legal Notice"
+    "legalNotice": "Legal Notice",
+    "whatsappCta": "Contact us on WhatsApp"
   },
   "contact": {
     "title": "Schedule Your Sweat Test",

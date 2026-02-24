@@ -162,6 +162,10 @@
     "contact": "Contacto",
     "contactTitle": "Contacto",
     "phone": "Teléfono",
+    "phoneCallOnly": "Solo para llamadas",
+    "phoneMexico": "México",
+    "phoneUSA": "USA",
+    "whatsappForMessages": "WhatsApp para mensajes",
     "location": "Ubicación",
     "schedule": "Horario",
     "scheduleWeekdays": "Lunes - Viernes: 9:00 AM - 5:00 PM",
@@ -174,7 +178,8 @@
     "rightsReserved": "© 2025 Zero Sweat Clinic. Todos los derechos reservados.",
     "privacyPolicy": "Política de Privacidad",
     "terms": "Términos y Condiciones",
-    "legalNotice": "Aviso Legal"
+    "legalNotice": "Aviso Legal",
+    "whatsappCta": "Contáctanos por WhatsApp"
   },
   "contact": {
     "title": "Agenda tu Prueba de Sudoración",
