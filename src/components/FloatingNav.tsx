@@ -19,16 +19,15 @@ const FloatingNav = () => {
       <div className="container mx-auto px-3 sm:px-4 lg:px-6 relative z-50">
         {/* Logo - Posicionado de forma independiente fuera del flujo */}
         {/* Logo más pequeño en móvil */}
-        <div className={`absolute left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-300 ${
-          isButtonHovered 
-            ? 'z-30 opacity-100' 
+        <div className={`absolute left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 pointer-events-auto transition-all duration-300 ${isButtonHovered
+            ? 'z-30 opacity-100'
             : 'z-10 opacity-100'
-        }`}>
-            <img 
-              src={logo} 
-              alt="Zero Sweat Logo" 
-              className="h-10 sm:h-16 md:h-20 lg:h-28 xl:h-32 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] max-w-[80px] sm:max-w-[120px] md:max-w-none"
-            />
+          }`}>
+          <img
+            src={logo}
+            alt="Zero Sweat Logo"
+            className="h-10 sm:h-16 md:h-20 lg:h-28 xl:h-32 w-auto object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] max-w-[80px] sm:max-w-[120px] md:max-w-none"
+          />
         </div>
 
         {/* Contenido principal del navbar con altura fija independiente del logo */}
@@ -48,12 +47,12 @@ const FloatingNav = () => {
               onMouseLeave={() => setIsButtonHovered(false)}
               style={{ letterSpacing: 0 }}
             >
-              <Trans 
-                i18nKey="nav.stopSweatForeverMobile" 
+              <Trans
+                i18nKey="nav.stopSweatForeverMobile"
                 components={{ bold: <span className="font-bold" /> }}
               />
             </Button>
-            
+
             {/* Versión desktop completa */}
             <Button
               size="lg"
@@ -67,8 +66,8 @@ const FloatingNav = () => {
               onMouseLeave={() => setIsButtonHovered(false)}
               style={{ letterSpacing: 0 }}
             >
-              <Trans 
-                i18nKey="nav.stopSweatForeverDesktop" 
+              <Trans
+                i18nKey="nav.stopSweatForeverDesktop"
                 components={{ bold: <span className="font-bold" /> }}
               />
             </Button>
@@ -92,7 +91,7 @@ const FloatingNav = () => {
             d="M 0,80 Q 0,1 50,0 L 0,0 Z"
             fill="#0A0A0A"
           />
-          
+
           {/* Lado Derecho */}
           <path
             d="M 1200,80 Q 1200,1 1150,0 L 1200,0 Z"
@@ -100,7 +99,6 @@ const FloatingNav = () => {
           />
         </svg>
       </div>
-    </nav>
     </nav>
   );
 };

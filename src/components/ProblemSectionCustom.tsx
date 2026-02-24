@@ -20,8 +20,8 @@ const ProblemSectionCustom = () => {
         <div className="flex justify-center -mt-4 mb-8 animate-fade-in-slow">
           <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-full px-7 py-4 sm:px-12 sm:py-6 shadow-[0_0_40px_rgba(59,130,246,0.6),0_0_80px_rgba(34,211,238,0.35)] backdrop-blur-md border border-white/20 hover:scale-110 transition-transform duration-300">
             <div className="flex items-center gap-2">
-              <p 
-                className="text-sm xs:text-base sm:text-lg font-bold text-black leading-tight text-center" 
+              <p
+                className="text-sm xs:text-base sm:text-lg font-bold text-black leading-tight text-center"
                 style={{ fontFamily: "'Playfair Display', 'Poppins', Georgia, serif" }}
               >
                 <span className="hidden sm:inline">{t('problem.badge')}</span>
@@ -35,13 +35,13 @@ const ProblemSectionCustom = () => {
           {/* Imagen a la izquierda (más grande y movida a la izquierda, sólo un poco arriba, sin borde) */}
           <div className="relative flex justify-start items-end mb-2 sm:-mb-2 md:-mb-6 lg:-mb-8 -ml-12 sm:-ml-16 md:-ml-24 lg:-ml-32 xl:-ml-[16rem] overflow-visible -mt-8 sm:-mt-10 md:-mt-16 lg:-mt-20 xl:-mt-24">
             <div className="overflow-visible w-full">
-            <div className="relative overflow-visible">
-  <img
-    src={sillon}
-    alt={t('problem.chairAlt')}
-    className="w-full h-full object-cover scale-[1.15]"
-  />
-</div>
+              <div className="relative overflow-visible">
+                <img
+                  src={sillon}
+                  alt={t('problem.chairAlt')}
+                  className="w-full h-full object-cover scale-[1.15]"
+                />
+              </div>
 
             </div>
           </div>
@@ -57,7 +57,7 @@ const ProblemSectionCustom = () => {
                 }}
               />
             </h2>
-            
+
             {/* Isla con gradiente para "Si tú" */}
             <div className="bg-gradient-to-r from-cyan-400 via-teal-300 to-yellow-300 rounded-2xl p-4 sm:p-6 shadow-2xl backdrop-blur-md border border-white/20 shadow-[0_0_30px_rgba(59,130,246,0.5),0_0_60px_rgba(34,211,238,0.3)] mb-4 -ml-4 sm:-ml-6">
               <p className="text-xl lg:text-2xl font-[Poppins] font-bold text-black mb-4">
